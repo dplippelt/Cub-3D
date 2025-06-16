@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3D.h                                            :+:      :+:    :+:   */
+/*   ft_init.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/16 13:50:47 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/16 16:32:59 by dlippelt         ###   ########.fr       */
+/*   Created: 2025/06/16 16:29:41 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/06/16 16:30:52 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef cub3D_H
-# define cub3D_H
+#include "cub3D.h"
 
-# include <stdio.h>
-# include <unistd.h>
-# include "mlx.h"
-# include "enums.h"
-# include "macros.h"
-# include "init.h"
-# include "utils.h"
-# include "validation.h"
-
-
-
-#endif
+void	ft_init(t_map *m, char *av[])
+{
+	m->map = NULL;
+	m->map_path = av[1];
+	m->nlines = 0;
+}
