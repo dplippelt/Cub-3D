@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:53:28 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/16 15:28:43 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/16 16:47:25 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ int	ft_error(int e)
 		ft_putstr("Incorrect number of parameters\n", 2);
 	if (e == EFILEFORMAT)
 		ft_putstr("Map file has incorrect file format\n", 2);
+	if (e == EMALLOC)
+		ft_putstr("Failed to allocate memory\n", 2);
 	return (0);
 }
