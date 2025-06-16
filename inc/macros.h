@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3D.h                                            :+:      :+:    :+:   */
+/*   macros.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/16 13:50:47 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/16 15:09:07 by dlippelt         ###   ########.fr       */
+/*   Created: 2025/06/16 15:08:02 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/06/16 15:08:35 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef cub3D_H
-# define cub3D_H
+#ifndef MACROS_H
+# define MACROS_H
 
-# include <stdio.h>
-# include <unistd.h>
-# include "mlx.h"
-# include "enums.h"
-# include "macros.h"
-# include "utils.h"
-# include "validation.h"
-
-
+# define FORMAT ".cub"
 
 #endif
