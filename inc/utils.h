@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 14:02:38 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/16 15:00:46 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/16 15:26:29 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 # include <errno.h>
 
 int		ft_error(int e);
-ssize_t	ft_strlen(char *s);
-int		ft_putstr(char *s, int fd);
-int		ft_strcmp(char *s1, char *s2);
+ssize_t	ft_strlen(const char *s);
+int		ft_putstr(const char *s, int fd);
+int		ft_strcmp(const char *s1, const char *s2);
 
 #endif

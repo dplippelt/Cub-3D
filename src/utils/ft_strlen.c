@@ -6,13 +6,13 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 14:00:11 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/16 14:05:34 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/16 15:26:20 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-size_t	ft_strlen(char *s)
+size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 

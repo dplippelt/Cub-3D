@@ -6,11 +6,11 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 14:55:25 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/16 15:00:06 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/16 15:25:14 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
+int	ft_strcmp(const char *s1, const char *s2)
 {
 	while (*s1 && s2 && *s1 == *s2)
 	{
