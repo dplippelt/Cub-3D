@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   cleanup.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/16 13:50:19 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/16 17:20:29 by dlippelt         ###   ########.fr       */
+/*   Created: 2025/06/16 16:56:46 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/06/16 17:00:40 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#ifndef CLEANUP_H
+# define CLEANUP_H
 
-int	main(int ac, char *av[])
-{
-	t_map	m;
+# include "structs.h"
 
-	if (ac != 2)
-	{
-		ft_error(ENUMPARAM);
-		return (1);
-	}
-	ft_init(&m, av);
-	if (!ft_validate_map(&m))
-	{
-		ft_cleanup_map(&m);
-		return (1);
-	}
-	ft_cleanup_map(&m);
-	return (0);
-}
+void	ft_cleanup_map(t_map *m);
+
+#endif
