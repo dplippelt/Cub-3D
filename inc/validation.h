@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3D.h                                            :+:      :+:    :+:   */
+/*   validation.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/16 13:50:47 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/16 14:47:05 by dlippelt         ###   ########.fr       */
+/*   Created: 2025/06/16 14:46:25 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/06/16 14:46:45 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef cub3D_H
-# define cub3D_H
+#ifndef VALIDATION_H
+# define VALIDATION_H
 
-# include <stdio.h>
-# include <unistd.h>
-# include "mlx.h"
-# include "enums.h"
-# include "utils.h"
-# include "validation.h"
-
-
+int	ft_validate_map(char *map_path);
 
 #endif
