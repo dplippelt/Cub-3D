@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 14:42:29 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/16 15:27:44 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/16 16:28:52 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,23 @@ static int	ft_validate_file_format(const char *map_path)
 	return (1);
 }
 
-static int	ft_validate_file_content(const char *map_path)
+static int	ft_validate_file(t_map *m)
 {
 	int	fd;
 
-	fd = open(map_path, O_RDONLY);
+	fd = open(m->map_path, O_RDONLY);
 	if (fd == -1)
 		return (ft_error(ERRNO));
-	close(fd);
+	if (!ft_validate_file_content(fd, m))
+		return (0);
 	return (1);
 }
 
-int	ft_validate_map(const char *map_path)
+int	ft_validate_map(t_map *m)
 {
-	if (!ft_validate_file_format(map_path))
+	if (!ft_validate_file_format(m->map_path))
 		return (0);
-	if (!ft_validate_file_content(map_path))
+	if (!ft_validate_file(m))
 		return (0);
 	return (1);
 }
