@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:50:47 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/16 16:32:59 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/16 16:57:46 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include "init.h"
 # include "utils.h"
 # include "validation.h"
+# include "cleanup.h"
 
 
 
