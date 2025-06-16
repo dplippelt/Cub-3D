@@ -1,9 +1,9 @@
 
 
-NO ./textures/wall_north.xpm
-EA ./textures/wall_east.xpm
-SO ./textures/wall_south.xpm
-WE ./textures/wall_west.xpm
+NO ./textures/fake_wall_north.xpm
+EA ./textures/fake_wall_east.xpm
+SO ./textures/fake_wall_south.xpm
+WE ./textures/fake_wall_west.xpm
 
 
 F  220,100,0
