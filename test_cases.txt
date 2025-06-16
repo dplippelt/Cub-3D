@@ -1,0 +1,15 @@
+
+[Input validation]
+
+Map file = maps/test.cub
+
+./cub3D
+./cub3D maps/test.cb maps/test.cub
+./cub3D maps/test.cub
+
+./cub3D .cub
+./cub3D maps/.cub
+./cub3D maps/test.cb
+./cub3D maps/test.cub
+
+
