@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:56:56 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/16 14:11:32 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/16 15:02:43 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 enum e_errors
 {
 	ERRNO = 0,
-	ENUMPARAM = 1
+	ENUMPARAM = 1,
+	EFILEFORMAT = 2
 };
 
 #endif

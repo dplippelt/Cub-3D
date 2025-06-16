@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 14:02:38 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/16 14:12:46 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/16 15:00:46 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@
 int		ft_error(int e);
 ssize_t	ft_strlen(char *s);
 int		ft_putstr(char *s, int fd);
+int		ft_strcmp(char *s1, char *s2);
 
 #endif
