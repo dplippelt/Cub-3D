@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 11:36:58 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/01/18 16:15:31 by dlippelt         ###   ########.fr       */
+/*   Created: 2024/10/31 15:00:49 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/06/18 11:16:03 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,6 @@
 #  define BUFFER_SIZE 42
 # endif
 
-typedef struct s_buf
-{
-	char			buf[BUFFER_SIZE + 1];
-	int				fd;
-	struct s_buf	*next;
-}					t_buf;
-
 typedef struct s_line
 {
 	char	*line;
@@ -40,11 +33,11 @@ typedef struct s_line
 	size_t	cap;
 }			t_line;
 
-char	*get_next_line(int fd);
-t_buf	*ft_new_node(int fd);
-void	*ft_cleanup_gnl(t_line *l, t_buf **head, t_buf *b, int option);
-int		ft_find_new_line(char *s);
-size_t	ft_gnl_strlen(char *s);
-size_t	ft_strlcat(char *dst, char *src, size_t size);
+void		*gnl_cleanup(t_line *l, char *buf, int option);
+char		*get_next_line(int fd);
+void		gnl_init(t_line *l);
+int			gnl_find_new_line(char *s);
+size_t		gnl_strlen(char *s);
+size_t		gnl_strlcat(char *dst, char *src, size_t size);
 
 #endif

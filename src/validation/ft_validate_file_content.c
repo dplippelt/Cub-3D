@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 15:58:08 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/16 17:36:59 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/18 11:16:41 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static int	ft_get_map_file_content(int fd, t_map *m)
 		m->map[line] = get_next_line(fd);
 		if (!m->map[line])
 			return (ft_error(EMALLOC));
-		// printf("%s", m->map[line]);
+		printf("%s\n", m->map[line]);
 		line++;
 	}
 	return (1);

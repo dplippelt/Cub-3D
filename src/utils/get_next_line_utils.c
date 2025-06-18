@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 11:43:14 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/16 17:32:29 by dlippelt         ###   ########.fr       */
+/*   Created: 2024/10/31 15:01:36 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/06/18 11:15:40 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_gnl_strlen(char *s)
+size_t	gnl_strlen(char *s)
 {
 	size_t	i;
 
@@ -22,14 +22,14 @@ size_t	ft_gnl_strlen(char *s)
 	return (i);
 }
 
-size_t	ft_strlcat(char *dst, char *src, size_t size)
+size_t	gnl_strlcat(char *dst, char *src, size_t size)
 {
 	size_t	i;
 	size_t	dl;
 	size_t	sl;
 
-	dl = ft_gnl_strlen(dst);
-	sl = ft_gnl_strlen(src);
+	dl = gnl_strlen(dst);
+	sl = gnl_strlen(src);
 	if (size <= dl)
 		return (sl + size);
 	i = 0;
@@ -42,7 +42,7 @@ size_t	ft_strlcat(char *dst, char *src, size_t size)
 	return (dl + sl);
 }
 
-int	ft_find_new_line(char *s)
+int	gnl_find_new_line(char *s)
 {
 	size_t	i;
 
@@ -56,23 +56,17 @@ int	ft_find_new_line(char *s)
 	return (-1);
 }
 
-t_buf	*ft_new_node(int fd)
+void	gnl_init(t_line *l)
 {
-	t_buf	*b;
-
-	b = malloc(sizeof(t_buf));
-	if (!b)
-		return (NULL);
-	b->fd = fd;
-	b->buf[0] = '\0';
-	b->next = NULL;
-	return (b);
+	l->line = NULL;
+	l->tline = NULL;
+	l->eof = 0;
+	l->size = 0;
+	l->cap = 0;
 }
 
-void	*ft_cleanup_gnl(t_line *l, t_buf **head, t_buf *b, int ok)
+void	*gnl_cleanup(t_line *l, char *buf, int ok)
 {
-	t_buf	*temp;
-
 	if (l->tline != l->line)
 	{
 		free(l->tline);
@@ -84,16 +78,7 @@ void	*ft_cleanup_gnl(t_line *l, t_buf **head, t_buf *b, int ok)
 		l->line = NULL;
 		l->eof = 1;
 	}
-	if (ok <= 0 && b && head)
-	{
-		temp = *head;
-		while (temp && temp != b && temp->next != b)
-			temp = temp->next;
-		if (temp == b)
-			*head = b->next;
-		else
-			temp->next = b->next;
-		free(b);
-	}
-	return (free(*head), NULL);
+	if (ok <= 0)
+		buf[0] = '\0';
+	return (NULL);
 }
