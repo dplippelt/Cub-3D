@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+u/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_validate_elements.c                             :+:      :+:    :+:   */
@@ -43,14 +43,12 @@ static size_t	ft_move_past_element(char *s)
 		i++;
 	while (s[i] && ft_is_printable(s[i]))
 		i++;
-	while (s[i] && s[i] == ' ')
-		i++;
 	return (i);
 }
 
 static int	ft_check_for_invalid_symbol(char *s, int *el_id)
 {
-	if (*s && *s != '\n' && !ft_is_element(s, el_id))
+	if (*s && !ft_is_element(s, el_id))
 		return (ft_error(EUNEXPECTED));
 	return (1);
 }
@@ -72,11 +70,11 @@ static int	ft_get_elements(t_file *f)
 				if (!ft_get_element_info(f, &f->file[y][x], el_id))
 					return (0);
 				x += ft_move_past_element(&f->file[y][x]);
-				if (!ft_check_for_invalid_symbol(&f->file[y][x], &el_id))
-					return (0);
-				continue ;
 			}
-			x++;
+   while(f->file[y][x] == ' ')
+			   x++;
+   if (!ft_check_for_invalid_symbol(&f->file[y][x], &el_id))
+			   return (0);
 		}
 		y++;
 	}
