@@ -1,13 +1,11 @@
-
-
 NO ./textures/fake_wall_north.xpm
-EA ./textures/fake_wall_east.xpm
+EA ./textures/fake_wall_east.xpm    s
 SO ./textures/fake_wall_south.xpm
 WE ./textures/fake_wall_west.xpm
 
 
-F  220,100,0
-C  225,30,0
+    F  220,100,0
+           C  225,30,0
 
 
 1111111

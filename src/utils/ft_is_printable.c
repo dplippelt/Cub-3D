@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   debug.h                                            :+:      :+:    :+:   */
+/*   ft_is_printable.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/18 11:32:50 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/18 16:52:38 by dlippelt         ###   ########.fr       */
+/*   Created: 2025/06/18 18:01:39 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/06/18 18:02:40 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEBUG_H
-# define DEBUG_H
+#include "utils.h"
 
-// # define DEBUG
-
-# include <stdio.h>
-# include "enums.h"
-# include "structs.h"
-
-void	debug_print_map(t_file *f);
-void	debug_print_element_location(int element_id, size_t x, size_t y);
-void	debug_print_tex_paths(t_tex *tex);
-void	debug_print_rbg_values(t_col *col);
-
-#endif
+int	ft_is_printable(char c)
+{
+	if (c >= 33 && c <= 126)
+		return (1);
+	return (0);
+}

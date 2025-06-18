@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:53:28 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/18 15:55:56 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/18 17:36:13 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,7 @@ int	ft_error(int e)
 		ft_putstr("Failed to allocate memory\n", 2);
 	if (e == ECOLORFORMAT)
 		ft_putstr("Invalid RGB format\n", 2);
+	if (e == EUNEXPECTED)
+		ft_putstr("Map file contains unexpected symbol\n", 2);
 	return (0);
 }

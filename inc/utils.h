@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 14:02:38 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/18 16:12:50 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/18 18:02:49 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ size_t		ft_strlcpy(char *dst, const char *src, size_t size);
 int			ft_putstr(const char *s, int fd);
 int			ft_strcmp(const char *s1, const char *s2);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
+int			ft_is_printable(char c);
 int			ft_open(const char *path, int *fd);
 u_int8_t	ft_colortoi(char **s, int *overflow);
 
