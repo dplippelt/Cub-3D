@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:50:19 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/18 12:49:45 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/18 15:54:15 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ int	main(int ac, char *av[])
 	ft_init(&f, av);
 	if (!ft_validate_file(&f))
 	{
-		ft_cleanup_file(&f);
+		ft_cleanup(&f);
 		return (1);
 	}
-	ft_cleanup_file(&f);
+	ft_cleanup(&f);
 	return (0);
 }
