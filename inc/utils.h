@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 14:02:38 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/16 17:12:48 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/18 12:08:02 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int		ft_error(int e);
 ssize_t	ft_strlen(const char *s);
 int		ft_putstr(const char *s, int fd);
 int		ft_strcmp(const char *s1, const char *s2);
+int		strncmp(const char *s1, const char *s2, size_t n);
 int		ft_open(const char *path, int *fd);
 
 #endif
