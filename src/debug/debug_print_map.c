@@ -6,19 +6,19 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 11:40:52 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/18 12:49:26 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/18 12:57:34 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "debug.h"
 
-void	debug_print_map(t_file *m)
+void	debug_print_map(t_file *f)
 {
 	size_t	line;
 
 	line = 0;
 	printf("\n======================= FILE CONTENT =======================\n");
-	while (m->file[line])
-		printf("%s\n", m->file[line++]);
+	while (f->file[line])
+		printf("%s\n", f->file[line++]);
 	printf("============================================================\n\n");
 }

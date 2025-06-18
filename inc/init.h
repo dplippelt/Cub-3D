@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:31:03 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/16 16:31:39 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/18 12:57:14 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 
 # include "structs.h"
 
-void	ft_init(t_map *m, char *av[]);
+void	ft_init(t_file *f, char *av[]);
 
 #endif

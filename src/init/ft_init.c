@@ -6,15 +6,15 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:29:41 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/16 16:30:52 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/18 12:49:55 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-void	ft_init(t_map *m, char *av[])
+void	ft_init(t_file *f, char *av[])
 {
-	m->map = NULL;
-	m->map_path = av[1];
-	m->nlines = 0;
+	f->file = NULL;
+	f->file_path = av[1];
+	f->nlines = 0;
 }

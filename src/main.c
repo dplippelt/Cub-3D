@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:50:19 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/16 17:20:29 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/18 12:49:45 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 int	main(int ac, char *av[])
 {
-	t_map	m;
+	t_file	f;
 
 	if (ac != 2)
 	{
 		ft_error(ENUMPARAM);
 		return (1);
 	}
-	ft_init(&m, av);
-	if (!ft_validate_map(&m))
+	ft_init(&f, av);
+	if (!ft_validate_file(&f))
 	{
-		ft_cleanup_map(&m);
+		ft_cleanup_file(&f);
 		return (1);
 	}
-	ft_cleanup_map(&m);
+	ft_cleanup_file(&f);
 	return (0);
 }

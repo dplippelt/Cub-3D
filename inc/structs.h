@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/18 11:42:26 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/18 12:49:26 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 #include <unistd.h>
 
-typedef struct s_map
+typedef struct s_file
 {
-	const char	*map_path;
-	char		**map;
+	const char	*file_path;
+	char		**file;
 	size_t		nlines;
-}				t_map;
+}				t_file;
 
 #endif

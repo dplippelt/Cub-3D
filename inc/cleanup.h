@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:56:46 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/18 11:43:02 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/18 12:57:18 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@
 # include <stdlib.h>
 # include "structs.h"
 
-void	ft_cleanup_map(t_map *m);
+void	ft_cleanup_file(t_file *f);
 
 #endif
