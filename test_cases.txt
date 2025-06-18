@@ -13,3 +13,66 @@ Map file = maps/test.cub
 ./cub3D maps/test.cub
 
 
+
+
+
+
+
+
+[Map configurations]
+
+=================== VALID FILE CONTENT ======================
+     NO ./textures/fake_wall_north.xpm      EA ./textures/fake_wall_east.xpm
+
+SO ./textures/fake_wall_south.xpm
+WE ./textures/fake_wall_west.xpm
+
+
+    F  220,100,000
+           C  225,30,0
+
+
+1111111
+1000001
+100N001
+1000001
+1111111
+=============================================================
+
+
+================== INVALID FILE CONTENT =====================
+NO ./textures/fake_wall_north.xpm
+EA ./textures/fake_wall_east.xpm      s
+SO ./textures/fake_wall_south.xpm
+WE ./textures/fake_wall_west.xpm
+
+
+    F  220,100,0
+           C  225,30,0
+
+
+1111111
+1000001
+100N001
+1000001
+1111111
+=============================================================
+
+
+================== INVALID FILE CONTENT =====================
+NO ./textures/fake_wall_north.xpm
+EA ./textures/fake_wall_east.xpm
+SO ./textures/fake_wall_south.xpm
+WE ./textures/fake_wall_west.xpm
+
+
+    F  220,100,0000
+           C  225,030,0
+
+
+1111111
+1000001
+100N001
+1000001
+1111111
+=============================================================
