@@ -1,5 +1,4 @@
-NO ./textures/fake_wall_north.xpm
-EA ./textures/fake_wall_east.xpm    s
+    NO ./textures/fake_wall_north.xpm     EA ./textures/fake_wall_east.xpm
 SO ./textures/fake_wall_south.xpm
 WE ./textures/fake_wall_west.xpm
 

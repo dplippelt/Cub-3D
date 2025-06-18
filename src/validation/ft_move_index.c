@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   debug.h                                            :+:      :+:    :+:   */
+/*   ft_move_index.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/18 11:32:50 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/18 20:21:03 by dlippelt         ###   ########.fr       */
+/*   Created: 2025/06/18 20:32:11 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/06/18 20:34:05 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEBUG_H
-# define DEBUG_H
+#include "validation.h"
 
-// # define DEBUG
+size_t	ft_skip_space(char *s)
+{
+	size_t	i;
 
-# include <stdio.h>
-# include "enums.h"
-# include "structs.h"
+	i = 0;
+	while (s[i] == ' ')
+		i++;
+	return (i);
+}
 
-void	debug_print_map(t_file *f);
-void	debug_print_element_location(int element_id, size_t x, size_t y);
-void	debug_print_tex_paths(t_tex *tex);
-void	debug_print_rbg_values(t_col *col);
+size_t	ft_move_past_element(char *s)
+{
+	size_t	i;
 
-#endif
+	i = 0;
+	while (s[i] && ft_is_printable(s[i]))
+		i++;
+	while (s[i] && s[i] == ' ')
+		i++;
+	while (s[i] && ft_is_printable(s[i]))
+		i++;
+	return (i);
+}

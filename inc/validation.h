@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 14:46:25 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/18 18:10:31 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/18 20:35:03 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,7 @@ int		ft_validate_elements(t_file *f);
 int		ft_get_element_info(t_file *f, char *el, int el_id);
 int		ft_new_tex(t_tex **head, char *el, int el_id);
 int		ft_new_col(t_col **head, char *el, int el_id);
+size_t	ft_skip_space(char *s);
+size_t	ft_move_past_element(char *s);
 
 #endif
