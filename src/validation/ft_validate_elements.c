@@ -46,9 +46,10 @@ static size_t	ft_move_past_element(char *s)
 	return (i);
 }
 
-static int	ft_check_for_invalid_symbol(char *s, int *el_id)
+static int	ft_check_for_invalid_symbol(char *s)
 {
-	if (*s && !ft_is_element(s, el_id))
+   int dummy;
+	if (*s && !ft_is_element(s, &dummy))
 		return (ft_error(EUNEXPECTED));
 	return (1);
 }
@@ -73,7 +74,7 @@ static int	ft_get_elements(t_file *f)
 			}
    while(f->file[y][x] == ' ')
 			   x++;
-   if (!ft_check_for_invalid_symbol(&f->file[y][x], &el_id))
+   if (!ft_check_for_invalid_symbol(&f->file[y][x]))
 			   return (0);
 		}
 		y++;
