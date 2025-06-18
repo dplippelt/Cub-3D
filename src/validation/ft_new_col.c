@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 13:38:12 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/18 16:12:32 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/18 16:58:07 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,18 @@ static t_col	*ft_add_col(t_col **head)
 
 static int	ft_get_rgb(t_col *new_col, char *el, int color)
 {
-	int	overflow;
+	int	error;
 
 	if (*el < '0' || *el > '9')
 		return (0);
-	overflow = 0;
+	error = 0;
 	if (color == RED)
-		new_col->r = ft_colortoi(&el, &overflow);
+		new_col->r = ft_colortoi(&el, &error);
 	else if (color == GREEN)
-		new_col->g = ft_colortoi(&el, &overflow);
+		new_col->g = ft_colortoi(&el, &error);
 	else if (color == BLUE)
-		new_col->b = ft_colortoi(&el, &overflow);
-	if (overflow)
+		new_col->b = ft_colortoi(&el, &error);
+	if (error)
 		return (0);
 	if (color < BLUE)
 	{
