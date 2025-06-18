@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 11:40:52 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/18 11:41:34 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/18 12:29:20 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	debug_print_map(t_map *m)
 	size_t	line;
 
 	line = 0;
+	printf("\n======================= FILE CONTENT =======================\n");
 	while (m->map[line])
 		printf("%s\n", m->map[line++]);
+	printf("============================================================\n\n");
 }
