@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 11:29:34 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/18 18:05:38 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/18 18:12:30 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,14 @@ static size_t	ft_move_past_element(char *s)
 		i++;
 	while (s[i] && ft_is_printable(s[i]))
 		i++;
+	while (s[i] && s[i] == ' ')
+		i++;
 	return (i);
 }
 
-static int	ft_check_for_invalid_symbol(char c)
+static int	ft_check_for_invalid_symbol(char *s, int *el_id)
 {
-	if (c && c != ' ' && c != '\n')
+	if (*s && *s != '\n' && !ft_is_element(s, el_id))
 		return (ft_error(EUNEXPECTED));
 	return (1);
 }
@@ -70,8 +72,7 @@ static int	ft_get_elements(t_file *f)
 				if (!ft_get_element_info(f, &f->file[y][x], el_id))
 					return (0);
 				x += ft_move_past_element(&f->file[y][x]);
-				printf("%s\n", &f->file[y][x]);
-				if (!ft_check_for_invalid_symbol(f->file[y][x]))
+				if (!ft_check_for_invalid_symbol(&f->file[y][x], &el_id))
 					return (0);
 				continue ;
 			}
