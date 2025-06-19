@@ -5,20 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/18 11:40:52 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/18 14:36:28 by dlippelt         ###   ########.fr       */
+/*   Created: 2025/06/19 12:09:31 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/06/19 12:14:07 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "debug.h"
 
-void	debug_print_map(t_file *f)
+void	debug_print_map(t_map *map)
 {
-	size_t	line;
+	size_t	y;
 
-	line = 0;
-	printf("\n======================= FILE CONTENT =======================\n");
-	while (f->file[line])
-		printf("%s\n", f->file[line++]);
-	printf("============================================================\n\n");
+	printf("\nMap height: %zu\nMap width: %zu\n", map->height, map->width);
+	printf("===================== MAP =====================\n");
+	y = 0;
+	while (y < map->height)
+	{
+		printf("%s\n", map->map[y]);
+		y++;
+	}
+	printf("===============================================\n");
 }

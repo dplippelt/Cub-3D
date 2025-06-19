@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 11:32:50 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/19 10:44:51 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/19 12:14:14 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,11 @@
 # include "enums.h"
 # include "structs.h"
 
-void	debug_print_map(t_file *f);
+void	debug_print_file(t_file *f);
 void	debug_print_element_location(int element_id, size_t x, size_t y);
 void	debug_print_tex_paths(t_tex *tex);
 void	debug_print_rbg_values(t_col *col);
-void	debug_print_map_line(char *s, size_t y);
+void	debug_print_map_start(char *s, size_t y);
+void	debug_print_map(t_map *map);
 
 #endif

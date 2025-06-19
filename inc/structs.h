@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/18 15:58:19 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/19 11:38:41 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,13 @@ typedef struct s_col
 	struct s_col	*next;
 }					t_col;
 
+typedef struct s_map
+{
+	char	**map;
+	size_t	height;
+	size_t	width;
+}			t_map;
+
 typedef struct s_file
 {
 	const char	*file_path;
@@ -39,6 +46,7 @@ typedef struct s_file
 	size_t		nlines;
 	t_tex		*tex;
 	t_col		*col;
+	t_map		map;
 }				t_file;
 
 #endif
