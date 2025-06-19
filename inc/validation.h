@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 14:46:25 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/19 15:30:45 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/19 17:20:41 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int		ft_malloc_map(t_map *map);
 int		ft_validate_texture_info(t_tex *tex);
 int		ft_validate_color_info(t_col *col);
 int		ft_validate_map(t_map m);
-void	ft_set_next_wall(t_walls *w, int x, int y);
-void	ft_check_next_wall(t_walls *w);
+int		ft_copy_map_with_border(char ***dst, char **src, size_t width);
+void	ft_check_wall(t_walls *w);
 
 #endif

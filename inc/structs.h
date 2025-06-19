@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/19 15:15:15 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/19 17:49:18 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,19 @@
 # include <unistd.h>
 # include <sys/types.h>
 
-typedef struct s_coord
+typedef struct s_pos
 {
-	size_t	x;
-	size_t	y;
-}			t_coord;
+	int	x;
+	int	y;
+}			t_pos;
 
 typedef struct s_walls
 {
 	char	**map;
-	t_coord	start;
-	t_coord	next;
+	t_pos	pos;
 	int		valid;
-	size_t	height;
-	size_t	width;
+	int		height;
+	int		width;
 }			t_walls;
 
 typedef struct s_tex
