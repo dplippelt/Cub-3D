@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/19 12:54:51 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/19 15:15:15 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,22 @@
 
 # include <unistd.h>
 # include <sys/types.h>
+
+typedef struct s_coord
+{
+	size_t	x;
+	size_t	y;
+}			t_coord;
+
+typedef struct s_walls
+{
+	char	**map;
+	t_coord	start;
+	t_coord	next;
+	int		valid;
+	size_t	height;
+	size_t	width;
+}			t_walls;
 
 typedef struct s_tex
 {
@@ -48,17 +64,5 @@ typedef struct s_file
 	t_col		*col;
 	t_map		map;
 }				t_file;
-
-typedef struct s_check
-{
-	int	north_wall;
-	int	east_wall;
-	int	south_wall;
-	int	west_wall;
-	int	floor;
-	int	ceiling;
-	int	map;
-}		t_check;
-
 
 #endif

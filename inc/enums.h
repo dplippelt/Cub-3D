@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:56:56 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/19 13:13:28 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/19 14:27:23 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ enum e_errors
 	EUNEXPECTED = 4,
 	EMISSINGINFO = 5,
 	EDUPENTRIES = 6,
+	EWALL = 7,
 	ECOLORFORMAT = 999
 };
 
@@ -41,6 +42,22 @@ enum e_colors
 	RED,
 	GREEN,
 	BLUE
+};
+
+// enum e_wall_side
+// {
+// 	TOP,
+// 	RIGHT,
+// 	BOTTOM,
+// 	LEFT
+// };
+
+enum e_dir
+{
+	UP,
+	DOWN,
+	LEFT,
+	RIGHT
 };
 
 #endif

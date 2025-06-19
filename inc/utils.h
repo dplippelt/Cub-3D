@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 14:02:38 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/18 20:32:19 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/19 15:26:51 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 # include "enums.h"
+# include "cleanup.h"
 
 int			ft_error(int e);
 size_t		ft_strlen(const char *s);
@@ -31,5 +32,6 @@ int			ft_strncmp(const char *s1, const char *s2, size_t n);
 int			ft_is_printable(char c);
 int			ft_open(const char *path, int *fd);
 u_int8_t	ft_colortoi(char **s, int *overflow);
+int			ft_copy_str_array(char ***dst, char **src);
 
 #endif

@@ -6,22 +6,24 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 14:46:25 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/19 13:29:09 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/19 15:30:45 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef VALIDATION_H
 # define VALIDATION_H
 
+
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <fcntl.h>
 # include "utils.h"
 # include "enums.h"
 # include "macros.h"
 # include "structs.h"
 # include "get_next_line.h"
 # include "cleanup.h"
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <fcntl.h>
+# include "debug.h"
 
 int		ft_validate_file(t_file *f);
 int		ft_validate_file_content(t_file *f);
@@ -41,5 +43,8 @@ size_t	ft_get_line_length(char *line);
 int		ft_malloc_map(t_map *map);
 int		ft_validate_texture_info(t_tex *tex);
 int		ft_validate_color_info(t_col *col);
+int		ft_validate_map(t_map m);
+void	ft_set_next_wall(t_walls *w, int x, int y);
+void	ft_check_next_wall(t_walls *w);
 
 #endif

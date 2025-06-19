@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_validate_elements.c                             :+:      :+:    :+:   */
+/*   debug_print_str_array.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/18 11:29:34 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/19 15:09:53 by dlippelt         ###   ########.fr       */
+/*   Created: 2025/06/19 15:29:14 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/06/19 15:30:03 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "validation.h"
 #include "debug.h"
 
-int	ft_validate_elements(t_file *f)
+void	debug_print_str_array(char **sa)
 {
-	if (!ft_get_elements(f))
-		return (0);
-
-	// debug_print_file(f);
-	// debug_print_tex_paths(f->tex);
-	// debug_print_rbg_values(f->col);
-	// debug_print_map(&f->map);
-
-	if (!ft_validate_texture_info(f->tex))
-		return (0);
-	if (!ft_validate_color_info(f->col))
-		return (0);
-	if (!ft_validate_map(f->map))
-		return (0);
-
-	return (1);
+	while (*sa)
+	{
+		printf("%s\n", *sa);
+		sa++;
+	}
 }

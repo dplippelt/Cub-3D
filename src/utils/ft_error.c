@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:53:28 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/19 13:13:38 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/19 13:57:38 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,7 @@ int	ft_error(int e)
 		ft_putstr("File is missing necessary information\n", 2);
 	if (e == EDUPENTRIES)
 		ft_putstr("File contains duplicate entries\n", 2);
+	if (e == EWALL)
+		ft_putstr("The map is not fully surrounded by a wall\n", 2);
 	return (0);
 }
