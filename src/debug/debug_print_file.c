@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   debug_print_map_line.c                             :+:      :+:    :+:   */
+/*   debug_print_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/19 10:41:18 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/19 10:44:45 by dlippelt         ###   ########.fr       */
+/*   Created: 2025/06/18 11:40:52 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/06/19 12:09:18 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "debug.h"
 
-void	debug_print_map_line(char *s, size_t y)
+void	debug_print_file(t_file *f)
 {
-	printf("\n");
-	printf("Found start of map on line %zu\n", y);
-	printf("First line of the map: %s\n", s);
+	size_t	line;
+
+	line = 0;
+	printf("\n======================= FILE CONTENT =======================\n");
+	while (f->file[line])
+		printf("%s\n", f->file[line++]);
+	printf("============================================================\n\n");
 }
