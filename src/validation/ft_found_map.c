@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   debug.h                                            :+:      :+:    :+:   */
+/*   ft_found_map.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/18 11:32:50 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/19 10:44:51 by dlippelt         ###   ########.fr       */
+/*   Created: 2025/06/19 10:35:41 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/06/19 10:39:32 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEBUG_H
-# define DEBUG_H
+#include "validation.h"
 
-# define DEBUG
+int	ft_found_map(char *line)
+{
+	int	is_map;
 
-# include <stdio.h>
-# include "enums.h"
-# include "structs.h"
-
-void	debug_print_map(t_file *f);
-void	debug_print_element_location(int element_id, size_t x, size_t y);
-void	debug_print_tex_paths(t_tex *tex);
-void	debug_print_rbg_values(t_col *col);
-void	debug_print_map_line(char *s, size_t y);
-
-#endif
+	is_map = 0;
+	while (*line)
+	{
+		if (*line != ' ' && *line != '1')
+			return (0);
+		if (*line == '1')
+			is_map = 1;
+		line++;
+	}
+	return (is_map);
+}

@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   debug.h                                            :+:      :+:    :+:   */
+/*   debug_print_map_line.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/18 11:32:50 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/19 10:44:51 by dlippelt         ###   ########.fr       */
+/*   Created: 2025/06/19 10:41:18 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/06/19 10:44:45 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEBUG_H
-# define DEBUG_H
+#include "debug.h"
 
-# define DEBUG
-
-# include <stdio.h>
-# include "enums.h"
-# include "structs.h"
-
-void	debug_print_map(t_file *f);
-void	debug_print_element_location(int element_id, size_t x, size_t y);
-void	debug_print_tex_paths(t_tex *tex);
-void	debug_print_rbg_values(t_col *col);
-void	debug_print_map_line(char *s, size_t y);
-
-#endif
+void	debug_print_map_line(char *s, size_t y)
+{
+	printf("\n");
+	printf("Found start of map on line %zu\n", y);
+	printf("First line of the map: %s\n", s);
+}
