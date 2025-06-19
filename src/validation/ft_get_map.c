@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 10:56:26 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/19 12:25:34 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/19 12:42:58 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,22 +56,42 @@ static void	ft_copy_map_line(t_map *map, char *line, size_t i)
 	}
 }
 
-int	ft_get_map(t_file *f, size_t *y)
+static int	ft_post_map_content(t_file *f, size_t y)
+{
+	size_t	x;
+
+	while (f->file[y])
+	{
+		x = 0;
+		while (f->file[y][x])
+		{
+			if (f->file[y][x] != ' ')
+				return (ft_error(EUNEXPECTED));
+			x++;
+		}
+		y++;
+	}
+	return (1);
+}
+
+int	ft_get_map(t_file *f, size_t y)
 {
 	t_map	map;
 	size_t	i;
 
-	map.height = ft_get_map_height(f, *y);
-	map.width = ft_get_map_width(f, *y);
+	map.height = ft_get_map_height(f, y);
+	map.width = ft_get_map_width(f, y);
 	if (!ft_malloc_map(&map))
 		return (0);
 	i = 0;
-	while (f->file[*y] && !ft_end_of_map(f->file[*y]))
+	while (f->file[y] && !ft_end_of_map(f->file[y]))
 	{
-		ft_copy_map_line(&map, f->file[*y], i);
-		(*y)++;
+		ft_copy_map_line(&map, f->file[y], i);
+		y++;
 		i++;
 	}
+	if (!ft_post_map_content(f, y))
+		return (0);
 	f->map = map;
 	return (1);
 }

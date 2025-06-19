@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 14:46:25 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/19 12:25:46 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/19 12:40:30 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ size_t	ft_skip_space(char *s);
 size_t	ft_move_past_element(char *s);
 int		ft_found_map(char *line);
 int		ft_end_of_map(char *line);
-int		ft_get_map(t_file *f, size_t *y);
+int		ft_get_map(t_file *f, size_t y);
 int		ft_is_valid_map_char(char c);
 size_t	ft_get_line_length(char *line);
 int		ft_malloc_map(t_map *map);
