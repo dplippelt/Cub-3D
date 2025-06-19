@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   ft_setup_hook.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/16 14:02:38 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/17 19:59:05 by tmitsuya         ###   ########.fr       */
+/*   Created: 2025/06/17 17:51:31 by tmitsuya          #+#    #+#             */
+/*   Updated: 2025/06/17 17:54:28 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
+#include "cub3D.h"
 
-# include <stdio.h>
-# include <unistd.h>
-# include <string.h>
-# include <errno.h>
-
-int		ft_error(int e);
-ssize_t	ft_strlen(char *s);
-int		ft_putstr(char *s, int fd);
-
-#endif
+void	ft_setup_hook(t_win_list *win, int (*funct)(), void *param)
+{
+	win->hooks[KeyPress].hook = funct;
+	win->hooks[KeyPress].param = param;
+	win->hooks[KeyPress].mask = KeyPressMask;
+}

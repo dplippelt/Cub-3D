@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   ft_put_img_to_win.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/16 14:02:38 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/17 19:59:05 by tmitsuya         ###   ########.fr       */
+/*   Created: 2025/06/19 17:18:47 by tmitsuya          #+#    #+#             */
+/*   Updated: 2025/06/19 17:24:08 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
+#include "cub3D.h"
 
-# include <stdio.h>
-# include <unistd.h>
-# include <string.h>
-# include <errno.h>
-
-int		ft_error(int e);
-ssize_t	ft_strlen(char *s);
-int		ft_putstr(char *s, int fd);
-
-#endif
+void	ft_put_img_to_win(t_img *img, t_cub3d *cub3d)
+{
+	mlx_put_image_to_window(cub3d->mlx, cub3d->win, img, 0, 0);
+}

@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   ft_get_target_img.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/16 14:02:38 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/17 19:59:05 by tmitsuya         ###   ########.fr       */
+/*   Created: 2025/06/19 18:05:09 by tmitsuya          #+#    #+#             */
+/*   Updated: 2025/06/19 18:05:28 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
+#include "cub3D.h"
 
-# include <stdio.h>
-# include <unistd.h>
-# include <string.h>
-# include <errno.h>
-
-int		ft_error(int e);
-ssize_t	ft_strlen(char *s);
-int		ft_putstr(char *s, int fd);
-
-#endif
+t_imgs	ft_get_target_img(t_cub3d *cub3d, t_dda dda, t_ray ray)
+{
+	if (dda.side == ROW_SIDE)
+	{
+		if (ray.dir_row > 0)
+			return (cub3d->imgs[EA]);
+		else
+			return (cub3d->imgs[WE]);
+	}
+	else
+	{
+		if (ray.dir_col > 0)
+			return (cub3d->imgs[SO]);
+		else
+			return (cub3d->imgs[NO]);
+	}
+}
