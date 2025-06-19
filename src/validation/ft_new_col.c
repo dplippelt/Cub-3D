@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 13:38:12 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/18 16:58:07 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/19 13:29:40 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ static int	ft_get_rgb(t_col *new_col, char *el, int color)
 			return (ft_get_rgb(new_col, el + 1, color + 1));
 		return (0);
 	}
+	if (*el && !ft_only_trailing_spaces(el))
+		return (0);
 	return (1);
 }
 

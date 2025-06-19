@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/19 11:38:41 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/19 12:54:51 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,17 @@ typedef struct s_file
 	t_col		*col;
 	t_map		map;
 }				t_file;
+
+typedef struct s_check
+{
+	int	north_wall;
+	int	east_wall;
+	int	south_wall;
+	int	west_wall;
+	int	floor;
+	int	ceiling;
+	int	map;
+}		t_check;
+
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 11:42:05 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/19 11:56:13 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/19 13:28:58 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_is_valid_map_char(char c)
 	return (0);
 }
 
-static int	ft_only_trailing_spaces(char *line)
+int	ft_only_trailing_spaces(char *line)
 {
 	while (*line)
 	{

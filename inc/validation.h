@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 14:46:25 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/19 12:40:30 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/19 13:29:09 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int		ft_validate_file(t_file *f);
 int		ft_validate_file_content(t_file *f);
 int		ft_validate_elements(t_file *f);
 int		ft_get_element_info(t_file *f, char *el, int el_id);
+int		ft_get_elements(t_file *f);
 int		ft_new_tex(t_tex **head, char *el, int el_id);
 int		ft_new_col(t_col **head, char *el, int el_id);
 size_t	ft_skip_space(char *s);
@@ -35,7 +36,10 @@ int		ft_found_map(char *line);
 int		ft_end_of_map(char *line);
 int		ft_get_map(t_file *f, size_t y);
 int		ft_is_valid_map_char(char c);
+int		ft_only_trailing_spaces(char *line);
 size_t	ft_get_line_length(char *line);
 int		ft_malloc_map(t_map *map);
+int		ft_validate_texture_info(t_tex *tex);
+int		ft_validate_color_info(t_col *col);
 
 #endif
