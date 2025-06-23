@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3D.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:50:47 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/19 18:15:28 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/06/23 13:18:03 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@
 # include "utils.h"
 # define TITLE "cub3D"
 # define NUM_OF_IMGS 4  // temporary need to set correct number
-# define P_NO "textures/block_x64.xpm" // temporary for test
-# define P_SO "textures/item_x64.xpm" // temporary for test
-# define P_WE "textures/goal_x64.xpm" // temporary for test
-# define P_EA "textures/player_x64_0.xpm" // temporary for test
-# define TEXTURE_SIZE 64
+# define P_NO "textures/wall_north.xpm" // temporary for test
+# define P_SO "textures/wall_south.xpm" // temporary for test
+# define P_WE "textures/wall_west.xpm" // temporary for test
+# define P_EA "textures/wall_east.xpm" // temporary for test
+# define TEXTURE_SIZE 32
 # define DIST_PER_SECOND 5.0
 # define RADIAN_PER_SECOND 2.0
 
