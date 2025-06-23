@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_start_cub3d.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 18:26:51 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/06/19 18:10:38 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/06/23 13:31:23 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ void	ft_init_game_condition(t_cub3d *cub3d)
 	cub3d->move_speed = 0;
 	cub3d->rot_speed = 0;
 	// TODO: get from the map data
-	cub3d->c_color = ft_rgb_to_color(0, 255, 255); // temporary
-	cub3d->f_color = ft_rgb_to_color(0, 255, 255); // temporary
+	cub3d->c_color = ft_rgb_to_color(40, 40, 40); // temporary
+	cub3d->f_color = ft_rgb_to_color(70, 8, 8); // temporary (100,8,8) / (70,8,8)
 }
 
 void	ft_start_cub3d(t_cub3d *cub3d)
