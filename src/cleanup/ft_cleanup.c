@@ -1,0 +1,81 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_cleanup.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/16 16:56:24 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/06/25 16:51:55 by tmitsuya         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "cleanup.h"
+
+void	ft_cleanup_tex(t_tex *curr)
+{
+	t_tex	*next;
+
+	while (curr)
+	{
+		next = curr->next;
+		free(curr->tex_path);
+		free(curr);
+		curr = next;
+	}
+}
+
+void	ft_cleanup_col(t_col *curr)
+{
+	t_col	*next;
+
+	while (curr)
+	{
+		next = curr->next;
+		free(curr);
+		curr = next;
+	}
+}
+
+void	ft_cleanup_file(char **sa, size_t nlines)
+{
+	size_t	i;
+
+	if (!sa)
+		return ;
+	i = 0;
+	while (i < nlines)
+	{
+		free(sa[i]);
+		sa[i] = NULL;
+		i++;
+	}
+	free(sa);
+	sa = NULL;
+}
+
+void	ft_cleanup_str_array(char **sa)
+{
+	size_t	i;
+
+	if (!sa)
+		return ;
+	i = 0;
+	while (sa[i])
+	{
+		free(sa[i]);
+		sa[i] = NULL;
+		i++;
+	}
+	free(sa);
+	sa = NULL;
+}
+
+void	ft_cleanup(t_file *f)
+{
+	ft_cleanup_tex(f->tex);
+	ft_cleanup_col(f->col);
+	// ft_cleanup_str_array(f->file);
+	ft_cleanup_file(f->file, f->nlines);
+	ft_cleanup_str_array(f->map.map);
+}
