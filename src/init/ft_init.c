@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_init.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/16 14:00:11 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/16 15:26:20 by dlippelt         ###   ########.fr       */
+/*   Created: 2025/06/16 16:29:41 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/06/19 11:48:16 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "cub3D.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_init(t_file *f, char *av[])
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	f->file = NULL;
+	f->file_path = av[1];
+	f->nlines = 0;
+	f->tex = NULL;
+	f->col = NULL;
+	f->map.map = NULL;
+	f->map.height = 0;
+	f->map.width = 0;
 }

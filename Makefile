@@ -6,7 +6,7 @@
 #    By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/16 12:34:50 by dlippelt          #+#    #+#              #
-#    Updated: 2025/06/16 13:26:26 by dlippelt         ###   ########.fr        #
+#    Updated: 2025/06/16 15:50:27 by dlippelt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,7 @@ fclean: clean
 re: fclean all
 
 valgrind: $(NAME)
-	$(VALG) ./$(NAME)
+	$(VALG) ./$(NAME) $(ARGS)
 
 memory: CFLAGS += -fsanitize=address
 memory: re

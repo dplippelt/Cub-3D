@@ -1,23 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_get_element_info.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/16 14:00:11 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/16 15:26:20 by dlippelt         ###   ########.fr       */
+/*   Created: 2025/06/18 13:23:36 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/06/18 16:02:44 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "validation.h"
 
-size_t	ft_strlen(const char *s)
+static void	ft_move_to_info(char **el)
 {
-	size_t	i;
+	while (**el && **el != ' ')
+		(*el)++;
+	while (**el && **el == ' ')
+		(*el)++;
+}
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+int	ft_get_element_info(t_file *f, char *el, int el_id)
+{
+	ft_move_to_info(&el);
+	if (el_id < COLFLOOR)
+	{
+		if (!ft_new_tex(&f->tex, el, el_id))
+			return (0);
+	}
+	else
+	{
+		if (!ft_new_col(&f->col, el, el_id))
+			return (0);
+	}
+	return (1);
 }

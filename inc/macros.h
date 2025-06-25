@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   macros.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/16 14:00:11 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/16 15:26:20 by dlippelt         ###   ########.fr       */
+/*   Created: 2025/06/16 15:08:02 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/06/19 13:22:42 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef MACROS_H
+# define MACROS_H
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
+# define FORMAT ".cub"
+# define NTEX 4
+# define NCOL 2
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
+#endif

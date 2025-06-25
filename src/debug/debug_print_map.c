@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   debug_print_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/16 14:00:11 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/16 15:26:20 by dlippelt         ###   ########.fr       */
+/*   Created: 2025/06/19 12:09:31 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/06/19 12:34:51 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "debug.h"
 
-size_t	ft_strlen(const char *s)
+void	debug_print_map(t_map *map)
 {
-	size_t	i;
+	size_t	y;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	printf("\nMap height: %zu\t\t\tMap width: %zu\n", map->height, map->width);
+	printf("===================== MAP =====================\n");
+	y = 0;
+	while (y < map->height)
+	{
+		printf("%s\n", map->map[y]);
+		y++;
+	}
+	printf("===============================================\n");
 }

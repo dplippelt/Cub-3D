@@ -6,7 +6,7 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:50:47 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/25 16:05:34 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/06/25 16:26:00 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,11 @@
 # include "mlx.h"
 # include "mlx_int.h"
 # include "enums.h"
+# include "macros.h"
+# include "init.h"
 # include "utils.h"
+# include "validation.h"
+# include "cleanup.h"
 # define TITLE "cub3D"
 # define NUM_OF_IMGS 4  // temporary need to set correct number
 # define P_NO "textures/wall_north.xpm" // temporary for test

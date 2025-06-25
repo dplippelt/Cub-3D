@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   debug_print_rbg_values.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/16 14:00:11 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/16 15:26:20 by dlippelt         ###   ########.fr       */
+/*   Created: 2025/06/18 15:49:30 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/06/18 16:08:05 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "debug.h"
 
-size_t	ft_strlen(const char *s)
+void	debug_print_rbg_values(t_col *col)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	printf("\n");
+	while (col)
+	{
+		if (col->id == COLFLOOR)
+			printf("Floor RGB:\t\t");
+		else if (col->id == COLCEILING)
+			printf("Ceiling RGB:\t\t");
+		printf("%u,%u,%u\n", col->r, col->g, col->b);
+		col = col->next;
+	}
 }

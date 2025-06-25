@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_write.c                                         :+:      :+:    :+:   */
+/*   debug_print_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/16 13:59:29 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/16 14:10:44 by dlippelt         ###   ########.fr       */
+/*   Created: 2025/06/18 11:40:52 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/06/19 12:09:18 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "debug.h"
 
-int	ft_putstr(char *s, int fd)
+void	debug_print_file(t_file *f)
 {
-	size_t	slen;
+	size_t	line;
 
-	slen = ft_strlen(s);
-	if (write(fd, s, slen) == -1)
-		return (0);
-	return (1);
+	line = 0;
+	printf("\n======================= FILE CONTENT =======================\n");
+	while (f->file[line])
+		printf("%s\n", f->file[line++]);
+	printf("============================================================\n\n");
 }

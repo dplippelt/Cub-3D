@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   cleanup.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/16 14:00:11 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/16 15:26:20 by dlippelt         ###   ########.fr       */
+/*   Created: 2025/06/16 16:56:46 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/06/19 11:54:44 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef CLEANUP_H
+# define CLEANUP_H
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
+# include <stdlib.h>
+# include "structs.h"
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
+void	ft_cleanup(t_file *f);
+void	ft_cleanup_str_array(char **sa);
+void	ft_cleanup_tex(t_tex *curr);
+void	ft_cleanup_col(t_col *curr);
+
+#endif

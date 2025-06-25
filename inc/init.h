@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   init.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/16 14:00:11 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/16 15:26:20 by dlippelt         ###   ########.fr       */
+/*   Created: 2025/06/16 16:31:03 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/06/18 12:57:14 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef INIT_H
+# define INIT_H
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
+# include "structs.h"
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
+void	ft_init(t_file *f, char *av[]);
+
+#endif
