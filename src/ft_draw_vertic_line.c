@@ -6,7 +6,7 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 13:03:10 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/06/19 18:11:46 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/06/25 16:08:34 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static void	ft_set_tex_pixel(char *dest, char *src, t_line ln, t_cub3d *cub3d)
 	}
 }
 
-void	ft_set_ceiling_pixel(char *dest, t_line ln, t_cub3d *cub3d)
+static void	ft_set_ceiling_pixel(char *dest, t_line ln, t_cub3d *cub3d)
 {
 	int	i;
 
@@ -56,7 +56,7 @@ void	ft_set_ceiling_pixel(char *dest, t_line ln, t_cub3d *cub3d)
 	}
 }
 
-void	ft_set_floor_pixel(char *dest, t_line ln, t_cub3d *cub3d)
+static void	ft_set_floor_pixel(char *dest, t_line ln, t_cub3d *cub3d)
 {
 	int	i;
 

@@ -6,7 +6,7 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 13:29:29 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/06/19 18:01:06 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/06/25 16:13:52 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_get_path(int i) // temprarily set texture's path
 		return (NULL);
 }
 
-void	ft_loading_texture(t_xvar *mlx, t_imgs *imgs, int i, char *path)
+static void	ft_loading_texture(t_xvar *mlx, t_imgs *imgs, int i, char *path)
 {
 	if (!path)
 		imgs[i].img = NULL;
@@ -38,7 +38,7 @@ void	ft_loading_texture(t_xvar *mlx, t_imgs *imgs, int i, char *path)
 	}
 }
 
-int	ft_is_loading_success(t_imgs *imgs)
+static int	ft_is_loading_success(t_imgs *imgs)
 {
 	int	i;
 
@@ -52,16 +52,13 @@ int	ft_is_loading_success(t_imgs *imgs)
 	return (1);
 }
 
-void	ft_init_texture_imgs(t_cub3d *cub3d)
+int	ft_init_texture_imgs(t_cub3d *cub3d)
 {
 	int	i;
 
 	cub3d->imgs = (t_imgs *)malloc(sizeof(t_imgs) * (NUM_OF_IMGS + 1));
 	if (!cub3d->imgs)
-	{
-		ft_destroy_mlx_win(cub3d);
-		exit(EXIT_FAILURE);
-	}
+		return (0);
 	i = 0;
 	while (i < NUM_OF_IMGS)
 	{
@@ -70,9 +67,6 @@ void	ft_init_texture_imgs(t_cub3d *cub3d)
 	}
 	cub3d->imgs[NUM_OF_IMGS].img = NULL;
 	if (!ft_is_loading_success(cub3d->imgs))
-	{
-		ft_destroy_texture_imgs(cub3d->mlx, cub3d->imgs);
-		ft_destroy_mlx_win(cub3d);
-		exit(EXIT_FAILURE);
-	}
+		return (0);
+	return (1);
 }

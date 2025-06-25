@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3D.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:50:47 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/23 13:18:03 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/25 16:05:34 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,11 @@ enum e_img_field
 
 typedef struct s_imgs
 {
-	t_img	*img;
+	void	*img;
 	char	*data;
+	int		bpp;
 	int		sl;
+	int		endian;
 	int		x;
 	int		y;
 }			t_imgs;
@@ -98,8 +100,8 @@ enum e_side
 
 typedef struct	s_cub3d
 {
-	t_xvar			*mlx;
-	t_win_list		*win;
+	void			*mlx;
+	void			*win;
 	t_imgs			*imgs;
 	t_imgs			fov;
 	int				win_x;
@@ -120,21 +122,23 @@ typedef struct	s_cub3d
 	int				c_color;
 }					t_cub3d;
 
-void	ft_init_mlx_setup_win(t_cub3d *cub3d);
-void	ft_init_texture_imgs(t_cub3d *cub3d);
-void	ft_calc_frame_time(t_cub3d *cub3d);
+void	ft_init_cub3d(t_cub3d *cub3d);
+int		ft_setup_cub3d(t_cub3d *cub3d);
 void	ft_start_cub3d(t_cub3d *cub3d);
+int		ft_init_mlx_setup_win(t_cub3d *cub3d);
+int		ft_init_texture_imgs(t_cub3d *cub3d);
+int		ft_init_field_of_view(t_cub3d *cub3d);
+int		ft_init_game_condition(t_cub3d *cub3d);
+void	ft_update_field_of_view(t_cub3d *cub3d);
+int		ft_calc_frame_time(t_cub3d *cub3d);
 void	ft_setup_hook(t_win_list *win, int (*funct)(), void *param);
 int		ft_key_action(int keycode, t_cub3d *cub3d);
 void	ft_ray_casting(t_rcast *rc, t_cub3d *cub3d, int x);
 t_imgs	ft_get_target_img(t_cub3d *cub3d, t_dda dda, t_ray ray);
 void	ft_draw_vertic_line(t_cub3d *cub3d, t_rcast rc, int screen_x, int texture_x);
-void	ft_update_field_of_view(t_cub3d *cub3d);
-void	ft_destroy_mlx_win(t_cub3d *cub3d);
-void	ft_destroy_texture_imgs(t_xvar *mlx, t_imgs *imgs);
 void	ft_destroy_all(t_cub3d *cub3d);
 void	ft_set_img_addr(t_imgs *imgs);
-void	ft_put_img_to_win(t_img *img, t_cub3d *cub3d);
+void	ft_put_img_to_win(void *img, t_cub3d *cub3d);
 void	test_map_data(t_cub3d *cub3d); // temporary for test
 
 #endif
