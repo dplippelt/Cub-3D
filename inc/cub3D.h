@@ -6,7 +6,7 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:50:47 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/25 16:26:00 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/06/25 17:31:55 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,12 +121,12 @@ typedef struct	s_cub3d
 	double			frame_time;
 	double			move_speed;
 	double			rot_speed;
-	char			map[mapWidth][mapHeight]; // temporary for test
+	char			**map/* [mapWidth][mapHeight] */; // temporary for test
 	int				f_color;
 	int				c_color;
 }					t_cub3d;
 
-void	ft_init_cub3d(t_cub3d *cub3d);
+void	ft_init_cub3d(t_cub3d *cub3d, char **map);
 int		ft_setup_cub3d(t_cub3d *cub3d);
 void	ft_start_cub3d(t_cub3d *cub3d);
 int		ft_init_mlx_setup_win(t_cub3d *cub3d);

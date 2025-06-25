@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_validate_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 12:37:48 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/19 17:49:18 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/25 17:28:54 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,8 @@ int	ft_validate_map(t_map m)
 	if (!ft_init_walls(&w, m))
 		return (0);
 	ft_check_wall(&w);
-	if (!w.valid)
-	{
-		ft_cleanup_str_array(w.map);
-		return (ft_error(EWALL));
-	}
 	ft_cleanup_str_array(w.map);
+	if (!w.valid)
+		return (ft_error(EWALL));
 	return (1);
 }

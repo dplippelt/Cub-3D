@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 15:00:49 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/18 11:16:03 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/25 16:46:51 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 #  define BUFFER_SIZE 42
 # endif
 
-typedef struct s_line
+typedef struct s_gnl_line
 {
 	char	*line;
 	char	*tline;
@@ -31,11 +31,11 @@ typedef struct s_line
 	int		i;
 	size_t	size;
 	size_t	cap;
-}			t_line;
+}			t_gnl_line;
 
-void		*gnl_cleanup(t_line *l, char *buf, int option);
+void		*gnl_cleanup(t_gnl_line *l, char *buf, int option);
 char		*get_next_line(int fd);
-void		gnl_init(t_line *l);
+void		gnl_init(t_gnl_line *l);
 int			gnl_find_new_line(char *s);
 size_t		gnl_strlen(char *s);
 size_t		gnl_strlcat(char *dst, char *src, size_t size);

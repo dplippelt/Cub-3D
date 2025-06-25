@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 14:56:55 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/18 11:16:57 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/25 16:46:07 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static int	gnl_get_line(t_line *l, char *buf, int fd);
+static int	gnl_get_line(t_gnl_line *l, char *buf, int fd);
 
-static int	gnl_malloc_line_exact(t_line *l)
+static int	gnl_malloc_line_exact(t_gnl_line *l)
 {
 	if (l->line)
 	{
@@ -29,7 +29,7 @@ static int	gnl_malloc_line_exact(t_line *l)
 	return (1);
 }
 
-static int	gnl_malloc_line(t_line *l, char *buf)
+static int	gnl_malloc_line(t_gnl_line *l, char *buf)
 {
 	if (!l->cap)
 		l->cap = gnl_strlen(buf) + 1;
@@ -49,7 +49,7 @@ static int	gnl_malloc_line(t_line *l, char *buf)
 	return (1);
 }
 
-static int	gnl_read_line(t_line *l, char *buf, int fd)
+static int	gnl_read_line(t_gnl_line *l, char *buf, int fd)
 {
 	l->br = read(fd, buf, BUFFER_SIZE);
 	if (l->br >= 0)
@@ -65,7 +65,7 @@ static int	gnl_read_line(t_line *l, char *buf, int fd)
 	return (gnl_get_line(l, buf, fd));
 }
 
-static int	gnl_get_line(t_line *l, char *buf, int fd)
+static int	gnl_get_line(t_gnl_line *l, char *buf, int fd)
 {
 	l->i = gnl_find_new_line(buf);
 	if (l->i == -1)
@@ -83,7 +83,7 @@ static int	gnl_get_line(t_line *l, char *buf, int fd)
 
 char	*get_next_line(int fd)
 {
-	t_line		l;
+	t_gnl_line	l;
 	static char	buf[BUFFER_SIZE + 1];
 
 	gnl_init(&l);

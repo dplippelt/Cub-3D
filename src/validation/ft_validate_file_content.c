@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_validate_file_content.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 15:58:08 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/18 12:52:31 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/25 16:56:44 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ static int	ft_get_num_lines(int fd, t_file *f)
 static int	ft_get_file_content(int fd, t_file *f)
 {
 	size_t	line;
+	int		gnl_error;
 
 	f->file = malloc(sizeof(char *) * (f->nlines + 1));
 	if (!f->file)
@@ -38,14 +39,18 @@ static int	ft_get_file_content(int fd, t_file *f)
 	while (line <= f->nlines)
 		f->file[line++] = NULL;
 	line = 0;
+	gnl_error = 0;
 	while (line < f->nlines)
 	{
 		f->file[line] = get_next_line(fd);
-		if (!f->file[line])
-			return (close(fd), ft_error(EMALLOC));
+		if (!f->file[line] && line != f->nlines - 1)
+			gnl_error = 1;
 		line++;
 	}
-	return (close(fd), 1);
+	close(fd);
+	if (gnl_error)
+		return (0);
+	return (1);
 }
 
 int	ft_validate_file_content(t_file *f)

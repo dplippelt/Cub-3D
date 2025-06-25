@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 15:01:36 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/18 11:15:40 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/25 16:46:15 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	gnl_find_new_line(char *s)
 	return (-1);
 }
 
-void	gnl_init(t_line *l)
+void	gnl_init(t_gnl_line *l)
 {
 	l->line = NULL;
 	l->tline = NULL;
@@ -65,7 +65,7 @@ void	gnl_init(t_line *l)
 	l->cap = 0;
 }
 
-void	*gnl_cleanup(t_line *l, char *buf, int ok)
+void	*gnl_cleanup(t_gnl_line *l, char *buf, int ok)
 {
 	if (l->tline != l->line)
 	{

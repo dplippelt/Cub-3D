@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_get_element_info.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 13:23:36 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/18 16:02:44 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/25 17:08:29 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	ft_move_to_info(char **el)
 int	ft_get_element_info(t_file *f, char *el, int el_id)
 {
 	ft_move_to_info(&el);
-	if (el_id < COLFLOOR)
+	if (el_id != COLFLOOR && el_id != COLCEILING)
 	{
 		if (!ft_new_tex(&f->tex, el, el_id))
 			return (0);

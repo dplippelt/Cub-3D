@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_new_col.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 13:38:12 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/19 13:29:40 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/25 17:11:19 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static int	ft_get_rgb(t_col *new_col, char *el, int color)
 		new_col->b = ft_colortoi(&el, &error);
 	if (error)
 		return (0);
-	if (color < BLUE)
+	if (color != BLUE)
 	{
 		if (*el == ',')
 			return (ft_get_rgb(new_col, el + 1, color + 1));

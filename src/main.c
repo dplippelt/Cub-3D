@@ -6,7 +6,7 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:50:19 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/25 16:27:01 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/06/25 17:32:13 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	main(int ac, char *av[])
 		return (EXIT_FAILURE);
 	}
 	// copy map data into cub3d struct
-	ft_init_cub3d(&cub3d);
+	ft_init_cub3d(&cub3d, f.map.map);
 	if (!ft_setup_cub3d(&cub3d))
 	{
 		ft_destroy_all(&cub3d);

@@ -6,7 +6,7 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:54:18 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/06/19 17:24:35 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/06/25 18:03:50 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_valid_move(t_cub3d *cub3d, double add_row, double add_col)
 
 	next_pos_row = cub3d->pos_row + add_row;
 	next_pos_col = cub3d->pos_col + add_col;
-	if (cub3d->map[next_pos_row][next_pos_col] != '0')
+	if (cub3d->map[next_pos_row][next_pos_col] == '1')
 		return ;
 	cub3d->pos_row += add_row;
 	cub3d->pos_col += add_col;

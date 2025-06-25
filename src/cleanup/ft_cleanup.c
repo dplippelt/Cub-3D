@@ -6,7 +6,7 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:56:24 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/25 16:22:27 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/06/25 16:51:55 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,23 @@ void	ft_cleanup_col(t_col *curr)
 	}
 }
 
+void	ft_cleanup_file(char **sa, size_t nlines)
+{
+	size_t	i;
+
+	if (!sa)
+		return ;
+	i = 0;
+	while (i < nlines)
+	{
+		free(sa[i]);
+		sa[i] = NULL;
+		i++;
+	}
+	free(sa);
+	sa = NULL;
+}
+
 void	ft_cleanup_str_array(char **sa)
 {
 	size_t	i;
@@ -58,6 +75,7 @@ void	ft_cleanup(t_file *f)
 {
 	ft_cleanup_tex(f->tex);
 	ft_cleanup_col(f->col);
-	ft_cleanup_str_array(f->file);
+	// ft_cleanup_str_array(f->file);
+	ft_cleanup_file(f->file, f->nlines);
 	ft_cleanup_str_array(f->map.map);
 }
