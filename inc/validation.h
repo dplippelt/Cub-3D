@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 14:46:25 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/19 17:20:41 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/26 10:48:22 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,9 @@ size_t	ft_get_line_length(char *line);
 int		ft_malloc_map(t_map *map);
 int		ft_validate_texture_info(t_tex *tex);
 int		ft_validate_color_info(t_col *col);
-int		ft_validate_map(t_map m);
+int		ft_validate_map(t_map *m);
 int		ft_copy_map_with_border(char ***dst, char **src, size_t width);
-void	ft_check_wall(t_walls *w);
+void	ft_validate_wall(t_walls *w);
+int		ft_validate_player(t_map *map);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:56:56 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/19 14:27:23 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/26 10:40:38 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ enum e_errors
 	EMISSINGINFO = 5,
 	EDUPENTRIES = 6,
 	EWALL = 7,
+	ENUMPLAYERS = 8,
 	ECOLORFORMAT = 999
 };
 

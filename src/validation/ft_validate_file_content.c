@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_validate_file_content.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 15:58:08 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/25 16:56:44 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/06/26 10:55:39 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,29 @@ static int	ft_get_file_content(int fd, t_file *f)
 	return (1);
 }
 
+static void	ft_get_player_pos(t_pos *player, char **map)
+{
+	size_t	y;
+	size_t	x;
+
+	y = 0;
+	while (map[y])
+	{
+		x = 0;
+		while (map[y][x])
+		{
+			if (ft_found_player(map[y][x]))
+			{
+				player->y = y;
+				player->x = x;
+				return ;
+			}
+			x++;
+		}
+		y++;
+	}
+}
+
 int	ft_validate_file_content(t_file *f)
 {
 	int	fd;
@@ -67,5 +90,6 @@ int	ft_validate_file_content(t_file *f)
 		return (0);
 	if (!ft_validate_elements(f))
 		return (0);
+	ft_get_player_pos(&f->map.player, f->map.map);
 	return (1);
 }

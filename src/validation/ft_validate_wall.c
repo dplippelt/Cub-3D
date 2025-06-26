@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_wall.c                                    :+:      :+:    :+:   */
+/*   ft_validate_wall.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:55:19 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/19 17:46:50 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/26 10:49:53 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "validation.h"
 
 static int	ft_found_hole(t_walls *w, int y, int x)
 {
@@ -60,7 +60,7 @@ static void	ft_flood_fill_rec(t_walls *w, int y, int x)
 	ft_flood_fill_rec(w, y, x - 1);
 }
 
-void	ft_check_wall(t_walls *w)
+void	ft_validate_wall(t_walls *w)
 {
 	ft_flood_fill_rec(w, 0, 0);
 }
