@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:53:28 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/26 17:55:03 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/26 17:56:34 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ static void	ft_misc_error(int e)
 
 int	ft_error(int e)
 {
+	ft_putstr("Error\n", 2);
 	ft_errno(e);
 	ft_validation_error(e);
 	ft_mlx_error(e);
