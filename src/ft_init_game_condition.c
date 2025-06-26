@@ -6,18 +6,13 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 16:02:23 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/06/26 15:45:53 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/06/26 17:38:58 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-static int	ft_rgb_to_color(int red, int green, int blue)
-{
-	return ((red << 16) + (green << 8) + blue);
-}
-
-static void ft_set_player_dir(t_cub3d *cub3d, char c)
+static void	ft_set_player_dir(t_cub3d *cub3d, char c)
 {
 	if (c == 'N')
 		cub3d->dir_row = -1;
@@ -38,13 +33,29 @@ static void	ft_init_player(t_cub3d *cub3d, t_pos player, char **map)
 	ft_set_player_dir(cub3d, map[player.y][player.x]);
 }
 
+static int	ft_rgb_to_color(int red, int green, int blue)
+{
+	return ((red << 16) + (green << 8) + blue);
+}
+
+static void	ft_get_color(t_cub3d *cub3d, t_col *col)
+{
+	while (col)
+	{
+		if (col->id == COLFLOOR)
+			cub3d->f_color = ft_rgb_to_color(col->r, col->g, col->b);
+		else if (col->id == COLCEILING)
+			cub3d->c_color = ft_rgb_to_color(col->r, col->g, col->b);
+		col = col->next;
+	}
+}
+
 int	ft_init_game_condition(t_cub3d *cub3d, t_file file)
 {
 	ft_init_player(cub3d, file.map.player, cub3d->map);
 	if (gettimeofday(&cub3d->time, NULL) < 0)
 		return (0);
 	cub3d->prev_time = cub3d->time;
-	cub3d->c_color = ft_rgb_to_color(40, 40, 40); // temporary
-	cub3d->f_color = ft_rgb_to_color(70, 8, 8); // temporary (100,8,8) / (70,8,8)
+	ft_get_color(cub3d, file.col);
 	return (1);
 }

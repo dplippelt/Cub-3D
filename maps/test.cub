@@ -3,9 +3,8 @@ SO ./textures/wall_south_128.xpm
 WE ./textures/wall_west_128.xpm
 EA ./textures/wall_east_128.xpm
 
-F  40,40,40
-C  70,8,8
-
+C  40,40,40
+F  70,8,8
 
 
              111      1111     111
