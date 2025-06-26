@@ -6,7 +6,7 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 13:29:29 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/06/26 15:28:44 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/06/26 15:45:01 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,10 @@ static char	*ft_get_path(int i, t_tex *tex)
 	while (tex)
 	{
 		if (tex->id == tex_id)
-			return (tex->id);
+			return (tex->tex_path);
 		tex = tex->next;
 	}
+	return (NULL);
 }
 
 static void	ft_loading_texture(t_xvar *mlx, t_imgs *imgs, int i, char *path)

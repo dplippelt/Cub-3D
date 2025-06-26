@@ -6,7 +6,7 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:50:47 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/26 14:47:46 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/06/26 15:46:24 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@
 # include "cleanup.h"
 # define TITLE "cub3D"
 # define NUM_OF_IMGS 4  // temporary need to set correct number
-# define P_NO "textures/wall_north.xpm" // temporary for test
-# define P_SO "textures/wall_south.xpm" // temporary for test
-# define P_WE "textures/wall_west.xpm" // temporary for test
-# define P_EA "textures/wall_east.xpm" // temporary for test
-# define TEXTURE_SIZE 32
+# define P_NO "textures/wall_north_128.xpm" // temporary for test
+# define P_SO "textures/wall_south_128.xpm" // temporary for test
+# define P_WE "textures/wall_west_128.xpm" // temporary for test
+# define P_EA "textures/wall_east_128.xpm" // temporary for test
+# define TEXTURE_SIZE 128
 # define DIST_PER_SECOND 5.0
 # define RADIAN_PER_SECOND 2.0
 
@@ -123,13 +123,13 @@ typedef struct	s_cub3d
 	int				c_color;
 }					t_cub3d;
 
-void	ft_init_cub3d(t_cub3d *cub3d, char **map);
-int		ft_setup_cub3d(t_cub3d *cub3d);
+void	ft_init_cub3d(t_cub3d *cub3d, t_map *map);
+int		ft_setup_cub3d(t_cub3d *cub3d, t_file file);
 void	ft_start_cub3d(t_cub3d *cub3d);
 int		ft_init_mlx_setup_win(t_cub3d *cub3d);
 int		ft_init_texture_imgs(t_cub3d *cub3d, t_tex *tex);
 int		ft_init_field_of_view(t_cub3d *cub3d);
-int		ft_init_game_condition(t_cub3d *cub3d, t_col *col);
+int		ft_init_game_condition(t_cub3d *cub3d, t_file file);
 void	ft_update_field_of_view(t_cub3d *cub3d);
 int		ft_calc_frame_time(t_cub3d *cub3d);
 void	ft_setup_hook(t_win_list *win, int (*funct)(), void *param);

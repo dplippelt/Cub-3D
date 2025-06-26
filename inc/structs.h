@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/19 17:49:18 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/26 10:36:15 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ typedef struct s_map
 	char	**map;
 	size_t	height;
 	size_t	width;
+	t_pos	player;
 }			t_map;
 
 typedef struct s_file

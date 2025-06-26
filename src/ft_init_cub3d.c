@@ -6,13 +6,13 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 14:48:53 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/06/25 18:45:52 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/06/26 15:41:14 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-void	ft_init_cub3d(t_cub3d *cub3d, char **map)
+void	ft_init_cub3d(t_cub3d *cub3d, t_map *map)
 {
 	*cub3d = (t_cub3d){0};
 	// cub3d->mlx = NULL;
@@ -42,5 +42,5 @@ void	ft_init_cub3d(t_cub3d *cub3d, char **map)
 	// cub3d->rot_speed = 0;
 	// cub3d->f_color = 0;
 	// cub3d->c_color = 0;
-	cub3d->map = map;
+	cub3d->map = map->map;
 }
