@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 14:48:53 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/06/26 11:06:47 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/26 12:00:25 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,30 +18,33 @@ static void ft_set_player_dir(t_cub3d *cub3d, char c)
 	{
 		cub3d->dir_row = -1;
 		cub3d->dir_col = 0;
-		cub3d->plane_row = 0;
-		cub3d->plane_col = 0.66;
+		// cub3d->plane_row = 0;
+		// cub3d->plane_col = 0.66;
 	}
 	if (c == 'E')
 	{
 		cub3d->dir_row = 0;
 		cub3d->dir_col = 1;
-		cub3d->plane_row = -0.66;
-		cub3d->plane_col = 0;
+		// cub3d->plane_row = 0.66;
+		// cub3d->plane_col = 0;
 	}
 	if (c == 'S')
 	{
 		cub3d->dir_row = 1;
 		cub3d->dir_col = 0;
-		cub3d->plane_row = 0;
-		cub3d->plane_col = -0.66;
+		// cub3d->plane_row = 0;
+		// cub3d->plane_col = -0.66;
 	}
 	if (c == 'W')
 	{
 		cub3d->dir_row = 0;
 		cub3d->dir_col = -1;
-		cub3d->plane_row = 0.66;
-		cub3d->plane_col = 0;
+		// cub3d->plane_row = -0.66;
+		// cub3d->plane_col = 0;
 	}
+	cub3d->plane_row = 0.66 * cub3d->dir_col;
+	cub3d->plane_col = -0.66 * cub3d->dir_row;
+
 }
 
 static void	ft_set_player_spawn(t_cub3d *cub3d, t_pos player, char **map)
