@@ -6,24 +6,39 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 13:29:29 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/06/25 16:13:52 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/06/26 15:28:44 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-char	*ft_get_path(int i) // temprarily set texture's path
+static int	ft_field_to_texid(int i)
 {
 	if (i == NO)
-		return (P_NO);
+		return (TEXNORTH);
 	else if (i == SO)
-		return (P_SO);
+		return (TEXSOUTH);
 	else if (i == WE)
-		return (P_WE);
+		return (TEXEAST);
 	else if (i == EA)
-		return (P_EA);
+		return (TEXEAST);
 	else
+		return (NOELEMENT);
+}
+
+static char	*ft_get_path(int i, t_tex *tex)
+{
+	int	tex_id;
+
+	tex_id = ft_field_to_texid(i);
+	if (tex_id == NOELEMENT)
 		return (NULL);
+	while (tex)
+	{
+		if (tex->id == tex_id)
+			return (tex->id);
+		tex = tex->next;
+	}
 }
 
 static void	ft_loading_texture(t_xvar *mlx, t_imgs *imgs, int i, char *path)
@@ -52,7 +67,7 @@ static int	ft_is_loading_success(t_imgs *imgs)
 	return (1);
 }
 
-int	ft_init_texture_imgs(t_cub3d *cub3d)
+int	ft_init_texture_imgs(t_cub3d *cub3d, t_tex *tex)
 {
 	int	i;
 
@@ -62,7 +77,7 @@ int	ft_init_texture_imgs(t_cub3d *cub3d)
 	i = 0;
 	while (i < NUM_OF_IMGS)
 	{
-		ft_loading_texture(cub3d->mlx, cub3d->imgs, i, ft_get_path(i)); // to get path from the map
+		ft_loading_texture(cub3d->mlx, cub3d->imgs, i, ft_get_path(i, tex));
 		i++;
 	}
 	cub3d->imgs[NUM_OF_IMGS].img = NULL;

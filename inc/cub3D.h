@@ -6,7 +6,7 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:50:47 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/25 17:31:55 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/06/26 14:47:46 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,9 +99,6 @@ enum e_side
 	COL_SIDE,
 };
 
-#define mapWidth 10 // temporary for test
-#define mapHeight 10 // temporary for test
-
 typedef struct	s_cub3d
 {
 	void			*mlx;
@@ -110,6 +107,7 @@ typedef struct	s_cub3d
 	t_imgs			fov;
 	int				win_x;
 	int				win_y;
+	char			**map;
 	double			pos_row;
 	double			pos_col;
 	double			dir_row;
@@ -121,7 +119,6 @@ typedef struct	s_cub3d
 	double			frame_time;
 	double			move_speed;
 	double			rot_speed;
-	char			**map/* [mapWidth][mapHeight] */; // temporary for test
 	int				f_color;
 	int				c_color;
 }					t_cub3d;
@@ -130,9 +127,9 @@ void	ft_init_cub3d(t_cub3d *cub3d, char **map);
 int		ft_setup_cub3d(t_cub3d *cub3d);
 void	ft_start_cub3d(t_cub3d *cub3d);
 int		ft_init_mlx_setup_win(t_cub3d *cub3d);
-int		ft_init_texture_imgs(t_cub3d *cub3d);
+int		ft_init_texture_imgs(t_cub3d *cub3d, t_tex *tex);
 int		ft_init_field_of_view(t_cub3d *cub3d);
-int		ft_init_game_condition(t_cub3d *cub3d);
+int		ft_init_game_condition(t_cub3d *cub3d, t_col *col);
 void	ft_update_field_of_view(t_cub3d *cub3d);
 int		ft_calc_frame_time(t_cub3d *cub3d);
 void	ft_setup_hook(t_win_list *win, int (*funct)(), void *param);
@@ -143,6 +140,5 @@ void	ft_draw_vertic_line(t_cub3d *cub3d, t_rcast rc, int screen_x, int texture_x
 void	ft_destroy_all(t_cub3d *cub3d);
 void	ft_set_img_addr(t_imgs *imgs);
 void	ft_put_img_to_win(void *img, t_cub3d *cub3d);
-void	test_map_data(t_cub3d *cub3d); // temporary for test
 
 #endif
