@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3D.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:50:47 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/25 17:31:55 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/06/26 11:06:09 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,7 @@ typedef struct	s_cub3d
 	int				c_color;
 }					t_cub3d;
 
-void	ft_init_cub3d(t_cub3d *cub3d, char **map);
+void	ft_init_cub3d(t_cub3d *cub3d, t_map *map);
 int		ft_setup_cub3d(t_cub3d *cub3d);
 void	ft_start_cub3d(t_cub3d *cub3d);
 int		ft_init_mlx_setup_win(t_cub3d *cub3d);

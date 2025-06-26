@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 14:46:25 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/26 10:48:22 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/26 11:03:24 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ int		ft_validate_map(t_map *m);
 int		ft_copy_map_with_border(char ***dst, char **src, size_t width);
 void	ft_validate_wall(t_walls *w);
 int		ft_validate_player(t_map *map);
+void	ft_get_player_pos(t_pos *player, char **map);
 
 #endif

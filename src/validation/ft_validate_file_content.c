@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 15:58:08 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/26 10:55:39 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/26 11:03:09 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,29 +51,6 @@ static int	ft_get_file_content(int fd, t_file *f)
 	if (gnl_error)
 		return (0);
 	return (1);
-}
-
-static void	ft_get_player_pos(t_pos *player, char **map)
-{
-	size_t	y;
-	size_t	x;
-
-	y = 0;
-	while (map[y])
-	{
-		x = 0;
-		while (map[y][x])
-		{
-			if (ft_found_player(map[y][x]))
-			{
-				player->y = y;
-				player->x = x;
-				return ;
-			}
-			x++;
-		}
-		y++;
-	}
 }
 
 int	ft_validate_file_content(t_file *f)

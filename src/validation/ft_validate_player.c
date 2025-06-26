@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 10:35:27 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/26 10:53:21 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/26 11:05:01 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	ft_found_player(char c)
 	return (0);
 }
 
-static int	ft_count_players(char **map)
+static size_t	ft_count_players(char **map)
 {
 	size_t	y;
 	size_t	x;
@@ -44,6 +44,7 @@ static int	ft_count_players(char **map)
 		}
 		y++;
 	}
+	return (nplayers);
 }
 
 int	ft_validate_player(t_map *map)
@@ -51,4 +52,27 @@ int	ft_validate_player(t_map *map)
 	if (ft_count_players(map->map) != 1)
 		return (ft_error(ENUMPLAYERS));
 	return (1);
+}
+
+void	ft_get_player_pos(t_pos *player, char **map)
+{
+	size_t	y;
+	size_t	x;
+
+	y = 0;
+	while (map[y])
+	{
+		x = 0;
+		while (map[y][x])
+		{
+			if (ft_found_player(map[y][x]))
+			{
+				player->y = y;
+				player->x = x;
+				return ;
+			}
+			x++;
+		}
+		y++;
+	}
 }

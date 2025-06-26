@@ -6,13 +6,13 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 14:48:53 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/06/26 10:56:43 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/26 11:06:47 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-static void ft_get_player_dir(t_cub3d *cub3d, char c)
+static void ft_set_player_dir(t_cub3d *cub3d, char c)
 {
 	if (c == 'N')
 	{
@@ -42,6 +42,13 @@ static void ft_get_player_dir(t_cub3d *cub3d, char c)
 		cub3d->plane_row = 0.66;
 		cub3d->plane_col = 0;
 	}
+}
+
+static void	ft_set_player_spawn(t_cub3d *cub3d, t_pos player, char **map)
+{
+	cub3d->pos_col = (double)player.x + 0.5;
+	cub3d->pos_row = (double)player.y + 0.5;
+	ft_set_player_dir(cub3d, map[player.y][player.x]);
 }
 
 void	ft_init_cub3d(t_cub3d *cub3d, t_map *map)
@@ -75,5 +82,5 @@ void	ft_init_cub3d(t_cub3d *cub3d, t_map *map)
 	// cub3d->f_color = 0;
 	// cub3d->c_color = 0;
 	cub3d->map = map->map;
-	ft_get_player_pos(cub3d, map);
+	ft_set_player_spawn(cub3d, map->player, map->map);
 }
