@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init_game_condition.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 16:02:23 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/06/26 17:38:58 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/06/26 17:49:48 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	ft_init_game_condition(t_cub3d *cub3d, t_file file)
 {
 	ft_init_player(cub3d, file.map.player, cub3d->map);
 	if (gettimeofday(&cub3d->time, NULL) < 0)
-		return (0);
+		return (ft_error(EGETTIME));
 	cub3d->prev_time = cub3d->time;
 	ft_get_color(cub3d, file.col);
 	return (1);

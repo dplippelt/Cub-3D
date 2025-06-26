@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:56:56 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/26 10:40:38 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/26 17:49:48 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@ enum e_errors
 	EDUPENTRIES = 6,
 	EWALL = 7,
 	ENUMPLAYERS = 8,
+	EMLXINIT = 9,
+	EMLXWIN = 10,
+	EMLXLOADTEX = 11,
+	EMLXNEWIMG = 12,
+	EGETTIME = 13,
 	ECOLORFORMAT = 999
 };
 

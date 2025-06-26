@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init_texture_imgs.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 13:29:29 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/06/26 15:45:01 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/06/26 17:46:29 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int	ft_init_texture_imgs(t_cub3d *cub3d, t_tex *tex)
 
 	cub3d->imgs = (t_imgs *)malloc(sizeof(t_imgs) * (NUM_OF_IMGS + 1));
 	if (!cub3d->imgs)
-		return (0);
+		return (ft_error(EMALLOC));
 	i = 0;
 	while (i < NUM_OF_IMGS)
 	{
@@ -83,6 +83,6 @@ int	ft_init_texture_imgs(t_cub3d *cub3d, t_tex *tex)
 	}
 	cub3d->imgs[NUM_OF_IMGS].img = NULL;
 	if (!ft_is_loading_success(cub3d->imgs))
-		return (0);
+		return (ft_error(EMLXLOADTEX));
 	return (1);
 }
