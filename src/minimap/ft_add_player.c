@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 16:12:00 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/30 18:04:10 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/30 18:06:49 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	ft_draw_player(int line, int i, t_mmap *mmap)
 	{
 		curr_img_data = &mmap->img.data[(line * mmap->img.sl)];
 		i = i_start;
-		x = 3;
+		x = MM_PLAYER_BORDER_X;
 		while (x < CELL_SIZE - MM_PLAYER_BORDER_X)
 		{
 			pxl_start = (int *)(curr_img_data + i);
