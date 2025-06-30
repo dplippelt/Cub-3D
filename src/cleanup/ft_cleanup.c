@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_cleanup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:56:24 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/25 16:51:55 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/06/30 11:24:58 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,6 @@ void	ft_cleanup(t_file *f)
 {
 	ft_cleanup_tex(f->tex);
 	ft_cleanup_col(f->col);
-	// ft_cleanup_str_array(f->file);
 	ft_cleanup_file(f->file, f->nlines);
 	ft_cleanup_str_array(f->map.map);
 }

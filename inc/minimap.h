@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cleanup.h                                          :+:      :+:    :+:   */
+/*   minimap.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/16 16:56:46 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/30 11:29:20 by dlippelt         ###   ########.fr       */
+/*   Created: 2025/06/30 10:35:20 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/06/30 11:51:24 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLEANUP_H
-# define CLEANUP_H
+#ifndef MINIMAP_H
+# define MINIMAP_H
 
-# include <stdlib.h>
-# include "mlx.h"
+# include <stdio.h>
 # include "structs.h"
+# include "mlx.h"
+# include "utils.h"
+# include "rendering.h"
 
-void	ft_cleanup(t_file *f);
-void	ft_cleanup_str_array(char **sa);
-void	ft_cleanup_tex(t_tex *curr);
-void	ft_cleanup_col(t_col *curr);
-void	ft_destroy_minimap(t_mmap *mmap);
+int	ft_init_minimap(t_cub3d *cub);
 
 #endif

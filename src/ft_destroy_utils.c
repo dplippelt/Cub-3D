@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_destroy_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:46:46 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/06/25 16:13:54 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/06/30 11:30:38 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ static void	ft_destroy_mlx(t_cub3d *cub3d)
 void	ft_destroy_all(t_cub3d *cub3d)
 {
 	ft_destroy_texture_imgs(cub3d);
+	ft_destroy_minimap(&cub3d->mmap);
 	ft_destroy_fov(cub3d);
 	ft_destroy_win(cub3d);
 	ft_destroy_mlx(cub3d);

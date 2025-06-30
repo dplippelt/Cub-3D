@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cleanup.h                                          :+:      :+:    :+:   */
+/*   ft_destroy_minimap.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/16 16:56:46 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/30 11:29:20 by dlippelt         ###   ########.fr       */
+/*   Created: 2025/06/30 11:25:23 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/06/30 11:40:49 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLEANUP_H
-# define CLEANUP_H
+#include "cleanup.h"
 
-# include <stdlib.h>
-# include "mlx.h"
-# include "structs.h"
-
-void	ft_cleanup(t_file *f);
-void	ft_cleanup_str_array(char **sa);
-void	ft_cleanup_tex(t_tex *curr);
-void	ft_cleanup_col(t_col *curr);
-void	ft_destroy_minimap(t_mmap *mmap);
-
-#endif
+void	ft_destroy_minimap(t_mmap *mmap)
+{
+	mlx_destroy_image(mmap->mlx, mmap->img.img);
+}

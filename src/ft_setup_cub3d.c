@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_setup_cub3d.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 15:27:43 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/06/26 15:46:00 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/06/30 11:32:04 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 int	ft_setup_cub3d(t_cub3d *cub3d, t_file file)
 {
 	if (!ft_init_mlx_setup_win(cub3d))
+		return (0);
+	if (!ft_init_minimap(cub3d))
 		return (0);
 	if (!ft_init_texture_imgs(cub3d, file.tex))
 		return (0);
