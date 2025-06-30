@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:56:56 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/26 17:49:48 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/30 11:35:04 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,20 @@ enum e_dir
 	DOWN,
 	LEFT,
 	RIGHT
+};
+
+enum e_side
+{
+	ROW_SIDE,
+	COL_SIDE,
+};
+
+enum e_img_field
+{
+	NO,
+	SO,
+	WE,
+	EA,
 };
 
 #endif
