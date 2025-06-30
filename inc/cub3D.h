@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:50:47 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/30 11:48:27 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/30 11:58:24 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,5 @@
 # include "minimap.h"
 # include "cleanup.h"
 # include "structs.h"
-# define TITLE "cub3D"
-# define NUM_OF_IMGS 4  // temporary need to set correct number
-# define TEXTURE_SIZE 128
-# define DIST_PER_SECOND 5.0
-# define RADIAN_PER_SECOND 2.0
 
 #endif
