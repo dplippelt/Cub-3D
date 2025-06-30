@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/30 12:09:12 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/30 15:40:32 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,8 +123,8 @@ typedef struct s_mmap
 {
 	void	*mlx;
 	void	*win;
-	int		screen_width;
-	int		screen_height;
+	int		map_width;
+	int		map_height;
 	int		width;
 	int		height;
 	t_imgs	img;
@@ -157,6 +157,7 @@ typedef struct	s_cub3d
 	int				f_color;
 	int				c_color;
 	t_mmap			mmap;
+	t_map			*map_data;
 }					t_cub3d;
 
 #endif

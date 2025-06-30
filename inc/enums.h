@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:56:56 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/30 11:35:04 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/30 13:53:02 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,15 @@ enum e_colors
 	RED,
 	GREEN,
 	BLUE
+};
+
+enum e_cell
+{
+	FLOOR,
+	WALL,
+	DOOR,
+	PLAYER,
+	NOTHING
 };
 
 // enum e_wall_side

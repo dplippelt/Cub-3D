@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 10:48:04 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/30 12:59:38 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/30 15:44:47 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,17 @@ int	ft_init_minimap(t_cub3d *cub)
 	mmap->mlx = cub->mlx;
 	mmap->win = cub->win;
 	mmap->pos_x = &cub->pos_col;
-	mmap->pos_x = &cub->pos_row;
-	mlx_get_screen_size(mmap->mlx, &mmap->screen_width, &mmap->screen_height);
-	mmap->width = cub->win_x / 5;
-	mmap->height = cub->win_y / 5;
+	mmap->pos_y = &cub->pos_row;
+	mmap->map_width = cub->map_data->width;
+	mmap->map_height = cub->map_data->height;
+	mmap->width = 300;
+	mmap->height = 300;
 	mmap->img.img = mlx_new_image(mmap->mlx, mmap->width, mmap->height);
 	if (!mmap->img.img)
 		return (ft_error(EMLXNEWIMG));
 	ft_set_img_addr(&mmap->img);
 	mmap->mmap = mmap->img.data;
-	mmap->img.x = 50;
-	mmap->img.y = 50;
+	mmap->img.x = MM_X;
+	mmap->img.y = MM_Y;
 	return (1);
 }
