@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 15:08:02 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/30 11:59:44 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/30 12:49:03 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@
 # define RADIAN_PER_SECOND 2.0
 # define NTEX 4
 # define NCOL 2
+# define BGRA(b,g,r,a) ((a << 24) | (r << 16) | (g << 8) | b)
 
 #endif

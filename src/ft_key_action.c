@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_key_action.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:54:18 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/06/25 18:03:50 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/06/30 12:37:29 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,6 @@ int	ft_key_action(int key, t_cub3d *cub3d)
 		return (key);
 	ft_update_field_of_view(cub3d);
 	ft_put_img_to_win(cub3d->fov.img, cub3d);
+	ft_draw_minimap(&cub3d->mmap);
 	return (key);
 }

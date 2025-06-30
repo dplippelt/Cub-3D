@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/30 11:48:50 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/30 12:09:12 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,8 @@ typedef struct s_mmap
 	t_imgs	img;
 	char	**map;
 	char	*mmap;
+	double	*pos_x;
+	double	*pos_y;
 }			t_mmap;
 
 typedef struct	s_cub3d
