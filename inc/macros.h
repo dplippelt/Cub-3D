@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 15:08:02 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/30 15:42:28 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/06/30 18:03:51 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@
 # define CELL_SIZE 20
 # define MM_X 50
 # define MM_Y 50
+# define MM_PLAYER_BORDER_X 7
+# define MM_PLAYER_BORDER_Y 5
 
 #endif
