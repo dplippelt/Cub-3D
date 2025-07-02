@@ -6,18 +6,18 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 17:38:21 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/02 10:46:29 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/02 11:24:35 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minimap.h"
 
-static int	ft_offset(int pixel_pos)
+static int	ft_offset(int pixel_pos, int vis_dist)
 {
 	int	cell_offset;
 
 	cell_offset = pixel_pos / CELL_SIZE;
-	return (7 - cell_offset);
+	return (vis_dist - cell_offset);
 }
 
 int	ft_get_cell_id(int line, int i, t_mmap *mmap)
@@ -27,8 +27,8 @@ int	ft_get_cell_id(int line, int i, t_mmap *mmap)
 	int	x_offset;
 	int	y_offset;
 
-	x_offset = ft_offset(i / (mmap->img.bpp / 8));
-	y_offset = ft_offset(line);
+	x_offset = ft_offset(i / (mmap->img.bpp / 8), mmap->vis_dist);
+	y_offset = ft_offset(line, mmap->vis_dist);
 	if (x_offset == 0 && y_offset == 0)
 		return (PLAYER);
 	y = (int)*mmap->pos_y - y_offset;
