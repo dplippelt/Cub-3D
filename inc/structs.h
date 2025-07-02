@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/02 13:13:40 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/02 14:44:36 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,15 @@ typedef struct s_pos
 	int	y;
 }			t_pos;
 
-typedef struct s_walls
+typedef struct s_map_val
 {
 	char	**map;
 	t_pos	pos;
+	t_pos	player;
 	int		valid;
 	int		height;
 	int		width;
-}			t_walls;
+}			t_map_val;
 
 typedef struct s_tex
 {

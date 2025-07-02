@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:53:28 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/26 17:56:34 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/02 14:39:19 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,9 @@ static void	ft_validation_error(int e)
 	else if (e == EWALL)
 		ft_putstr("The map is not fully surrounded by a wall\n", 2);
 	else if (e == ENUMPLAYERS)
-		ft_putstr("Multiple players found\n", 2);
+		ft_putstr("Incorrect number of players found\n", 2);
+	else if (e == EMAP)
+		ft_putstr("Map contains invalid spaces in playable area\n", 2);
 }
 
 static void	ft_mlx_error(int e)
