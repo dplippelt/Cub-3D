@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:55:19 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/02 13:52:05 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/02 14:22:57 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,6 @@ static void	ft_flood_fill_rec(t_walls *w, int y, int x)
 
 void	ft_validate_wall(t_walls *w)
 {
+	w->valid = 1;
 	ft_flood_fill_rec(w, 0, 0);
 }
