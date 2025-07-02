@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 15:08:02 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/02 13:22:51 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/02 15:27:59 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,10 @@
 # define WALL_COLOR BGRA(128, 128, 128, 0)
 # define BG_COLOR BGRA(64, 64, 64, 0)
 # define FLOOR_COLOR BGRA(0, 0, 100, 0)
-# define PLAYER_COLOR BGRA(0,100,0,0)
+# define PLAYER_COLOR BGRA(0, 100, 0, 0)
+// # define SQUIRREL_COLOR BGRA(0, 215, 255, 0)		//Gold
+// # define SQUIRREL_COLOR BGRA(63, 133, 205, 0)	//Light Brown
+# define SQUIRREL_COLOR BGRA(19, 69, 139, 0)		//Medium Brown
+// # define SQUIRREL_COLOR BGRA(33, 67, 101, 0)		//Dark Brown
 
 #endif
