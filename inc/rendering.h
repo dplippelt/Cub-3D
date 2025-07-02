@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 11:47:37 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/30 11:52:37 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/02 17:41:54 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		ft_init_field_of_view(t_cub3d *cub3d);
 int		ft_init_game_condition(t_cub3d *cub3d, t_file file);
 void	ft_update_field_of_view(t_cub3d *cub3d);
 int		ft_calc_frame_time(t_cub3d *cub3d);
-void	ft_setup_hook(t_win_list *win, int (*funct)(), void *param);
+void	ft_setup_hooks(void *win, t_cub3d *cub3d, t_mouse *mouse);
 int		ft_key_action(int keycode, t_cub3d *cub3d);
 void	ft_ray_casting(t_rcast *rc, t_cub3d *cub3d, int x);
 t_imgs	ft_get_target_img(t_cub3d *cub3d, t_dda dda, t_ray ray);
