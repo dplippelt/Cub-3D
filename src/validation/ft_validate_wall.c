@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:55:19 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/26 10:49:53 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/02 13:52:05 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ static int	ft_found_hole(t_walls *w, int y, int x)
 	if (w->map[y][x] == 'S')
 		return (1);
 	if (w->map[y][x] == 'W')
+		return (1);
+	if (w->map[y][x] == 'C')
 		return (1);
 	return (0);
 }
