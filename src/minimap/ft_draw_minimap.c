@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 10:33:50 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/02 15:03:18 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/02 15:40:04 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void	ft_fill_line(int y, t_mmap *mmap)
 			color = WALL_COLOR;
 		else if (cell_id == BACKGROUND)
 			color = BG_COLOR;
-		else if (cell_id == FLOOR || cell_id == PLAYER)
+		else if (cell_id == FLOOR || cell_id == PLAYER || cell_id == SQUIRREL)
 			color = FLOOR_COLOR;
 		pxl_start = (int *)(curr_img_data + i);
 		*pxl_start = color;

@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 16:12:00 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/02 15:23:49 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/02 15:37:18 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,23 @@ static void	ft_draw_object(int line, int i, int color, t_mmap *mmap)
 	}
 }
 
+static void	ft_check_pixel(int y, int i, int *drew_obj, t_mmap *mmap)
+{
+	int	cell_id;
+
+	cell_id = ft_get_cell_id(y, i, mmap);
+	if (cell_id == SQUIRREL)
+		ft_draw_object(y, i, SQUIRREL_COLOR, mmap);
+	if (cell_id == PLAYER)
+		ft_draw_object(y, i, PLAYER_COLOR, mmap);
+	if (cell_id == PLAYER || cell_id == SQUIRREL)
+		*drew_obj = 1;
+}
+
 void	ft_add_objects(t_mmap *mmap)
 {
 	int	y;
 	int	i;
-	int	cell_id;
 	int	drew_obj;
 
 	y = 0;
@@ -54,16 +66,9 @@ void	ft_add_objects(t_mmap *mmap)
 		drew_obj = 0;
 		while (i < mmap->img.sl)
 		{
-			cell_id = ft_get_cell_id(y, i, mmap);
-			if (cell_id == SQUIRREL)
-				ft_draw_object(y, i, SQUIRREL_COLOR, mmap);
-			if (cell_id == PLAYER)
-				ft_draw_object(y, i, PLAYER_COLOR, mmap);
-			if (cell_id == PLAYER || cell_id == SQUIRREL)
-			{
-				drew_obj = 1;
+			ft_check_pixel(y, i, &drew_obj, mmap);
+			if (drew_obj)
 				i += (mmap->img.bpp / 8) * mmap->cell_size;
-			}
 			else
 				i += mmap->img.bpp / 8;
 		}
