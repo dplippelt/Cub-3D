@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/02 11:21:48 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/02 13:13:40 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,6 +128,8 @@ typedef struct s_mmap
 	int		width;
 	int		height;
 	int		vis_dist;
+	int		cell_size;
+	int		player_border;
 	t_imgs	img;
 	char	**map;
 	char	*mmap;

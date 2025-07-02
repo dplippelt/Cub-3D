@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 16:12:00 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/02 10:48:43 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/02 13:16:19 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@ static void	ft_draw_player(int line, int i, t_mmap *mmap)
 	int		x;
 	int		y;
 
-	i_start = i + (MM_PLAYER_BORDER * (mmap->img.bpp / 8));
-	y = MM_PLAYER_BORDER;
-	line += MM_PLAYER_BORDER;
-	while (y < CELL_SIZE - MM_PLAYER_BORDER)
+	i_start = i + (mmap->player_border * (mmap->img.bpp / 8));
+	y = mmap->player_border;
+	line += mmap->player_border;
+	while (y < mmap->cell_size - mmap->player_border)
 	{
 		curr_img_data = &mmap->img.data[(line * mmap->img.sl)];
 		i = i_start;
-		x = MM_PLAYER_BORDER;
-		while (x < CELL_SIZE - MM_PLAYER_BORDER)
+		x = mmap->player_border;
+		while (x < mmap->cell_size - mmap->player_border)
 		{
 			pxl_start = (int *)(curr_img_data + i);
 			*pxl_start = PLAYER_COLOR;
