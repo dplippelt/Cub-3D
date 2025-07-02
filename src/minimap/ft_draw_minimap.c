@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 10:33:50 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/02 10:43:48 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/02 15:03:18 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,6 @@ void	ft_draw_minimap(t_mmap *mmap)
 	mlx = mmap->mlx;
 	win = mmap->win;
 	ft_fill_image_buffer(mmap);
-	ft_add_player(mmap);
+	ft_add_objects(mmap);
 	mlx_put_image_to_window(mlx, win, img->img, img->x, img->y);
 }
