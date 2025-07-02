@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 10:48:04 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/02 13:20:35 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/02 13:33:19 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_set_minimap_cell_size(int win_w, int win_h)
 	return (CELL_SIZE_DEFAULT);
 }
 
-static int ft_set_minimap_player_border(int win_w, int win_h)
+static int	ft_set_minimap_player_border(int win_w, int win_h)
 {
 	if (win_w <= 720 || win_h <= (720 * 3 / 4))
 		return (PLAYER_BORDER_DEFAULT - 1);

@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:50:19 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/30 14:36:58 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/02 13:32:20 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	main(int ac, char *av[])
 {
-	setbuf(stdout, NULL);
 	t_cub3d	cub3d;
 	t_file	f;
 

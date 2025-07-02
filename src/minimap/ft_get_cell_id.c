@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 17:38:21 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/02 13:08:51 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/02 13:30:16 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,19 @@ static int	ft_offset(int pixel_pos, t_mmap *mmap)
 
 	cell_offset = pixel_pos / mmap->cell_size;
 	return (mmap->vis_dist - cell_offset);
+}
+
+static int	ft_is_player_cell(char **map, int x, int y)
+{
+	if (map[y][x] == 'N')
+		return (1);
+	if (map[y][x] == 'E')
+		return (1);
+	if (map[y][x] == 'S')
+		return (1);
+	if (map[y][x] == 'W')
+		return (1);
+	return (0);
 }
 
 int	ft_get_cell_id(int line, int i, t_mmap *mmap)
@@ -41,13 +54,7 @@ int	ft_get_cell_id(int line, int i, t_mmap *mmap)
 		return (FLOOR);
 	if (mmap->map[y][x] == '1')
 		return (WALL);
-	if (mmap->map[y][x] == 'N')
-		return (FLOOR);
-	if (mmap->map[y][x] == 'E')
-		return (FLOOR);
-	if (mmap->map[y][x] == 'S')
-		return (FLOOR);
-	if (mmap->map[y][x] == 'W')
+	if (ft_is_player_cell(mmap->map, x, y))
 		return (FLOOR);
 	return (BACKGROUND);
 }
