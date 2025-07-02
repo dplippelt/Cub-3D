@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:56:56 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/30 13:53:02 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/02 10:46:37 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ enum e_cell
 	WALL,
 	DOOR,
 	PLAYER,
-	NOTHING
+	BACKGROUND
 };
 
 // enum e_wall_side

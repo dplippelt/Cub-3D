@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 17:38:21 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/30 17:38:34 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/02 10:46:29 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ int	ft_get_cell_id(int line, int i, t_mmap *mmap)
 	y = (int)*mmap->pos_y - y_offset;
 	x = (int)*mmap->pos_x - x_offset;
 	if (y < 0 || x < 0)
-		return (NOTHING);
+		return (BACKGROUND);
 	if (y >= mmap->map_height || x >= mmap->map_width)
-		return (NOTHING);
+		return (BACKGROUND);
 	if (mmap->map[y][x] == '0')
 		return (FLOOR);
 	if (mmap->map[y][x] == '1')
@@ -49,5 +49,5 @@ int	ft_get_cell_id(int line, int i, t_mmap *mmap)
 		return (FLOOR);
 	if (mmap->map[y][x] == 'W')
 		return (FLOOR);
-	return (NOTHING);
+	return (BACKGROUND);
 }

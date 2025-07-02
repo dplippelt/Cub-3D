@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 15:08:02 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/30 18:07:36 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/02 10:48:40 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@
 # define CELL_SIZE 20
 # define MM_X 50
 # define MM_Y 50
-# define MM_PLAYER_BORDER_X 5
-# define MM_PLAYER_BORDER_Y 5
+# define MM_PLAYER_BORDER 5
+# define WALL_COLOR BGRA(128, 128, 128, 0)
+# define BG_COLOR BGRA(64, 64, 64, 0)
+# define FLOOR_COLOR BGRA(0, 0, 100, 0)
+# define PLAYER_COLOR BGRA(0,100,0,0)
 
 #endif
