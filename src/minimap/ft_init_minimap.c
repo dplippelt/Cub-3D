@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 10:48:04 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/02 13:33:19 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/02 13:39:51 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,12 @@ static int	ft_set_minimap_player_border(int win_w, int win_h)
 	return (PLAYER_BORDER_DEFAULT);
 }
 
-static void	ft_set_minimap_dimensions(t_mmap *mmap, int win_w, int win_h)
+static int	ft_set_minimap_size(int win_w, int win_h, int cell_size)
 {
 	int	size;
-	int	vis_dist;
-	int	cell_size;
-	int	player_border;
 
-	size = 0;
-	vis_dist = 0;
-	cell_size = ft_set_minimap_cell_size(win_w, win_h);
-	player_border = ft_set_minimap_player_border(win_w, win_h);
-	if (win_h < win_w)
-		size = win_h;
-	else
+	size = win_h;
+	if (win_h > win_w)
 		size = win_w;
 	size /= 5;
 	size -= (size % cell_size);
@@ -47,6 +39,19 @@ static void	ft_set_minimap_dimensions(t_mmap *mmap, int win_w, int win_h)
 		size += cell_size;
 	if (size > MM_MAX_SIZE)
 		size = MM_MAX_SIZE;
+	return (size);
+}
+
+static void	ft_set_minimap_dimensions(t_mmap *mmap, int win_w, int win_h)
+{
+	int	size;
+	int	vis_dist;
+	int	cell_size;
+	int	player_border;
+
+	cell_size = ft_set_minimap_cell_size(win_w, win_h);
+	player_border = ft_set_minimap_player_border(win_w, win_h);
+	size = ft_set_minimap_size(win_w, win_h, cell_size);
 	vis_dist = (size / cell_size) / 2;
 	mmap->height = size;
 	mmap->width = size;
