@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3D.h                                            :+:      :+:    :+:   */
+/*   mouse_rotation.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/16 13:50:47 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/02 17:08:41 by dlippelt         ###   ########.fr       */
+/*   Created: 2025/07/02 17:08:12 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/07/02 17:56:31 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef cub3D_H
-# define cub3D_H
+#ifndef MOUSE_ROTATION_H
+# define MOUSE_ROTATION_H
 
 # include <stdio.h>
-# include <unistd.h>
+# include <mlx.h>
 # include <math.h>
-# include <sys/time.h>
-# include "mlx.h"
-# include "mlx_int.h"
-# include "enums.h"
-# include "macros.h"
-# include "init.h"
-# include "utils.h"
-# include "validation.h"
-# include "rendering.h"
-# include "mouse_rotation.h"
-# include "minimap.h"
-# include "cleanup.h"
 # include "structs.h"
+
+int		ft_mouse_move(int x, int y, void *param);
+void	ft_init_mouse(t_cub3d *cub);
 
 #endif

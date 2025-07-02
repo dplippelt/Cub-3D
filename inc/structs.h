@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/02 14:44:36 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/02 17:39:23 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,6 +138,19 @@ typedef struct s_mmap
 	double	*pos_y;
 }			t_mmap;
 
+typedef struct	s_mouse
+{
+	void	*mlx;
+	void	*win;
+	int		max_x;
+	int		max_y;
+	int		min_x;
+	int		min_y;
+	int		center_x;
+	int		center_y;
+	int		x_prev;
+}			t_mouse;
+
 typedef struct	s_cub3d
 {
 	void			*mlx;
@@ -162,6 +175,7 @@ typedef struct	s_cub3d
 	int				c_color;
 	t_mmap			mmap;
 	t_map			*map_data;
+	t_mouse			mouse;
 }					t_cub3d;
 
 #endif
