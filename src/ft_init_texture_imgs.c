@@ -3,44 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init_texture_imgs.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 13:29:29 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/06/26 17:59:27 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/02 16:12:10 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
-
-static int	ft_field_to_texid(int i)
-{
-	if (i == NO)
-		return (TEXNORTH);
-	else if (i == SO)
-		return (TEXSOUTH);
-	else if (i == WE)
-		return (TEXEAST);
-	else if (i == EA)
-		return (TEXEAST);
-	else
-		return (NOELEMENT);
-}
-
-static char	*ft_get_path(int i, t_tex *tex)
-{
-	int	tex_id;
-
-	tex_id = ft_field_to_texid(i);
-	if (tex_id == NOELEMENT)
-		return (NULL);
-	while (tex)
-	{
-		if (tex->id == tex_id)
-			return (tex->tex_path);
-		tex = tex->next;
-	}
-	return (NULL);
-}
 
 static void	ft_loading_texture(t_xvar *mlx, t_imgs *imgs, int i, char *path)
 {
@@ -59,7 +29,7 @@ static int	ft_is_loading_success(t_imgs *imgs)
 	int	i;
 
 	i = 0;
-	while (i < NUM_OF_IMGS)
+	while (i < MAX_IMAGE)
 	{
 		if (!imgs[i].img)
 			return (0);
@@ -72,16 +42,16 @@ int	ft_init_texture_imgs(t_cub3d *cub3d, t_tex *tex)
 {
 	int	i;
 
-	cub3d->imgs = (t_imgs *)malloc(sizeof(t_imgs) * (NUM_OF_IMGS + 1));
+	cub3d->imgs = (t_imgs *)malloc(sizeof(t_imgs) * (MAX_IMAGE + 1));
 	if (!cub3d->imgs)
 		return (ft_error(EMALLOC));
 	i = 0;
-	while (i < NUM_OF_IMGS)
+	while (i < MAX_IMAGE)
 	{
 		ft_loading_texture(cub3d->mlx, cub3d->imgs, i, ft_get_path(i, tex));
 		i++;
 	}
-	cub3d->imgs[NUM_OF_IMGS].img = NULL;
+	cub3d->imgs[MAX_IMAGE].img = NULL;
 	if (!ft_is_loading_success(cub3d->imgs))
 		return (ft_error(EMLXLOADTEX));
 	return (1);

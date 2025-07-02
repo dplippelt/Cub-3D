@@ -6,7 +6,7 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 11:16:42 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/06/25 15:14:28 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/02 18:08:48 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	ft_set_ray_dir(t_ray *ray, t_cub3d *cub3d, int i)
 {
 	double	x_coordinate_on_camera;
 
-	x_coordinate_on_camera = 2 * i / (double)cub3d->win_x - 1;
+	x_coordinate_on_camera = 2 * i / (double)(cub3d->win_x - 1) - 1;
 	ray->dir_row = cub3d->dir_row + cub3d->plane_row * x_coordinate_on_camera;
 	ray->dir_col = cub3d->dir_col + cub3d->plane_col * x_coordinate_on_camera;
 }
@@ -26,11 +26,11 @@ static void	ft_calc_dist_for_dda(t_dist *dist, t_ray ray, t_cub3d *cub3d)
 	int	map_row;
 	int	map_col;
 
-	if (!ray.dir_row)
+	if (fabs(ray.dir_row) < EPSILON)
 		dist->delta_row = INFINITY;
 	else
 		dist->delta_row = fabs(1 / ray.dir_row);
-	if (!ray.dir_col)
+	if (fabs(ray.dir_col) < EPSILON)
 		dist->delta_col = INFINITY;
 	else
 		dist->delta_col = fabs(1 / ray.dir_col);
@@ -86,10 +86,11 @@ static void	ft_digi_diff_analyze(t_dda *dda, t_dist dist, t_cub3d *cub3d)
 		dda->wall_dist = dist.side_col - dist.delta_col;
 }
 
-void	ft_ray_casting(t_rcast *rc, t_cub3d *cub3d, int x)
+void	ft_ray_casting(t_rcast *rc, t_cub3d *cub3d, int win_x)
 {
-	ft_set_ray_dir(&rc->ray, cub3d, x);
+	ft_set_ray_dir(&rc->ray, cub3d, win_x);
 	ft_calc_dist_for_dda(&rc->dist, rc->ray, cub3d);
 	ft_set_step_for_dda(&rc->dda, rc->ray);
 	ft_digi_diff_analyze(&rc->dda, rc->dist, cub3d);
+	cub3d->wall_dists[win_x] = rc->dda.wall_dist;
 }

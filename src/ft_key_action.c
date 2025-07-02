@@ -6,7 +6,7 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:54:18 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/06/25 18:03:50 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/06/26 19:05:36 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,18 +47,6 @@ void	ft_action_move(int key, t_cub3d *cub3d)
 		ft_valid_move(cub3d, -cub3d->plane_row * cub3d->move_speed, 0);
 		ft_valid_move(cub3d, 0, -cub3d->plane_col * cub3d->move_speed);
 	}
-}
-
-void	ft_vector_rotation(t_cub3d *cub3d, double x)
-{
-	double	tmp;
-
-	tmp = cub3d->dir_row;
-	cub3d->dir_row = cub3d->dir_row * cos(x) - cub3d->dir_col * sin(x);
-	cub3d->dir_col = tmp * sin(x) + cub3d->dir_col * cos(x);
-	tmp = cub3d->plane_row;
-	cub3d->plane_row = cub3d->plane_row * cos(x) - cub3d->plane_col * sin(x);
-	cub3d->plane_col = tmp * sin(x) + cub3d->plane_col * cos(x);
 }
 
 void	ft_action_rotate(int key, t_cub3d *cub3d)
