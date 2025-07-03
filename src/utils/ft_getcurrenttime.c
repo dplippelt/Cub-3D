@@ -1,41 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_set_target_img.c                                :+:      :+:    :+:   */
+/*   ft_getcurrenttime.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/19 18:05:09 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/03 18:15:25 by dlippelt         ###   ########.fr       */
+/*   Created: 2025/07/03 18:27:00 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/07/03 18:42:20 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "utils.h"
 
-void	ft_set_target_img(t_dda *dda, t_ray ray, char c)
+long	ft_getcurrenttime(void)
 {
-	if (dda->side == ROW_SIDE)
-	{
-		if (c == '1')
-		{
-			if (ray.dir_row > 0)
-				dda->img = EA;
-			else
-				dda->img = WE;
-		}
-		else if (c == 'D')
-			dda->img = DOOR;
-	}
-	else
-	{
-		if (c == '1')
-		{
-			if (ray.dir_col > 0)
-				dda->img = SO;
-			else
-				dda->img = NO;
-		}
-		else if (c == 'D')
-			dda->img = DOOR;
-	}
+	struct timeval	time;
+	long 			curr_time;
+
+	curr_time = 0;
+	if (gettimeofday(&time, NULL) < 0)
+		return (-1);
+	curr_time = (time.tv_sec * 1000) + (time.tv_usec / 1000);
+	return (curr_time);
 }

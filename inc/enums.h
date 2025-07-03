@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:56:56 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/03 17:59:05 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/03 18:15:21 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ enum e_cell
 {
 	FLOOR,
 	WALL,
-	DOOR,
+	DOORA,
 	PLAYER,
 	SQUIRREL,
 	BACKGROUND

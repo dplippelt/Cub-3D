@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_destroy_doors.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 15:36:04 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/03 16:21:20 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/03 18:18:19 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_destroy_doors(t_cub3d *cub3d)
 			i++;
 		}
 		free(cub3d->doors);
-	}	
+	}
 }
 
 void	ft_print_doors(t_door **doors, size_t width)

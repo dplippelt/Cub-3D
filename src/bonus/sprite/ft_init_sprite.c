@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init_sprite.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 12:08:58 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/02 18:08:48 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/03 18:47:09 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,7 @@ int	ft_init_sprite(t_cub3d *cub3d)
 	}
 	ft_get_sprite_info(cub3d->sprite, cub3d->map);
 	ft_set_zero_arr(cub3d->wall_dists, cub3d->win_x);
+	// cub3d->prev_anim_time = 0;
+	gettimeofday(&cub3d->prev_anim_timevl, NULL);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/03 18:00:14 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/03 18:47:21 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <sys/types.h>
 # include <sys/time.h>
+# include "enums.h"
 
 typedef struct s_pos
 {
@@ -244,6 +245,8 @@ typedef struct s_cub3d
 	size_t			num_sprite;
 	t_sprite		*sprite;
 	double			*wall_dists;
+	long			prev_anim_time;
+	struct timeval	prev_anim_timevl;
 	t_door			**doors;
 	t_mmap			mmap;
 	t_map			*map_data;

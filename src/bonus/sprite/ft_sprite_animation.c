@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sprite_animation.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 17:27:20 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/02 18:14:09 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/03 18:51:08 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,30 +24,35 @@ static void	ft_change_sprite_id(t_sprite *sprite)
 		sprite->id = SPRITE_0;
 }
 
-static int	ft_is_image_change(t_cub3d *cub3d, int sec)
+// static int	ft_is_image_change(t_cub3d *cub3d, int sec)
+// {
+// 	size_t	i;
+
+// 	if (sec < ANIMATION_SPEED_MILISEC)
+// 		return (0);
+// 	i = 0;
+// 	while (i < cub3d->num_sprite)
+// 		ft_change_sprite_id(&cub3d->sprite[i++]);
+// 	return (1);
+// }
+
+static void	ft_animate_sprites(t_cub3d *cub3d)
 {
 	size_t	i;
 
-	if (sec < ANIMATION_SPEED_MILISEC)
-		return (0);
 	i = 0;
 	while (i < cub3d->num_sprite)
 		ft_change_sprite_id(&cub3d->sprite[i++]);
-	return (1);
 }
 
 int	ft_sprite_animation(t_cub3d *cub3d)
 {
-	int				time_diff;
-	struct timeval	curr;
 
-	gettimeofday(&curr, NULL);
-	time_diff = ft_get_time_diff_sec(curr, cub3d->time) * 1e3;
-	if (!ft_is_image_change(cub3d, time_diff))
-		return (0);
-	ft_update_field_of_view(cub3d);
-	ft_put_img_to_win(cub3d->fov.img, cub3d);
-	cub3d->time = curr;
+	if (ft_get_time_diff_sec(cub3d->time, cub3d->prev_anim_timevl) * 1000 > ANIMATION_SPEED_MILISEC)
+	{
+		ft_animate_sprites(cub3d);
+		cub3d->prev_anim_timevl = cub3d->time;
+	}
 	return (1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 11:47:37 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/03 18:04:51 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/03 18:17:55 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_put_img_to_win(void *img, t_cub3d *cub3d);
 int		ft_rendering_loop(void *param);
 char	*ft_get_path(int i, t_tex *tex);
 // void	ft_setup_key_hook(t_win_list *win, int (*funct)(), void *param);
-// void	ft_setup_loop_hook(void *mlx, int (*funct)(), void *param);
+void	ft_setup_loop_hook(void *mlx, int (*funct)(), void *param);
 void	ft_set_target_img(t_dda *dda, t_ray ray, char c);
 void	ft_draw_vertic_line(t_cub3d *cub3d, t_imgs img, int win_x, int tex_x);
 void	ft_vector_rotation(t_cub3d *cub3d, double x);

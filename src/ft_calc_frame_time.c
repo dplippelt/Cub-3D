@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calc_frame_time.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 16:39:09 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/02 17:53:22 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/03 18:27:06 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
