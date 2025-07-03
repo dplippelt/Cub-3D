@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 10:48:04 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/02 13:39:51 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/03 17:52:12 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,15 @@ int	ft_init_minimap(t_cub3d *cub)
 		return (ft_error(EMLXNEWIMG));
 	ft_set_img_addr(&mmap->img);
 	mmap->mmap = mmap->img.data;
-	mmap->img.x = MM_X;
-	mmap->img.y = MM_Y;
+	mmap->img.x = cub->win_x / MM_POS;
+	mmap->img.y = mmap->img.x;
+	mmap->cols.wall = ft_bgra(128, 128, 128, 0);
+	mmap->cols.background = ft_bgra(64, 64, 64, 0);
+	mmap->cols.floor = ft_bgra(0, 0, 100, 0);
+	mmap->cols.player = ft_bgra(0, 100, 0, 0);
+	mmap->cols.squirrel = ft_bgra(19, 69, 139, 0);	//Medium Brown
+	// mmap->cols.squirrel = ft_bgra(63, 133, 205, 0);	//Light Brown
+	// mmap->cols.squirrel = ft_bgra(33, 67, 101, 0);	//Dark Brown
+	// mmap->cols.squirrel = ft_bgra(0, 215, 255, 0);	//Gold
 	return (1);
 }

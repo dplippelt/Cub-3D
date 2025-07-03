@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/03 16:59:30 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/03 17:53:51 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,6 @@ typedef struct s_file
 	t_map		map;
 }				t_file;
 
-
-// Takato's structs
-
 typedef struct s_imgs
 {
 	void	*img;
@@ -120,25 +117,37 @@ typedef struct s_line
 	int		end;
 }			t_line;
 
+typedef struct s_mm_cols
+{
+	int	wall;
+	int	background;
+	int	floor;
+	int	player;
+	int	squirrel;
+}		t_mm_cols;
+
 typedef struct s_mmap
 {
-	void	*mlx;
-	void	*win;
-	int		map_width;
-	int		map_height;
-	int		width;
-	int		height;
-	int		vis_dist;
-	int		cell_size;
-	int		player_border;
-	t_imgs	img;
-	char	**map;
-	char	*mmap;
-	double	*pos_x;
-	double	*pos_y;
-}			t_mmap;
+	void		*mlx;
+	void		*win;
+	int			map_width;
+	int			map_height;
+	int			width;
+	int			height;
+	int			mm_x;
+	int			mm_y;
+	int			vis_dist;
+	int			cell_size;
+	int			player_border;
+	t_imgs		img;
+	char		**map;
+	char		*mmap;
+	double		*pos_x;
+	double		*pos_y;
+	t_mm_cols	cols;
+}				t_mmap;
 
-typedef	struct s_rot
+typedef struct s_rot
 {
 	double	*dir_row;
 	double	*dir_col;
@@ -147,8 +156,7 @@ typedef	struct s_rot
 	int		sens;
 }			t_rot;
 
-
-typedef struct	s_mouse
+typedef struct s_mouse
 {
 	void	*mlx;
 	void	*win;
@@ -176,8 +184,7 @@ typedef struct s_keys
 	int	esc;
 }		t_keys;
 
-
-typedef struct	s_cub3d
+typedef struct s_cub3d
 {
 	void			*mlx;
 	void			*win;

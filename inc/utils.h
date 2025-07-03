@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 14:02:38 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/25 16:26:09 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/03 17:43:20 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ int			ft_is_printable(char c);
 int			ft_open(const char *path, int *fd);
 u_int8_t	ft_colortoi(char **s, int *overflow);
 int			ft_copy_str_array(char ***dst, char **src);
+int			ft_bgra(int b, int g, int r, int a);
 
 #endif

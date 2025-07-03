@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:54:18 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/03 17:10:06 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/03 17:24:52 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,50 +67,6 @@ void	ft_action_rotate(int key, t_cub3d *cub3d)
 		ft_vector_rotation(cub3d, cub3d->rot_speed);
 	else
 		ft_vector_rotation(cub3d, -cub3d->rot_speed);
-}
-
-int	ft_key_press(int key, void *param)
-{
-	t_keys *keys;
-
-	keys = (t_keys *)param;
-	if (key == XK_Escape)
-		keys->esc = 1;
-	if (key == XK_Left)
-		keys->left = 1;
-	if (key == XK_Right)
-		keys->right = 1;
-	if (key == XK_w)
-		keys->w = 1;
-	if (key == XK_a)
-		keys->a = 1;
-	if (key == XK_s)
-		keys->s = 1;
-	if (key == XK_d)
-		keys->d = 1;
-	return (1);
-}
-
-int	ft_key_release(int key, void *param)
-{
-	t_keys *keys;
-
-	keys = (t_keys *)param;
-	if (key == XK_Escape)
-		keys->esc = 0;
-	if (key == XK_Left)
-		keys->left = 0;
-	if (key == XK_Right)
-		keys->right = 0;
-	if (key == XK_w)
-		keys->w = 0;
-	if (key == XK_a)
-		keys->a = 0;
-	if (key == XK_s)
-		keys->s = 0;
-	if (key == XK_d)
-		keys->d = 0;
-	return (1);
 }
 
 void	ft_key_action(t_cub3d *cub3d, t_keys *keys)

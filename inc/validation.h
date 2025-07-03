@@ -6,13 +6,12 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 14:46:25 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/02 14:45:30 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/03 17:53:07 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef VALIDATION_H
 # define VALIDATION_H
-
 
 # include <sys/types.h>
 # include <sys/stat.h>

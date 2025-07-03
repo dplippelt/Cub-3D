@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 16:12:00 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/02 15:37:18 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/03 17:36:44 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ static void	ft_check_pixel(int y, int i, int *drew_obj, t_mmap *mmap)
 
 	cell_id = ft_get_cell_id(y, i, mmap);
 	if (cell_id == SQUIRREL)
-		ft_draw_object(y, i, SQUIRREL_COLOR, mmap);
+		ft_draw_object(y, i, mmap->cols.squirrel, mmap);
 	if (cell_id == PLAYER)
-		ft_draw_object(y, i, PLAYER_COLOR, mmap);
+		ft_draw_object(y, i, mmap->cols.player, mmap);
 	if (cell_id == PLAYER || cell_id == SQUIRREL)
 		*drew_obj = 1;
 }
