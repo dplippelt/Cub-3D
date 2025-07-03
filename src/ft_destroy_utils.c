@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:46:46 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/06/30 11:30:38 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/03 18:06:03 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	ft_destroy_texture_imgs(t_cub3d *cub3d)
 	if (!cub3d->imgs)
 		return ;
 	i = 0;
-	while (i < NUM_OF_IMGS)
+	while (i < MAX_IMAGE)
 	{
 		if (cub3d->imgs[i].img)
 			mlx_destroy_image(cub3d->mlx, cub3d->imgs[i].img);
@@ -53,6 +53,8 @@ void	ft_destroy_all(t_cub3d *cub3d)
 	ft_destroy_texture_imgs(cub3d);
 	ft_destroy_minimap(&cub3d->mmap);
 	ft_destroy_fov(cub3d);
+	ft_destroy_sprite(cub3d);
+	ft_destroy_doors(cub3d);
 	ft_destroy_win(cub3d);
 	ft_destroy_mlx(cub3d);
 }

@@ -1,0 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_get_target_img.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/19 18:05:09 by tmitsuya          #+#    #+#             */
+/*   Updated: 2025/07/03 17:47:17 by tmitsuya         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "cub3D.h"
+
+void	ft_set_target_img(t_dda *dda, t_ray ray, char c)
+{
+	if (dda->side == ROW_SIDE)
+	{
+		if (c == '1')
+		{
+			if (ray.dir_row > 0)
+				dda->img = EA;
+			else
+				dda->img = WE;
+		}
+		else if (c == 'D')
+			dda->img = DOOR;
+	}
+	else
+	{
+		if (c == '1')
+		{
+			if (ray.dir_col > 0)
+				dda->img = SO;
+			else
+				dda->img = NO;
+		}
+		else if (c == 'D')
+			dda->img = DOOR;
+	}
+}

@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 11:42:05 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/02 13:45:14 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/03 18:08:57 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int	ft_is_valid_map_char(char c)
 	if (c == 'W')
 		return (1);
 	if (c == 'C')
+		return (1);
+	if (c == 'D')
 		return (1);
 	return (0);
 }

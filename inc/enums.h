@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:56:56 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/02 15:05:28 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/03 17:59:05 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,12 +83,26 @@ enum e_side
 	COL_SIDE,
 };
 
-enum e_img_field
+typedef enum e_img_field
 {
 	NO,
 	SO,
 	WE,
 	EA,
+	SPRITE_0,
+	SPRITE_1,
+	SPRITE_2,
+	SPRITE_3,
+	DOOR,
+	MAX_IMAGE,
+}	t_img_field;
+
+enum e_status
+{
+	CLOSE,
+	CLOSING,
+	OPENING,
+	OPEN,
 };
 
 #endif

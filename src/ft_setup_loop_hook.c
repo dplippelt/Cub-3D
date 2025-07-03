@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bgra.c                                          :+:      :+:    :+:   */
+/*   ft_setup_loop_hook.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/03 18:10:55 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/03 18:11:00 by dlippelt         ###   ########.fr       */
+/*   Created: 2025/07/02 17:22:59 by tmitsuya          #+#    #+#             */
+/*   Updated: 2025/07/02 18:14:46 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "cub3D.h"
 
-int	ft_bgra(int b, int g, int r, int a)
+void	ft_setup_loop_hook(void *mlx, int (*funct)(), void *param)
 {
-	return ((a << 24) | (r << 16) | (g << 8) | b);
+	mlx_loop_hook(mlx, funct, param);
 }

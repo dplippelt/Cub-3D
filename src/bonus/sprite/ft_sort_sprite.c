@@ -1,31 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_target_img.c                                :+:      :+:    :+:   */
+/*   ft_sort_sprite.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/19 18:05:09 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/06/19 18:05:28 by tmitsuya         ###   ########.fr       */
+/*   Created: 2025/07/02 15:03:49 by tmitsuya          #+#    #+#             */
+/*   Updated: 2025/07/02 17:12:11 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-t_imgs	ft_get_target_img(t_cub3d *cub3d, t_dda dda, t_ray ray)
+static void	ft_swap_value(t_sprite *s1, t_sprite *s2)
 {
-	if (dda.side == ROW_SIDE)
+	t_sprite	tmp;
+
+	tmp = *s1;
+	*s1 = *s2;
+	*s2 = tmp;
+}
+
+void	ft_sort_sprite(t_sprite *sprite, size_t num)
+{
+	size_t		i;
+	size_t		j;
+
+	i = 0;
+	if (i < num)
 	{
-		if (ray.dir_row > 0)
-			return (cub3d->imgs[EA]);
-		else
-			return (cub3d->imgs[WE]);
-	}
-	else
-	{
-		if (ray.dir_col > 0)
-			return (cub3d->imgs[SO]);
-		else
-			return (cub3d->imgs[NO]);
+		j = 0;
+		while (j < num - i - 1)
+		{
+			if (sprite[j].dist - sprite[j + 1].dist < EPSILON)
+				ft_swap_value(&sprite[j], &sprite[j + 1]);
+			j++;
+		}
+		i++;
 	}
 }

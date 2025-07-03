@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/03 17:53:51 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/03 18:00:14 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,14 +94,15 @@ typedef struct s_dist
 
 typedef struct s_dda
 {
-	double	wall_dist;
-	int		step_row;
-	int		step_col;
-	int		map_row;
-	int		map_col;
-	double	hit;
-	double	side;
-}			t_dda;
+	double		wall_dist;
+	int			step_row;
+	int			step_col;
+	int			map_row;
+	int			map_col;
+	double		hit;
+	double		side;
+	t_img_field img;
+}				t_dda;
 
 typedef struct s_rcast
 {
@@ -109,6 +110,40 @@ typedef struct s_rcast
 	t_dist	dist;
 	t_dda	dda;
 }			t_rcast;
+
+typedef struct s_draw
+{
+	int		len_win;
+	int		len_tex;
+	int		begin;
+	int		end;
+}			t_draw;
+
+typedef struct s_sprite
+{
+	int		id;
+	int		map_row;
+	int		map_col;
+	double	pos_row;
+	double	pos_col;
+	double	x_on_camera;
+	double	y_on_camera;
+	int		x_on_win;
+	int		y_on_win;
+	int		hight;
+	int		width;
+	double	dist;
+}			t_sprite;
+
+typedef	struct	s_door
+{
+	enum e_side		dir;
+	double			row;
+	double			col;
+	enum e_status	status;
+	double			time;
+	int				texid;
+}					t_door;
 
 typedef struct s_line
 {
@@ -206,6 +241,10 @@ typedef struct s_cub3d
 	double			rot_speed;
 	int				f_color;
 	int				c_color;
+	size_t			num_sprite;
+	t_sprite		*sprite;
+	double			*wall_dists;
+	t_door			**doors;
 	t_mmap			mmap;
 	t_map			*map_data;
 	t_mouse			mouse;
