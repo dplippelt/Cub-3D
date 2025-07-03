@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/03 14:41:39 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/03 15:57:48 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,6 +138,16 @@ typedef struct s_mmap
 	double	*pos_y;
 }			t_mmap;
 
+typedef	struct s_rot
+{
+	double	*dir_row;
+	double	*dir_col;
+	double	*plane_row;
+	double	*plane_col;
+	int		sens;
+}			t_rot;
+
+
 typedef struct	s_mouse
 {
 	void	*mlx;
@@ -150,6 +160,8 @@ typedef struct	s_mouse
 	int		center_y;
 	int		x_prev;
 	int		skip;
+	int		ncall;
+	t_rot	rot;
 }			t_mouse;
 
 typedef struct	s_cub3d

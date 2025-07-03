@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 17:06:40 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/03 14:48:05 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/03 16:35:07 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,30 @@ static void	ft_recenter_mouse(int x, int y, t_mouse *mouse)
 	if (do_center)
 	{
 		mouse->skip = 1;
-		mlx_mouse_move(mouse->mlx, mouse->win, mouse->center_x, mouse->center_y);
+		mlx_mouse_move(mouse->mlx, mouse->win,
+			mouse->center_x, mouse->center_y);
 	}
+}
+
+static void	ft_vector_rotation(t_rot *rot, double diff, int *ncall)
+{
+	double	x;
+	double	tmp;
+
+	x = diff / rot->sens;
+	tmp = *rot->dir_row;
+	*rot->dir_row = *rot->dir_row * cos(x) - *rot->dir_col * sin(x);
+	*rot->dir_col = tmp * sin(x) + *rot->dir_col * cos(x);
+	tmp = *rot->plane_row;
+	*rot->plane_row = *rot->plane_row * cos(x) - *rot->plane_col * sin(x);
+	*rot->plane_col = tmp * sin(x) + *rot->plane_col * cos(x);
+	(*ncall)++;
 }
 
 int	ft_mouse_move(int x, int y, void *param)
 {
 	t_mouse	*mouse;
-	int		diff;
+	double	diff;
 
 	mouse = (t_mouse *)param;
 	if (mouse->skip)
@@ -42,15 +58,12 @@ int	ft_mouse_move(int x, int y, void *param)
 	}
 	diff = 0;
 	if (x > mouse->x_prev)
-	{
-		diff = x - mouse->x_prev;
-		printf("diff: %d\n", diff);
-	}
+		diff = (double)(x - mouse->x_prev);
 	else if (x < mouse->x_prev)
-	{
-		diff = (mouse->x_prev - x) * -1;
-		printf("diff: %d\n", diff);
-	}
+		diff = (double)((mouse->x_prev - x) * -1);
+	if (fabs(diff) < 100 && mouse->ncall == 0)
+		ft_vector_rotation(&mouse->rot, -diff, &mouse->ncall);
+	mouse->ncall = 0;
 	ft_recenter_mouse(x, y, mouse);
 	mouse->x_prev = x;
 	return (1);
