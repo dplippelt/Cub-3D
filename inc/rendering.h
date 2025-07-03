@@ -6,14 +6,15 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 11:47:37 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/02 17:41:54 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/03 16:20:07 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RENDERING_H
 # define RENDERING_H
 
-# include "mlx_int.h" //for t_win_list, can we change to not use t_win_list?
+# include "minimap.h"
+# include "structs.h"
 
 void	ft_init_cub3d(t_cub3d *cub3d, t_map *map);
 int		ft_setup_cub3d(t_cub3d *cub3d, t_file file);
@@ -32,5 +33,6 @@ void	ft_draw_vertic_line(t_cub3d *cub3d, t_rcast rc, int screen_x, int texture_x
 void	ft_destroy_all(t_cub3d *cub3d);
 void	ft_set_img_addr(t_imgs *imgs);
 void	ft_put_img_to_win(void *img, t_cub3d *cub3d);
+int		ft_rendering_loop(void *param);
 
 #endif
