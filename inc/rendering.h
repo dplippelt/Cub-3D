@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 11:47:37 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/03 16:20:07 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/03 17:12:36 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,10 @@ int		ft_init_field_of_view(t_cub3d *cub3d);
 int		ft_init_game_condition(t_cub3d *cub3d, t_file file);
 void	ft_update_field_of_view(t_cub3d *cub3d);
 int		ft_calc_frame_time(t_cub3d *cub3d);
-void	ft_setup_hooks(void *win, t_cub3d *cub3d, t_mouse *mouse);
-int		ft_key_action(int keycode, t_cub3d *cub3d);
+void	ft_setup_hooks(void *win, t_cub3d *cub, t_mouse *mouse, t_keys *keys);
+void	ft_key_action(t_cub3d *cub3d, t_keys *keys);
+int		ft_key_press(int key, void *param);
+int		ft_key_release(int key, void *param);
 void	ft_ray_casting(t_rcast *rc, t_cub3d *cub3d, int x);
 t_imgs	ft_get_target_img(t_cub3d *cub3d, t_dda dda, t_ray ray);
 void	ft_draw_vertic_line(t_cub3d *cub3d, t_rcast rc, int screen_x, int texture_x);

@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/03 15:57:48 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/03 16:59:30 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,9 +160,22 @@ typedef struct	s_mouse
 	int		center_y;
 	int		x_prev;
 	int		skip;
+	int		focus;
 	int		ncall;
 	t_rot	rot;
 }			t_mouse;
+
+typedef struct s_keys
+{
+	int	w;
+	int	a;
+	int	s;
+	int	d;
+	int	left;
+	int	right;
+	int	esc;
+}		t_keys;
+
 
 typedef struct	s_cub3d
 {
@@ -189,6 +202,7 @@ typedef struct	s_cub3d
 	t_mmap			mmap;
 	t_map			*map_data;
 	t_mouse			mouse;
+	t_keys			keys;
 }					t_cub3d;
 
 #endif

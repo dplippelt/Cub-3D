@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:54:18 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/03 16:50:11 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/03 17:10:06 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,20 +69,67 @@ void	ft_action_rotate(int key, t_cub3d *cub3d)
 		ft_vector_rotation(cub3d, -cub3d->rot_speed);
 }
 
-int	ft_key_down(int key, t_cub3d *cub3d)
+int	ft_key_press(int key, void *param)
 {
-	
+	t_keys *keys;
+
+	keys = (t_keys *)param;
+	if (key == XK_Escape)
+		keys->esc = 1;
+	if (key == XK_Left)
+		keys->left = 1;
+	if (key == XK_Right)
+		keys->right = 1;
+	if (key == XK_w)
+		keys->w = 1;
+	if (key == XK_a)
+		keys->a = 1;
+	if (key == XK_s)
+		keys->s = 1;
+	if (key == XK_d)
+		keys->d = 1;
+	return (1);
 }
 
-int	ft_key_action(int key, t_cub3d *cub3d)
+int	ft_key_release(int key, void *param)
 {
+	t_keys *keys;
+
+	keys = (t_keys *)param;
 	if (key == XK_Escape)
-		return (mlx_loop_end(cub3d->mlx), 0);
-	if (key == XK_Left || key == XK_Right)
-		ft_action_rotate(key, cub3d);
-	if (key == XK_d || key == XK_w || key == XK_a || key == XK_s)
-		ft_action_move(key, cub3d);
-	else
-		return (key);
-	return (key);
+		keys->esc = 0;
+	if (key == XK_Left)
+		keys->left = 0;
+	if (key == XK_Right)
+		keys->right = 0;
+	if (key == XK_w)
+		keys->w = 0;
+	if (key == XK_a)
+		keys->a = 0;
+	if (key == XK_s)
+		keys->s = 0;
+	if (key == XK_d)
+		keys->d = 0;
+	return (1);
+}
+
+void	ft_key_action(t_cub3d *cub3d, t_keys *keys)
+{
+	if (keys->esc)
+	{
+		mlx_loop_end(cub3d->mlx);
+		return ;
+	}
+	if (keys->left)
+		ft_action_rotate(XK_Left, cub3d);
+	if (keys->right)
+		ft_action_rotate(XK_Right, cub3d);
+	if (keys->w)
+		ft_action_move(XK_w, cub3d);
+	if (keys->a)
+		ft_action_move(XK_a, cub3d);
+	if (keys->s)
+		ft_action_move(XK_s, cub3d);
+	if (keys->d)
+		ft_action_move(XK_d, cub3d);
 }
