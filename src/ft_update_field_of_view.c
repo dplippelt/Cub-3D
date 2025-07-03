@@ -6,7 +6,7 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 18:02:43 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/02 14:06:30 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/03 17:47:55 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_update_field_of_view(t_cub3d *cub3d)
 	while (win_x < cub3d->win_x)
 	{
 		ft_ray_casting(&rc, cub3d, win_x);
-		target = ft_get_target_img(cub3d, rc.dda, rc.ray);
+		target = cub3d->imgs[rc.dda.img];
 		tex_x = ft_get_texture_x(cub3d, rc.dda, rc.ray, target.x);
 		ft_draw_vertic_line(cub3d, target, win_x, tex_x);
 		win_x++;

@@ -6,7 +6,7 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 19:14:42 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/02 17:19:19 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/03 16:33:38 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static void	ft_calc_size_on_win(t_sprite *s, int win_y)
 	hight = 0;
 	if (fabs(s->y_on_camera) > EPSILON)
 	{
-		hight = abs((int)(win_y / s->y_on_camera));
+		hight = (int)fabs(win_y / s->y_on_camera);
 		s->hight = hight / SP_SIZE_DOWN;
 		s->width = s->hight;
 		s->y_on_win = (1.0 - 1.0 / SP_SIZE_DOWN) * hight;

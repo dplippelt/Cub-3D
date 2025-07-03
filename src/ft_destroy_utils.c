@@ -6,7 +6,7 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:46:46 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/02 18:05:28 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/03 15:52:40 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	ft_destroy_all(t_cub3d *cub3d)
 	ft_destroy_texture_imgs(cub3d);
 	ft_destroy_fov(cub3d);
 	ft_destroy_sprite(cub3d);
+	ft_destroy_doors(cub3d);
 	ft_destroy_win(cub3d);
 	ft_destroy_mlx(cub3d);
 }

@@ -6,7 +6,7 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:50:47 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/02 18:20:28 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/03 17:47:10 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@
 # define P_SPRITE_1 "textures/sprite_x256_1.xpm"
 # define P_SPRITE_2 "textures/sprite_x256_2.xpm"
 # define P_SPRITE_3 "textures/sprite_x256_3.xpm"
+# define P_DOOR "textures/gate_x256.xpm"
 // # define M_PI 3.14159265358979323846
 // # define TEXTURE_SIZE 128
 # define DIST_PER_SECOND 5.0
@@ -39,7 +40,7 @@
 # define EPSILON 1e-6
 # define ANIMATION_SPEED_MILISEC 500
 
-enum e_img_field
+typedef enum e_img_field
 {
 	NO,
 	SO,
@@ -49,7 +50,22 @@ enum e_img_field
 	SPRITE_1,
 	SPRITE_2,
 	SPRITE_3,
+	DOOR,
 	MAX_IMAGE,
+}	t_img_field;
+
+enum e_side
+{
+	ROW_SIDE,
+	COL_SIDE,
+};
+
+enum e_status
+{
+	CLOSE,
+	CLOSING,
+	OPENING,
+	OPEN,
 };
 
 typedef struct s_imgs
@@ -79,14 +95,15 @@ typedef struct s_dist
 
 typedef struct s_dda
 {
-	double	wall_dist;
-	int		step_row;
-	int		step_col;
-	int		map_row;
-	int		map_col;
-	double	hit;
-	double	side;
-}			t_dda;
+	double		wall_dist;
+	int			step_row;
+	int			step_col;
+	int			map_row;
+	int			map_col;
+	double		hit;
+	double		side;
+	t_img_field img;
+}				t_dda;
 
 typedef struct s_rcast
 {
@@ -119,11 +136,15 @@ typedef struct s_sprite
 	double	dist;
 }			t_sprite;
 
-enum e_side
+typedef	struct	s_door
 {
-	ROW_SIDE,
-	COL_SIDE,
-};
+	enum e_side		dir;
+	double			row;
+	double			col;
+	enum e_status	status;
+	double			time;
+	int				texid;
+}					t_door;
 
 typedef struct	s_cub3d
 {
@@ -150,6 +171,7 @@ typedef struct	s_cub3d
 	size_t			num_sprite;
 	t_sprite		*sprite;
 	double			*wall_dists;
+	t_door			**doors;
 }					t_cub3d;
 
 void	ft_init_cub3d(t_cub3d *cub3d, t_map *map);
@@ -167,7 +189,7 @@ void	ft_setup_loop_hook(void *mlx, int (*funct)(), void *param);
 int		ft_key_action(int keycode, t_cub3d *cub3d);
 int		ft_mouse(int key, t_cub3d *cub3d);
 void	ft_ray_casting(t_rcast *rc, t_cub3d *cub3d, int x);
-t_imgs	ft_get_target_img(t_cub3d *cub3d, t_dda dda, t_ray ray);
+void	ft_set_target_img(t_dda *dda, t_ray ray, char c);
 void	ft_draw_vertic_line(t_cub3d *cub3d, t_imgs img, int win_x, int tex_x);
 void	ft_destroy_all(t_cub3d *cub3d);
 void	ft_set_img_addr(t_imgs *imgs);
@@ -180,6 +202,9 @@ void	ft_draw_sprite(t_sprite sprite, t_cub3d *cub3d);
 void	ft_sprite_casting(t_cub3d *cub3d, t_sprite *sprite);
 int		ft_sprite_animation(t_cub3d *cub3d);
 void	ft_destroy_sprite(t_cub3d *cub3d);
+int		ft_init_doors(t_cub3d *cub3d, t_map map);
+void	ft_destroy_doors(t_cub3d *cub3d);
+void	ft_print_doors(t_door **doors, size_t width);
 // void	ft_print_sprite(t_sprite *sprite, size_t num);
 
 #endif
