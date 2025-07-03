@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 17:06:40 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/03 16:35:07 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/03 16:44:09 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ int	ft_mouse_move(int x, int y, void *param)
 	double	diff;
 
 	mouse = (t_mouse *)param;
+	if (!mouse->focus)
+		return (1);
 	if (mouse->skip)
 	{
 		mouse->x_prev = x;
