@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 17:06:40 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/02 18:01:58 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/03 14:48:05 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ static void	ft_recenter_mouse(int x, int y, t_mouse *mouse)
 	else if (y >= mouse->max_y || y <= mouse->min_y)
 		do_center = 1;
 	if (do_center)
+	{
+		mouse->skip = 1;
 		mlx_mouse_move(mouse->mlx, mouse->win, mouse->center_x, mouse->center_y);
+	}
 }
 
 int	ft_mouse_move(int x, int y, void *param)
@@ -31,6 +34,12 @@ int	ft_mouse_move(int x, int y, void *param)
 	int		diff;
 
 	mouse = (t_mouse *)param;
+	if (mouse->skip)
+	{
+		mouse->x_prev = x;
+		mouse->skip = 0;
+		return (1);
+	}
 	diff = 0;
 	if (x > mouse->x_prev)
 	{

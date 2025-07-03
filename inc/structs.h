@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/02 17:39:23 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/03 14:41:39 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,6 +149,7 @@ typedef struct	s_mouse
 	int		center_x;
 	int		center_y;
 	int		x_prev;
+	int		skip;
 }			t_mouse;
 
 typedef struct	s_cub3d
