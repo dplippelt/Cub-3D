@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 15:08:02 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/03 17:58:04 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/03 19:00:53 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,9 @@
 
 # define FORMAT ".cub"
 # define TITLE "cub3D"
-# define NUM_OF_IMGS 4  // This is identical to NTEX
-# define TEXTURE_SIZE 128
 # define DIST_PER_SECOND 5.0
 # define RADIAN_PER_SECOND 2.0
-# define WIN_X_DEFAULT 4000
+# define WIN_X_DEFAULT 1920
 # define MOUSE_SENSITIVITY_DEFAULT 500
 # define NTEX 4
 # define NCOL 2
@@ -33,8 +31,6 @@
 # define P_SPRITE_2 "textures/sprite_x256_2.xpm"
 # define P_SPRITE_3 "textures/sprite_x256_3.xpm"
 # define P_DOOR "textures/gate_x256.xpm"
-// # define M_PI 3.14159265358979323846
-// # define TEXTURE_SIZE 128
 # define SP_SIZE_DOWN 2
 # define EPSILON 1e-6
 # define ANIMATION_SPEED_MILISEC 500
