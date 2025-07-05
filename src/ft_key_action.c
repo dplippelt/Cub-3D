@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:54:18 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/05 15:47:56 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/05 15:50:35 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static void	ft_handle_minimap_toggle(t_mmap *mmap, t_keys *keys)
 		mmap->can_toggle = 1;
 }
 
-static void ft_handle_mouse_sens_adjustment(t_rot *rot, t_keys *keys)
+static void	ft_handle_mouse_sens_adjustment(t_rot *rot, t_keys *keys)
 {
 	if (rot->can_adjust && keys->plus)
 	{
