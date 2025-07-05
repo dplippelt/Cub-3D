@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/05 15:12:14 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/05 15:43:06 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,6 +192,7 @@ typedef struct s_rot
 	double	*plane_row;
 	double	*plane_col;
 	int		sens;
+	int		can_adjust;
 }			t_rot;
 
 typedef struct s_mouse
@@ -218,6 +219,8 @@ typedef struct s_keys
 	int	s;
 	int	d;
 	int	m;
+	int	minus;
+	int	plus;
 	int	left;
 	int	right;
 	int	esc;
