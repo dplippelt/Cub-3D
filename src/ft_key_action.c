@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:54:18 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/03 18:06:10 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/05 15:24:49 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,17 @@ void	ft_action_rotate(int key, t_cub3d *cub3d)
 		ft_vector_rotation(cub3d, -cub3d->rot_speed);
 }
 
+static void	ft_handle_minimap_toggle(t_mmap *mmap, t_keys *keys)
+{
+	if (mmap->can_toggle && keys->m)
+	{
+		mmap->visible = !mmap->visible;
+		mmap->can_toggle = 0;
+	}
+	if (!keys->m)
+		mmap->can_toggle = 1;
+}
+
 void	ft_key_action(t_cub3d *cub3d, t_keys *keys)
 {
 	if (keys->esc)
@@ -76,4 +87,5 @@ void	ft_key_action(t_cub3d *cub3d, t_keys *keys)
 		ft_action_move(XK_s, cub3d);
 	if (keys->d)
 		ft_action_move(XK_d, cub3d);
+	ft_handle_minimap_toggle(&cub3d->mmap, &cub3d->keys);
 }

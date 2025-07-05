@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 17:24:45 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/03 17:25:47 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/05 15:26:43 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int	ft_key_press(int key, void *param)
 		keys->s = 1;
 	if (key == XK_d)
 		keys->d = 1;
+	if (key == XK_m)
+		keys->m = 1;
 	return (1);
 }
 
@@ -53,5 +55,7 @@ int	ft_key_release(int key, void *param)
 		keys->s = 0;
 	if (key == XK_d)
 		keys->d = 0;
+	if (key == XK_m)
+		keys->m = 0;
 	return (1);
 }

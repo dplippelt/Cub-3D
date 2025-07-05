@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 15:26:44 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/03 18:20:14 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/05 15:15:57 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	ft_rendering_loop(void *param)
 	ft_key_action(cub3d, &cub3d->keys);
 	ft_update_field_of_view(cub3d);
 	ft_put_img_to_win(cub3d->fov.img, cub3d);
-	ft_draw_minimap(&cub3d->mmap);
+	if (cub3d->mmap.visible)
+		ft_draw_minimap(&cub3d->mmap);
 	return (1);
 }

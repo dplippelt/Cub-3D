@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 10:48:04 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/03 17:52:12 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/05 15:12:25 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,7 @@ int	ft_init_minimap(t_cub3d *cub)
 	// mmap->cols.squirrel = ft_bgra(63, 133, 205, 0);	//Light Brown
 	// mmap->cols.squirrel = ft_bgra(33, 67, 101, 0);	//Dark Brown
 	// mmap->cols.squirrel = ft_bgra(0, 215, 255, 0);	//Gold
+	mmap->can_toggle = 1;
+	mmap->visible = 1;
 	return (1);
 }
