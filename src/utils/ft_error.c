@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:53:28 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/02 14:39:19 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/08 11:34:28 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,19 @@ static void	ft_validation_error(int e)
 	if (e == ENUMPARAM)
 		ft_putstr("Incorrect number of parameters\n", 2);
 	else if (e == EFILEFORMAT)
-		ft_putstr("Map file has incorrect file format\n", 2);
+		ft_putstr("Configuration file has incorrect file format\n", 2);
 	else if (e == EMALLOC)
 		ft_putstr("Failed to allocate memory\n", 2);
 	else if (e == ECOLORFORMAT)
 		ft_putstr("Invalid RGB format\n", 2);
 	else if (e == EUNEXPECTED)
-		ft_putstr("Map file contains unexpected symbol\n", 2);
-	else if (e == EMISSINGINFO)
-		ft_putstr("File is missing necessary information\n", 2);
+		ft_putstr("Configuration file contains unexpected symbol\n", 2);
+	else if (e == EMISSINGTEX)
+		ft_putstr("Configuration file is missing a required texture path\n", 2);
+	else if (e == EMISSINGCOL)
+		ft_putstr("Configuration file is missing required color info\n", 2);
 	else if (e == EDUPENTRIES)
-		ft_putstr("File contains duplicate entries\n", 2);
+		ft_putstr("Configuration file contains duplicate entries\n", 2);
 	else if (e == EWALL)
 		ft_putstr("The map is not fully surrounded by a wall\n", 2);
 	else if (e == ENUMPLAYERS)
