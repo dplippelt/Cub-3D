@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 12:37:48 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/08 13:03:54 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/08 13:24:55 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,12 @@ static int	ft_init_map_val(t_map_val *map_val, t_map map)
 	return (1);
 }
 
+static int	ft_cleanup_and_error(t_map_val *map_val, int e)
+{
+	ft_cleanup_str_array(map_val->map);
+	return (ft_error(e));
+}
+
 int	ft_validate_map(t_map *map)
 {
 	t_map_val	map_val;
@@ -29,11 +35,11 @@ int	ft_validate_map(t_map *map)
 	if (!ft_init_map_val(&map_val, *map))
 		return (0);
 	if (!ft_validate_wall(&map_val))
-		return (ft_error(EWALL));
+		return (ft_cleanup_and_error(&map_val, EWALL));
 	if (!ft_validate_player(map))
-		return (ft_error(ENUMPLAYERS));
+		return (ft_cleanup_and_error(&map_val, ENUMPLAYERS));
 	if (!ft_validate_playable_area(&map_val))
-		return (ft_error(EMAP));
+		return (ft_cleanup_and_error(&map_val, EMAP));
 	ft_cleanup_str_array(map_val.map);
 	return (1);
 }
