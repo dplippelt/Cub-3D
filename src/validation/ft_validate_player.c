@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 10:35:27 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/26 11:05:01 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/08 12:55:12 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static size_t	ft_count_players(char **map)
 int	ft_validate_player(t_map *map)
 {
 	if (ft_count_players(map->map) != 1)
-		return (ft_error(ENUMPLAYERS));
+		return (0);
 	return (1);
 }
 
