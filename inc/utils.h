@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 14:02:38 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/03 18:42:35 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/08 15:29:51 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,5 @@ int			ft_open(const char *path, int *fd);
 u_int8_t	ft_colortoi(char **s, int *overflow);
 int			ft_copy_str_array(char ***dst, char **src);
 int			ft_bgra(int b, int g, int r, int a);
-long		ft_getcurrenttime(void);
 
 #endif
