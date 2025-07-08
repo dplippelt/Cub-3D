@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:54:18 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/05 15:50:35 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/08 10:42:56 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,18 +72,18 @@ static void	ft_handle_mouse_sens_adjustment(t_rot *rot, t_keys *keys)
 {
 	if (rot->can_adjust && keys->plus)
 	{
-		if (rot->sens - 10 > 1)
-			rot->sens -= 10;
+		if (rot->sens - MOUSE_SENS_STEPS > MOUSE_SENS_MIN)
+			rot->sens -= MOUSE_SENS_STEPS;
 		else
-			rot->sens = 1;
+			rot->sens = MOUSE_SENS_MIN;
 		rot->can_adjust = 0;
 	}
 	if (rot->can_adjust && keys->minus)
 	{
-		if (rot->sens + 10 < 1000)
-			rot->sens += 10;
+		if (rot->sens + MOUSE_SENS_STEPS < MOUSE_SENS_MAX)
+			rot->sens += MOUSE_SENS_STEPS;
 		else
-			rot->sens = 1000;
+			rot->sens = MOUSE_SENS_MAX;
 		rot->can_adjust = 0;
 	}
 	if (!keys->minus && !keys->plus)

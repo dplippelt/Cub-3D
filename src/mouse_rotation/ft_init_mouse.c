@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 17:37:03 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/05 15:43:29 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/08 10:41:02 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_init_mouse(t_cub3d *cub)
 	mouse->skip = 0;
 	mouse->focus = 1;
 	mouse->ncall = 0;
-	mouse->rot.sens = MOUSE_SENSITIVITY_DEFAULT;
+	mouse->rot.sens = MOUSE_SENS;
 	mouse->rot.can_adjust = 1;
 	mouse->rot.dir_col = &cub->dir_col;
 	mouse->rot.dir_row = &cub->dir_row;

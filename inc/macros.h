@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 15:08:02 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/03 19:00:53 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/08 10:41:50 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@
 # define DIST_PER_SECOND 5.0
 # define RADIAN_PER_SECOND 2.0
 # define WIN_X_DEFAULT 1920
-# define MOUSE_SENSITIVITY_DEFAULT 500
+# define MOUSE_SENS 1000
+# define MOUSE_SENS_MAX 2000
+# define MOUSE_SENS_MIN 1
+# define MOUSE_SENS_STEPS 100
 # define NTEX 4
 # define NCOL 2
 # define MM_MAX_SIZE 300
