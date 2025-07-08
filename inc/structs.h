@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/08 11:02:50 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/08 13:03:20 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ typedef struct s_pos
 typedef struct s_map_val
 {
 	char	**map;
-	t_pos	pos;
-	t_pos	player;
 	int		valid;
 	int		height;
 	int		width;
