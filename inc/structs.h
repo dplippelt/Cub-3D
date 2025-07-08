@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/08 13:03:20 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/08 14:34:12 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,6 +158,8 @@ typedef struct s_mm_cols
 	int	floor;
 	int	player;
 	int	squirrel;
+	int	door_closed;
+	int	door_open;
 }		t_mm_cols;
 
 typedef struct s_mmap

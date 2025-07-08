@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 10:33:50 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/03 17:36:13 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/08 14:54:23 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ static void	ft_fill_line(int y, t_mmap *mmap)
 	while (i < mmap->img.sl)
 	{
 		cell_id = ft_get_cell_id(y, i, mmap);
-		if (cell_id == WALL)
+		if (cell_id == WALL_CELL)
 			color = mmap->cols.wall;
-		else if (cell_id == BACKGROUND)
+		else if (cell_id == BACKGROUND_CELL)
 			color = mmap->cols.background;
-		else if (cell_id == FLOOR || cell_id == PLAYER || cell_id == SQUIRREL)
+		else
 			color = mmap->cols.floor;
 		pxl_start = (int *)(curr_img_data + i);
 		*pxl_start = color;
