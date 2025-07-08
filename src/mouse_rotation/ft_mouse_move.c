@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 17:06:40 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/03 16:44:09 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/08 11:03:14 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void	ft_recenter_mouse(int x, int y, t_mouse *mouse)
 	}
 }
 
-static void	ft_vector_rotation(t_rot *rot, double diff, int *ncall)
+static void	ft_vector_rotation(t_rot *rot, double diff)
 {
 	double	x;
 	double	tmp;
@@ -41,7 +41,6 @@ static void	ft_vector_rotation(t_rot *rot, double diff, int *ncall)
 	tmp = *rot->plane_row;
 	*rot->plane_row = *rot->plane_row * cos(x) - *rot->plane_col * sin(x);
 	*rot->plane_col = tmp * sin(x) + *rot->plane_col * cos(x);
-	(*ncall)++;
 }
 
 int	ft_mouse_move(int x, int y, void *param)
@@ -63,9 +62,8 @@ int	ft_mouse_move(int x, int y, void *param)
 		diff = (double)(x - mouse->x_prev);
 	else if (x < mouse->x_prev)
 		diff = (double)((mouse->x_prev - x) * -1);
-	if (fabs(diff) < 100 && mouse->ncall == 0)
-		ft_vector_rotation(&mouse->rot, -diff, &mouse->ncall);
-	mouse->ncall = 0;
+	if (fabs(diff) < mouse->max_diff)
+		ft_vector_rotation(&mouse->rot, -diff);
 	ft_recenter_mouse(x, y, mouse);
 	mouse->x_prev = x;
 	return (1);
