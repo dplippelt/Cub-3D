@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:00:23 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/08 13:04:05 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/08 14:12:13 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,7 +135,6 @@ int	ft_validate_playable_area(t_map_val *map)
 	int	x;
 	int	y;
 
-	// map->valid = 1;
 	y = 0;
 	while (map->map[y])
 	{
@@ -148,6 +147,5 @@ int	ft_validate_playable_area(t_map_val *map)
 		}
 		y++;
 	}
-	debug_print_str_array(map->map);
 	return (map->valid);
 }
