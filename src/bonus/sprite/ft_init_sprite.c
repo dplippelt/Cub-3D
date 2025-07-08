@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 12:08:58 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/03 18:47:09 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/08 11:58:28 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,11 +78,13 @@ static void	ft_set_zero_arr(double *arr, int size)
 		arr[i++] = 0;
 }
 
+// segfault when there are no squirrels on the map is happening because
+// wall_dists is not being allocated in that case due to the early return
 int	ft_init_sprite(t_cub3d *cub3d)
 {
 	cub3d->num_sprite = ft_get_num_sprite(cub3d->map);
-	if (!cub3d->num_sprite)
-		return (1);
+	// if (!cub3d->num_sprite)
+	// 	return (1);
 	cub3d->sprite = malloc(sizeof(t_sprite) * (cub3d->num_sprite + 1));
 	cub3d->wall_dists = malloc(sizeof(double) * cub3d->win_x);
 	if (!cub3d->sprite || !cub3d->wall_dists)
