@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:56:56 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/03 18:15:21 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/08 11:24:29 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,26 +20,32 @@ enum e_errors
 	EFILEFORMAT = 2,
 	EMALLOC = 3,
 	EUNEXPECTED = 4,
-	EMISSINGINFO = 5,
-	EDUPENTRIES = 6,
-	EWALL = 7,
-	ENUMPLAYERS = 8,
-	EMLXINIT = 9,
-	EMLXWIN = 10,
-	EMLXLOADTEX = 11,
-	EMLXNEWIMG = 12,
-	EGETTIME = 13,
-	EMAP = 14,
+	EMISSINGTEX = 5,
+	EMISSINGCOL = 6,
+	EDUPENTRIES = 7,
+	EWALL = 8,
+	ENUMPLAYERS = 9,
+	EMLXINIT = 10,
+	EMLXWIN = 11,
+	EMLXLOADTEX = 12,
+	EMLXNEWIMG = 13,
+	EGETTIME = 14,
+	EMAP = 15,
 	ECOLORFORMAT = 999
 };
 
 enum e_elements
 {
-	NOELEMENT = 0,
+	NOELEMENT,
 	TEXNORTH,
 	TEXEAST,
 	TEXWEST,
 	TEXSOUTH,
+	TEXDOOR,
+	TEXSQUIRREL_ZERO,
+	TEXSQUIRREL_ONE,
+	TEXSQUIRREL_TWO,
+	TEXSQUIRREL_THREE,
 	COLFLOOR,
 	COLCEILING
 };

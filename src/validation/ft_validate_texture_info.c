@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 13:05:56 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/19 13:15:28 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/08 11:37:58 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,42 @@
 
 static int	ft_got_tex_info(t_tex *tex, int type)
 {
+	int	nfound;
+
+	nfound = 0;
 	while (tex)
 	{
 		if (tex->id == type)
-			return (1);
+			nfound++;
 		tex = tex->next;
 	}
-	return (0);
-}
-
-static size_t	ft_num_textures(t_tex *tex)
-{
-	size_t	n;
-
-	n = 0;
-	while (tex)
-	{
-		n++;
-		tex = tex->next;
-	}
-	return (n);
+	if (nfound > 1)
+		return (ft_error(EDUPENTRIES));
+	if (nfound == 0)
+		return (ft_error(EMISSINGTEX));
+	return (1);
 }
 
 static int	ft_got_all_necessary_tex_info(t_tex *tex)
 {
 	if (!ft_got_tex_info(tex, TEXNORTH))
-		return (ft_error(EMISSINGINFO));
+		return (0);
 	if (!ft_got_tex_info(tex, TEXEAST))
-		return (ft_error(EMISSINGINFO));
+		return (0);
 	if (!ft_got_tex_info(tex, TEXSOUTH))
-		return (ft_error(EMISSINGINFO));
+		return (0);
 	if (!ft_got_tex_info(tex, TEXWEST))
-		return (ft_error(EMISSINGINFO));
-	if (ft_num_textures(tex) > NTEX)
-		return (ft_error(EDUPENTRIES));
+		return (0);
+	if (!ft_got_tex_info(tex, TEXDOOR))
+		return (0);
+	if (!ft_got_tex_info(tex, TEXSQUIRREL_ZERO))
+		return (0);
+	if (!ft_got_tex_info(tex, TEXSQUIRREL_ONE))
+		return (0);
+	if (!ft_got_tex_info(tex, TEXSQUIRREL_TWO))
+		return (0);
+	if (!ft_got_tex_info(tex, TEXSQUIRREL_THREE))
+		return (0);
 	return (1);
 }
 

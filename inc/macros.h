@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 15:08:02 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/08 10:41:50 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/08 11:39:31 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@
 # define MOUSE_SENS_MAX 2000
 # define MOUSE_SENS_MIN 1
 # define MOUSE_SENS_STEPS 100
-# define NTEX 4
-# define NCOL 2
 # define MM_MAX_SIZE 300
 # define MM_POS 40
 # define CELL_SIZE_DEFAULT 20

@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 13:20:19 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/19 13:24:41 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/08 11:38:04 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,28 @@
 
 static int	ft_got_color_info(t_col *col, int type)
 {
+	int	nfound;
+
+	nfound = 0;
 	while (col)
 	{
 		if (col->id == type)
-			return (1);
+			nfound++;
 		col = col->next;
 	}
-	return (0);
-}
-
-static size_t	ft_num_colors(t_col *col)
-{
-	size_t	n;
-
-	n = 0;
-	while (col)
-	{
-		n++;
-		col = col->next;
-	}
-	return (n);
+	if (nfound > 1)
+		return (ft_error(EDUPENTRIES));
+	if (nfound == 0)
+		return (ft_error(EMISSINGCOL));
+	return (1);
 }
 
 static int	ft_got_all_necessary_color_info(t_col *col)
 {
 	if (!ft_got_color_info(col, COLFLOOR))
-		return (ft_error(EMISSINGINFO));
+		return (0);
 	if (!ft_got_color_info(col, COLCEILING))
-		return (ft_error(EMISSINGINFO));
-	if (ft_num_colors(col) > NCOL)
-		return (ft_error(EDUPENTRIES));
+		return (0);
 	return (1);
 }
 
