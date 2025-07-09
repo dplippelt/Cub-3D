@@ -6,7 +6,7 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 11:47:37 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/03 20:42:39 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/09 19:57:12 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,17 @@ void	ft_setup_hooks(void *win, t_cub3d *cub, t_mouse *mouse, t_keys *keys);
 void	ft_key_action(t_cub3d *cub3d, t_keys *keys);
 int		ft_key_press(int key, void *param);
 int		ft_key_release(int key, void *param);
+void	ft_move_actions(t_cub3d *cub3d, t_keys *keys);
+void	ft_rotate_actions(t_cub3d *cub3d, t_keys *keys);
 void	ft_ray_casting(t_rcast *rc, t_cub3d *cub3d, int x);
-t_imgs	ft_get_target_img(t_cub3d *cub3d, t_dda dda, t_ray ray);
-void	ft_destroy_all(t_cub3d *cub3d);
+int		ft_wall_hit(t_dda *dda, t_dist dist, t_ray ray, t_cub3d *cub3d);
+void	ft_set_wall_dist(t_cub3d *cub3d, double wall_dist, int win_x);
+void	ft_destroy_cub3d(t_cub3d *cub3d);
 void	ft_set_img_addr(t_imgs *imgs);
 void	ft_put_img_to_win(void *img, t_cub3d *cub3d);
 int		ft_rendering_loop(void *param);
 char	*ft_get_path(int i, t_tex *tex);
-// void	ft_setup_key_hook(t_win_list *win, int (*funct)(), void *param);
-void	ft_setup_loop_hook(void *mlx, int (*funct)(), void *param);
-void	ft_set_target_img(t_dda *dda, t_ray ray, char c);
+void	ft_get_target_img(t_dda *dda, t_ray ray);
 void	ft_draw_vertic_line(t_cub3d *cub3d, t_imgs img, int win_x, int tex_x);
 void	ft_vector_rotation(t_cub3d *cub3d, double x);
 double	ft_get_time_diff_sec(struct timeval curr, struct timeval prev);
@@ -50,9 +51,8 @@ int		ft_sprite_animation(t_cub3d *cub3d);
 void	ft_destroy_sprite(t_cub3d *cub3d);
 int		ft_init_doors(t_cub3d *cub3d, t_map map);
 void	ft_destroy_doors(t_cub3d *cub3d);
-void	ft_action_door(t_cub3d *cub3d);
-void	ft_door_status_check(t_cub3d *cub3d);
-void	ft_print_doors(t_door **doors, size_t width);
-// void	ft_print_sprite(t_sprite *sprite, size_t num);
+int		ft_door_hit(t_dda *dda, t_dist dist, t_ray ray, t_cub3d *cub3d);
+void	ft_door_action(t_cub3d *cub3d, t_keys *keys);
+void	ft_door_positioning(t_cub3d *cub3d);
 
 #endif

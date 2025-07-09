@@ -6,7 +6,7 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 14:59:30 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/03 20:36:38 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/09 18:43:01 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,22 +23,20 @@ static void	ft_set_zero(t_door *door, size_t size)
 
 static int	ft_set_doors_info(t_door *door, t_map map, size_t i, size_t j)
 {
-	if (map.map[i - 1][j] == '1' && map.map[i + 1][j] == '1')
-		door->dir = ROW_SIDE;
-	else if (map.map[i][j - 1] == '1' && map.map[i][j + 1] == '1')
-		door->dir = COL_SIDE;
-	else
-		return (0);
-	if (door->dir == ROW_SIDE)
+	if (map.map[i - 1][j] == C_WALL && map.map[i + 1][j] == C_WALL)
 	{
+		door->dir = ROW_SIDE;
 		door->row = i;
 		door->col = j + 0.5;
 	}
-	else
+	else if (map.map[i][j - 1] == C_WALL && map.map[i][j + 1] == C_WALL)
 	{
+		door->dir = COL_SIDE;
 		door->row = i + 0.5;
 		door->col = j;
 	}
+	else
+		return (0);
 	door->status = CLOSE;
 	door->texid = DOOR;
 	door->open_ratio = 0;
@@ -56,7 +54,7 @@ static int	ft_loading_doors(t_door **doors, t_map map)
 		j = 0;
 		while (map.map[i][j])
 		{
-			if (map.map[i][j] == 'D')
+			if (map.map[i][j] == C_DOOR)
 			{
 				if (!ft_set_doors_info(&doors[i][j], map, i, j))
 					return (0);
@@ -75,7 +73,7 @@ int	ft_init_doors(t_cub3d *cub3d, t_map map)
 
 	cub3d->doors = (t_door **)malloc(sizeof(t_door *) * (map.height + 1));
 	if (!cub3d->doors)
-		return (0);
+		return (ft_error(EMALLOC));
 	i = 0;
 	flag = 0;
 	while (i < map.height)
@@ -89,8 +87,9 @@ int	ft_init_doors(t_cub3d *cub3d, t_map map)
 	}
 	cub3d->doors[map.height] = NULL;
 	if (flag)
-		return (0);
+		return (ft_error(EMALLOC));
 	if (!ft_loading_doors(cub3d->doors, map))
-		return (0);
+		return (ft_error(EDOOR));
+	cub3d->door_act = 1;
 	return (1);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   enums.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:56:56 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/08 14:33:06 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/09 18:30:15 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ enum e_errors
 	EMLXNEWIMG = 13,
 	EGETTIME = 14,
 	EMAP = 15,
+	EDOOR = 16,
 	ECOLORFORMAT = 999
 };
 
@@ -84,11 +85,11 @@ enum e_dir
 	RIGHT
 };
 
-enum e_side
+typedef enum e_side
 {
 	ROW_SIDE,
 	COL_SIDE,
-};
+}	t_side;
 
 typedef enum e_img_field
 {
@@ -104,12 +105,12 @@ typedef enum e_img_field
 	MAX_IMAGE,
 }	t_img_field;
 
-enum e_status
+typedef enum e_status
 {
 	CLOSE,
 	CLOSING,
 	OPENING,
 	OPEN,
-};
+}	t_status;
 
 #endif

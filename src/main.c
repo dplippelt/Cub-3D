@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:50:19 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/02 13:32:20 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/09 15:08:51 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ int	main(int ac, char *av[])
 	ft_init_cub3d(&cub3d, &f.map);
 	if (!ft_setup_cub3d(&cub3d, f))
 	{
-		ft_destroy_all(&cub3d);
+		ft_destroy_cub3d(&cub3d);
 		ft_cleanup(&f);
 		return (EXIT_FAILURE);
 	}
 	ft_start_cub3d(&cub3d);
-	ft_destroy_all(&cub3d);
+	ft_destroy_cub3d(&cub3d);
 	ft_cleanup(&f);
 	return (EXIT_SUCCESS);
 }

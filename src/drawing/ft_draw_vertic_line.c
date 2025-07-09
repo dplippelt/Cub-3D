@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_draw_vertic_line.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 13:03:10 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/05 15:00:45 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/09 19:13:18 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ static void	ft_calc_win_pos(t_draw *ln, double wall_dist, int win_y)
 {
 	ln->len_win = win_y;
 	if (wall_dist < EPSILON)
-		// ln->len_tex = INFINITY;
 		ln->len_tex = INT32_MAX;
 	else
 		ln->len_tex = (int)(ln->len_win / wall_dist);
@@ -54,7 +53,10 @@ static void	ft_set_floor_pixel(char *dest, t_draw ln, t_cub3d *cub3d)
 
 static void	ft_set_color(char *dest, char *src)
 {
-	*(unsigned int *)(dest) = *((unsigned int *)src);
+	unsigned int	color;
+
+	color = *((unsigned int *)src);
+	*(unsigned int *)(dest) = color;
 }
 
 void	ft_draw_vertic_line(t_cub3d *cub3d, t_imgs img, int win_x, int tex_x)
@@ -65,7 +67,7 @@ void	ft_draw_vertic_line(t_cub3d *cub3d, t_imgs img, int win_x, int tex_x)
 	char			*src;
 	int				i;
 
-	ft_calc_win_pos(&ln, cub3d->wall_dists[win_x], cub3d->win_y);
+	ft_calc_win_pos(&ln, cub3d->wall_dist, cub3d->win_y);
 	dest = cub3d->fov.data + win_x * 4;
 	ft_set_ceiling_pixel(dest, ln, cub3d);
 	i = ln.begin;

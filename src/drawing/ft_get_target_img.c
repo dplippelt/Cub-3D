@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mouse.c                                         :+:      :+:    :+:   */
+/*   ft_set_target_img.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/26 18:25:30 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/06/30 13:16:38 by tmitsuya         ###   ########.fr       */
+/*   Created: 2025/06/19 18:05:09 by tmitsuya          #+#    #+#             */
+/*   Updated: 2025/07/09 18:58:25 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-int	ft_mouse(int move_x, t_cub3d *cub3d)
+void	ft_get_target_img(t_dda *dda, t_ray ray)
 {
-	static int	start_x;
-	// double		rot_unit;
-	// double		rot;
-
-	printf("mouse x:%d\n", move_x);
-	// if (!start_x)
-	if (move_x != start_x)
+	if (dda->side == ROW_SIDE)
 	{
-		// rot_unit = (double)66 / (double)360 * 2 * M_PI / (double)cub3d->win_x;
-		// rot = ((double)move_x - (double)start_x) * rot_unit;
-		printf("radian: %d\n", move_x);
-		// ft_vector_rotation(cub3d, rot);
+		if (dda->hit_type == C_WALL)
+		{
+			if (ray.dir_row > 0)
+				dda->img = EA;
+			else
+				dda->img = WE;
+		}
+		else if (dda->hit_type == C_DOOR)
+			dda->img = DOOR;
 	}
-	start_x = move_x;
-	(void)cub3d;
-	return (move_x);
+	else
+	{
+		if (dda->hit_type == C_WALL)
+		{
+			if (ray.dir_col > 0)
+				dda->img = SO;
+			else
+				dda->img = NO;
+		}
+		else if (dda->hit_type == C_DOOR)
+			dda->img = DOOR;
+	}
 }

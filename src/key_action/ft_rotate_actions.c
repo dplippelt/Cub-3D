@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_destroy_sprite.c                                :+:      :+:    :+:   */
+/*   ft_rotate_actions.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/02 18:05:14 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/09 19:42:06 by tmitsuya         ###   ########.fr       */
+/*   Created: 2025/07/09 19:39:10 by tmitsuya          #+#    #+#             */
+/*   Updated: 2025/07/09 19:39:50 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-void	ft_destroy_sprite(t_cub3d *cub3d)
+static void	ft_action_rotate(int key, t_cub3d *cub3d)
 {
-	if (cub3d->sprite)
-		free(cub3d->sprite);
-	if (cub3d->wall_dists)
-		free(cub3d->wall_dists);
+	if (key == XK_Left)
+		ft_vector_rotation(cub3d, cub3d->rot_speed);
+	else
+		ft_vector_rotation(cub3d, -cub3d->rot_speed);
+}
+
+void	ft_rotate_actions(t_cub3d *cub3d, t_keys *keys)
+{
+	if (keys->left)
+		ft_action_rotate(XK_Left, cub3d);
+	if (keys->right)
+		ft_action_rotate(XK_Right, cub3d);	
 }

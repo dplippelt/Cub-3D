@@ -6,7 +6,7 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 12:08:58 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/09 13:53:38 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/09 19:19:11 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static size_t	ft_get_num_sprite(char **map)
 		j = 0;
 		while (map[i][j])
 		{
-			if (map[i][j] == 'C')
+			if (map[i][j] == C_SPRITE)
 				num++;
 			j++;
 		}
@@ -61,7 +61,7 @@ static void	ft_get_sprite_info(t_sprite *sprite, char **map)
 		j = 0;
 		while (map[i][j])
 		{
-			if (map[i][j] == 'C')
+			if (map[i][j] == C_SPRITE)
 				ft_set_sprite_info(sprite++, i, j);
 			j++;
 		}
@@ -69,7 +69,7 @@ static void	ft_get_sprite_info(t_sprite *sprite, char **map)
 	}
 }
 
-static void	ft_set_zero_arr(double *arr, int size)
+static void	ft_set_zeros(double *arr, int size)
 {
 	int	i;
 
@@ -81,6 +81,8 @@ static void	ft_set_zero_arr(double *arr, int size)
 int	ft_init_sprite(t_cub3d *cub3d)
 {
 	cub3d->num_sprite = ft_get_num_sprite(cub3d->map);
+	if (!cub3d->num_sprite)
+		return (1);
 	cub3d->sprite = malloc(sizeof(t_sprite) * (cub3d->num_sprite + 1));
 	cub3d->wall_dists = malloc(sizeof(double) * cub3d->win_x);
 	if (!cub3d->sprite || !cub3d->wall_dists)
@@ -90,6 +92,6 @@ int	ft_init_sprite(t_cub3d *cub3d)
 		return (ft_error(EMALLOC));
 	}
 	ft_get_sprite_info(cub3d->sprite, cub3d->map);
-	ft_set_zero_arr(cub3d->wall_dists, cub3d->win_x);
+	ft_set_zeros(cub3d->wall_dists, cub3d->win_x);
 	return (1);
 }

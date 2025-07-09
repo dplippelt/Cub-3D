@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:53:28 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/08 13:27:35 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/09 17:57:15 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ static void	ft_validation_error(int e)
 		ft_putstr("Incorrect number of players found\n", 2);
 	else if (e == EMAP)
 		ft_putstr("Map contains space characters in playable area\n", 2);
+	else if (e == EDOOR)
+		ft_putstr("Door shoud be in between walls\n", 2);
 }
 
 static void	ft_mlx_error(int e)

@@ -6,18 +6,18 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 20:06:51 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/03 20:42:31 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/09 18:15:51 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rendering.h"
 
-void	ft_door_action(t_door *door, t_cub3d *cub3d)
+static void	ft_change_open_ratio(t_door *door, t_cub3d *cub3d)
 {
 	if (door->status == OPENING)
 	{
 		door->open_ratio += cub3d->frame_time;
-		if (door->open_ratio - 1 < EPSILON)
+		if (door->open_ratio - 1 > EPSILON)
 		{
 			door->open_ratio = 1;
 			door->status = OPEN;
@@ -34,7 +34,7 @@ void	ft_door_action(t_door *door, t_cub3d *cub3d)
 	}
 }
 
-void	ft_door_status_check(t_cub3d *cub3d)
+void	ft_door_positioning(t_cub3d *cub3d)
 {
 	size_t	i;
 	size_t	j;
@@ -45,10 +45,10 @@ void	ft_door_status_check(t_cub3d *cub3d)
 		j = 0;
 		while (cub3d->map[i][j])
 		{
-			if (cub3d->map[i][j] == 'D')
-				ft_door_action(&cub3d->doors[i][j], cub3d);
+			if (cub3d->map[i][j] == C_DOOR)
+				ft_change_open_ratio(&cub3d->doors[i][j], cub3d);
 			j++;
 		}
 		i++;
 	}
-};
+}

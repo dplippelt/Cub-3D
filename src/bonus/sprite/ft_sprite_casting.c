@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sprite_casting.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 19:14:42 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/05 15:00:09 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/09 19:43:36 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,6 @@ static void	ft_calc_size_on_win(t_sprite *s, int win_y)
 	}
 	else
 	{
-		// s->hight = INFINITY;
-		// s->width = INFINITY;
 		s->hight = INT32_MAX;
 		s->width = INT32_MAX;
 	}
@@ -79,5 +77,4 @@ void	ft_sprite_casting(t_cub3d *cub3d, t_sprite *sprite)
 			ft_draw_sprite(sprite[i], cub3d);
 		i++;
 	}
-	// ft_print_sprite(sprite, cub3d->num_sprite);
 }

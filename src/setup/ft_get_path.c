@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_get_path.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 13:55:58 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/03 18:17:33 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/09 20:02:38 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,24 +22,18 @@ static int	ft_field_to_texid(int i)
 		return (TEXEAST);
 	else if (i == EA)
 		return (TEXEAST);
+	else if (i == SPRITE_0)
+		return (TEXSQUIRREL_ZERO);
+	else if (i == SPRITE_1)
+		return (TEXSQUIRREL_ONE);
+	else if (i == SPRITE_2)
+		return (TEXSQUIRREL_TWO);
+	else if (i == SPRITE_3)
+		return (TEXSQUIRREL_THREE);
+	else if (i == DOOR)
+		return (TEXDOOR);
 	else
 		return (NOELEMENT);
-}
-
-static char	*ft_field_to_texture(int i)
-{
-	if (i == SPRITE_0)
-		return (P_SPRITE_0);
-	else if (i == SPRITE_1)
-		return (P_SPRITE_1);
-	else if (i == SPRITE_2)
-		return (P_SPRITE_2);
-	else if (i == SPRITE_3)
-		return (P_SPRITE_3);
-	else if (i == DOOR)
-		return (P_DOOR);
-	else
-		return (NULL);
 }
 
 char	*ft_get_path(int i, t_tex *tex)
@@ -48,7 +42,7 @@ char	*ft_get_path(int i, t_tex *tex)
 
 	tex_id = ft_field_to_texid(i);
 	if (tex_id == NOELEMENT)
-		return (ft_field_to_texture(i));
+		return (NULL);
 	while (tex)
 	{
 		if (tex->id == tex_id)

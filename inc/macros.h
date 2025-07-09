@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   macros.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 15:08:02 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/08 11:39:31 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/09 17:53:41 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # define FORMAT ".cub"
 # define TITLE "cub3D"
+# define C_WALL '1'
+# define C_SPRITE 'C'
+# define C_DOOR 'D'
 # define DIST_PER_SECOND 5.0
 # define RADIAN_PER_SECOND 2.0
 # define WIN_X_DEFAULT 1920

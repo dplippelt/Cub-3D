@@ -6,7 +6,7 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/09 13:47:16 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/09 18:56:10 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,8 +98,9 @@ typedef struct s_dda
 	int			step_col;
 	int			map_row;
 	int			map_col;
-	double		hit;
-	double		side;
+	char		hit_type;
+	int			side;
+	double		hit_x;
 	t_img_field img;
 }				t_dda;
 
@@ -136,13 +137,13 @@ typedef struct s_sprite
 
 typedef	struct	s_door
 {
-	enum e_side		dir;
-	double			row;
-	double			col;
-	enum e_status	status;
-	double			open_ratio;
-	int				texid;
-}					t_door;
+	t_side		dir;
+	double		row;
+	double		col;
+	t_status	status;
+	double		open_ratio;
+	int			texid;
+}				t_door;
 
 typedef struct s_line
 {
@@ -242,6 +243,7 @@ typedef struct s_cub3d
 	double			dir_col;
 	double			plane_row;
 	double			plane_col;
+	double			wall_dist;
 	struct timeval	time;
 	struct timeval	prev_time;
 	double			frame_time;
@@ -254,8 +256,7 @@ typedef struct s_cub3d
 	double			*wall_dists;
 	struct timeval	anim_time;
 	t_door			**doors;
-	size_t			height;
-	size_t			width;
+	int				door_act;
 	t_mmap			mmap;
 	t_map			*map_data;
 	t_mouse			mouse;

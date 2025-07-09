@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_destroy_sprite.c                                :+:      :+:    :+:   */
+/*   ft_set_wall_dist.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/02 18:05:14 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/09 19:42:06 by tmitsuya         ###   ########.fr       */
+/*   Created: 2025/07/09 19:25:30 by tmitsuya          #+#    #+#             */
+/*   Updated: 2025/07/09 19:26:47 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-void	ft_destroy_sprite(t_cub3d *cub3d)
+void	ft_set_wall_dist(t_cub3d *cub3d, double wall_dist, int win_x)
 {
-	if (cub3d->sprite)
-		free(cub3d->sprite);
+	cub3d->wall_dist = wall_dist;
 	if (cub3d->wall_dists)
-		free(cub3d->wall_dists);
+		cub3d->wall_dists[win_x] = wall_dist;
 }
