@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init_doors.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 14:59:30 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/03 18:18:32 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/03 20:36:38 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ static int	ft_set_doors_info(t_door *door, t_map map, size_t i, size_t j)
 		door->col = j;
 	}
 	door->status = CLOSE;
-	door->time = 0;
 	door->texid = DOOR;
+	door->open_ratio = 0;
 	return (1);
 }
 

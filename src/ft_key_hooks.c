@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_key_hooks.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 17:24:45 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/03 17:25:47 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/03 20:02:33 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,20 @@ int	ft_key_press(int key, void *param)
 	keys = (t_keys *)param;
 	if (key == XK_Escape)
 		keys->esc = 1;
-	if (key == XK_Left)
+	else if (key == XK_Left)
 		keys->left = 1;
-	if (key == XK_Right)
+	else if (key == XK_Right)
 		keys->right = 1;
-	if (key == XK_w)
+	else if (key == XK_w)
 		keys->w = 1;
-	if (key == XK_a)
+	else if (key == XK_a)
 		keys->a = 1;
-	if (key == XK_s)
+	else if (key == XK_s)
 		keys->s = 1;
-	if (key == XK_d)
+	else if (key == XK_d)
 		keys->d = 1;
+	else if (key == XK_space)
+		keys->space = 1;
 	return (1);
 }
 
@@ -41,17 +43,19 @@ int	ft_key_release(int key, void *param)
 	keys = (t_keys *)param;
 	if (key == XK_Escape)
 		keys->esc = 0;
-	if (key == XK_Left)
+	else if (key == XK_Left)
 		keys->left = 0;
-	if (key == XK_Right)
+	else if (key == XK_Right)
 		keys->right = 0;
-	if (key == XK_w)
+	else if (key == XK_w)
 		keys->w = 0;
-	if (key == XK_a)
+	else if (key == XK_a)
 		keys->a = 0;
-	if (key == XK_s)
+	else if (key == XK_s)
 		keys->s = 0;
-	if (key == XK_d)
+	else if (key == XK_d)
 		keys->d = 0;
+	else if (key == XK_space)
+		keys->space = 0;
 	return (1);
 }

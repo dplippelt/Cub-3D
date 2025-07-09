@@ -6,7 +6,7 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 11:16:42 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/03 17:53:37 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/03 20:41:18 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,14 +71,14 @@ int	ft_is_door(t_dda *dda, t_dist dist, t_ray ray, t_cub3d *cub3d)
 	{
 		door_dist = dist.side_row - (dist.delta_row / 2);
 		intsec = cub3d->pos_col + door_dist * ray.dir_col;
-		if (intsec - door.col > EPSILON && ((int)door.col + 1) - intsec > EPSILON)
+		if (intsec - (door.col + door.open_ratio) > EPSILON && ((int)door.col + 1) - intsec > EPSILON)
 			return (1);
 	}
 	else
 	{
 		door_dist = dist.side_col - (dist.delta_col / 2);
 		intsec = cub3d->pos_row + door_dist * ray.dir_row;
-		if (intsec - door.row > EPSILON && ((int)door.row + 1) - intsec > EPSILON)
+		if (intsec - (door.row + door.open_ratio) > EPSILON && ((int)door.row + 1) - intsec > EPSILON)
 			return (1);
 	}
 	return (0);	
@@ -126,8 +126,7 @@ static void	ft_digi_diff_analyze(t_dda *dda, t_dist dist, t_ray ray, t_cub3d *cu
 		if (ft_is_door(dda, dist, ray, cub3d))
 			dda->hit = 1;
 	}
-	ft_get_dist(dda, dist, cub3d);
-	ft_set_target_img(dda, ray, cub3d->map[dda->map_row][dda->map_col]);
+	ft_get_dist(dda, dist, cub3d);;
 }
 
 void	ft_ray_casting(t_rcast *rc, t_cub3d *cub3d, int win_x)
@@ -136,5 +135,6 @@ void	ft_ray_casting(t_rcast *rc, t_cub3d *cub3d, int win_x)
 	ft_calc_dist_for_dda(&rc->dist, rc->ray, cub3d);
 	ft_set_step_for_dda(&rc->dda, rc->ray);
 	ft_digi_diff_analyze(&rc->dda, rc->dist, rc->ray, cub3d);
+	ft_set_target_img(&rc->dda, rc->ray, cub3d->map[rc->dda.map_row][rc->dda.map_col]);
 	cub3d->wall_dists[win_x] = rc->dda.wall_dist;
 }

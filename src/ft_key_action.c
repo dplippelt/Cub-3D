@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_key_action.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:54:18 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/03 18:06:10 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/03 19:48:33 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	ft_valid_move(t_cub3d *cub3d, double add_row, double add_col)
 	next_pos_row = cub3d->pos_row + add_row;
 	next_pos_col = cub3d->pos_col + add_col;
 	if (cub3d->map[next_pos_row][next_pos_col] == '1')
+		return ;
+	if (cub3d->map[next_pos_row][next_pos_col] == 'D')
 		return ;
 	cub3d->pos_row += add_row;
 	cub3d->pos_col += add_col;
@@ -76,4 +78,6 @@ void	ft_key_action(t_cub3d *cub3d, t_keys *keys)
 		ft_action_move(XK_s, cub3d);
 	if (keys->d)
 		ft_action_move(XK_d, cub3d);
+	if (keys->space)
+		ft_action_door(cub3d);
 }

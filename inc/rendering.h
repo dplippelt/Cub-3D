@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rendering.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 11:47:37 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/03 18:17:55 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/03 20:42:39 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ int		ft_sprite_animation(t_cub3d *cub3d);
 void	ft_destroy_sprite(t_cub3d *cub3d);
 int		ft_init_doors(t_cub3d *cub3d, t_map map);
 void	ft_destroy_doors(t_cub3d *cub3d);
+void	ft_action_door(t_cub3d *cub3d);
+void	ft_door_status_check(t_cub3d *cub3d);
 void	ft_print_doors(t_door **doors, size_t width);
 // void	ft_print_sprite(t_sprite *sprite, size_t num);
 

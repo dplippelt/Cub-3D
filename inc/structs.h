@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/03 18:47:21 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/03 20:36:22 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,7 +142,7 @@ typedef	struct	s_door
 	double			row;
 	double			col;
 	enum e_status	status;
-	double			time;
+	double			open_ratio;
 	int				texid;
 }					t_door;
 
@@ -218,6 +218,7 @@ typedef struct s_keys
 	int	left;
 	int	right;
 	int	esc;
+	int	space;
 }		t_keys;
 
 typedef struct s_cub3d
@@ -245,9 +246,10 @@ typedef struct s_cub3d
 	size_t			num_sprite;
 	t_sprite		*sprite;
 	double			*wall_dists;
-	long			prev_anim_time;
-	struct timeval	prev_anim_timevl;
+	struct timeval	anim_time;
 	t_door			**doors;
+	size_t			height;
+	size_t			width;
 	t_mmap			mmap;
 	t_map			*map_data;
 	t_mouse			mouse;

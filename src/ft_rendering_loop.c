@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rendering_loop.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 15:26:44 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/03 18:20:14 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/03 20:42:48 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ int	ft_rendering_loop(void *param)
 	cub3d = (t_cub3d *)param;
 	if (!ft_calc_frame_time(cub3d))
 		return (mlx_loop_end(cub3d->mlx), 0);
-	ft_sprite_animation(cub3d);
 	ft_key_action(cub3d, &cub3d->keys);
+	ft_sprite_animation(cub3d);
+	ft_door_status_check(cub3d);
 	ft_update_field_of_view(cub3d);
 	ft_put_img_to_win(cub3d->fov.img, cub3d);
 	ft_draw_minimap(&cub3d->mmap);
