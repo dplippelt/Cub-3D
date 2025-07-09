@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init_game_condition.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 16:02:23 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/03 19:32:43 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/09 15:28:58 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ static void	ft_set_player_dir(t_cub3d *cub3d, char c)
 		cub3d->dir_row = 1;
 	if (c == 'W')
 		cub3d->dir_col = -1;
-	cub3d->plane_row = 0.66 * cub3d->dir_col;
-	cub3d->plane_col = -0.66 * cub3d->dir_row;
+	cub3d->plane_row = cub3d->fov_factor * cub3d->dir_col;
+	cub3d->plane_col = -cub3d->fov_factor * cub3d->dir_row;
 }
 
 static void	ft_init_player(t_cub3d *cub3d, t_pos player, char **map)

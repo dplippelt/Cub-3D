@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/09 13:47:16 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/09 15:38:29 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -221,6 +221,10 @@ typedef struct s_keys
 	int	m;
 	int	minus;
 	int	plus;
+	int	zero;
+	int	mult;
+	int	div;
+	int	equal;
 	int	left;
 	int	right;
 	int	esc;
@@ -233,6 +237,8 @@ typedef struct s_cub3d
 	void			*win;
 	t_imgs			*imgs;
 	t_imgs			fov;
+	double			fov_factor;
+	int				can_adjust_fov;
 	int				win_x;
 	int				win_y;
 	char			**map;

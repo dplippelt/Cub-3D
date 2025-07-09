@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_key_hooks.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 17:24:45 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/09 13:48:05 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/09 15:33:17 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,14 @@ int	ft_key_press(int key, void *param)
 		keys->minus = 1;
 	if (key == XK_KP_Add)
 		keys->plus = 1;
+	if (key == XK_KP_Insert)
+		keys->zero = 1;
+	if (key == XK_KP_Multiply)
+		keys->mult = 1;
+	if (key == XK_KP_Divide)
+		keys->div = 1;
+	if (key == XK_KP_Equal)
+		keys->equal = 1;
 	return (1);
 }
 
@@ -69,5 +77,13 @@ int	ft_key_release(int key, void *param)
 		keys->minus = 0;
 	if (key == XK_KP_Add)
 		keys->plus = 0;
+	if (key == XK_KP_Insert)
+		keys->zero = 0;
+	if (key == XK_KP_Multiply)
+		keys->mult = 0;
+	if (key == XK_KP_Divide)
+		keys->div = 0;
+	if (key == XK_KP_Equal)
+		keys->equal = 0;
 	return (1);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ray_casting.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 11:16:42 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/03 20:41:18 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/09 15:15:53 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int	ft_is_door(t_dda *dda, t_dist dist, t_ray ray, t_cub3d *cub3d)
 		if (intsec - (door.row + door.open_ratio) > EPSILON && ((int)door.row + 1) - intsec > EPSILON)
 			return (1);
 	}
-	return (0);	
+	return (0);
 }
 
 void	ft_get_dist(t_dda *dda, t_dist dist, t_cub3d *cub3d)
@@ -98,7 +98,7 @@ void	ft_get_dist(t_dda *dda, t_dist dist, t_cub3d *cub3d)
 		if (cub3d->map[dda->map_row][dda->map_col] == '1')
 			dda->wall_dist = dist.side_col - dist.delta_col;
 		else
-			dda->wall_dist = dist.side_col - (dist.delta_col / 2);			
+			dda->wall_dist = dist.side_col - (dist.delta_col / 2);
 	}
 }
 
@@ -126,7 +126,7 @@ static void	ft_digi_diff_analyze(t_dda *dda, t_dist dist, t_ray ray, t_cub3d *cu
 		if (ft_is_door(dda, dist, ray, cub3d))
 			dda->hit = 1;
 	}
-	ft_get_dist(dda, dist, cub3d);;
+	ft_get_dist(dda, dist, cub3d);
 }
 
 void	ft_ray_casting(t_rcast *rc, t_cub3d *cub3d, int win_x)

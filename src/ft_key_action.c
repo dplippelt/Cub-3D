@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_key_action.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:54:18 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/09 13:47:35 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/09 15:47:43 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,8 +88,42 @@ static void	ft_handle_mouse_sens_adjustment(t_rot *rot, t_keys *keys)
 			rot->sens = MOUSE_SENS_MAX;
 		rot->can_adjust = 0;
 	}
-	if (!keys->minus && !keys->plus)
+	if (rot->can_adjust && keys->zero)
+	{
+		rot->sens = MOUSE_SENS;
+		rot->can_adjust = 0;
+	}
+	if (!keys->minus && !keys->plus && !keys->zero)
 		rot->can_adjust = 1;
+}
+
+static void	ft_handle_fov_adjustment(t_cub3d *cub3d, t_keys *keys)
+{
+	if (cub3d->can_adjust_fov && keys->mult)
+	{
+		if (cub3d->fov_factor + 0.1 > 1.66)
+			cub3d->fov_factor = 1.66;
+		else
+			cub3d->fov_factor += 0.1;
+		cub3d->can_adjust_fov = 0;
+	}
+	if (cub3d->can_adjust_fov && keys->div)
+	{
+		if (cub3d->fov_factor - 0.1 < 0.36)
+			cub3d->fov_factor = 0.36;
+		else
+			cub3d->fov_factor -= 0.1;
+		cub3d->can_adjust_fov = 0;
+	}
+	if (cub3d->can_adjust_fov && keys->equal)
+	{
+		cub3d->fov_factor = FOV_FACTOR;
+		cub3d->can_adjust_fov = 0;
+	}
+	cub3d->plane_row = cub3d->fov_factor * cub3d->dir_col;
+	cub3d->plane_col = -cub3d->fov_factor * cub3d->dir_row;
+	if (!keys->mult && !keys->div && !keys->equal)
+		cub3d->can_adjust_fov = 1;
 }
 
 void	ft_key_action(t_cub3d *cub3d, t_keys *keys)
@@ -115,4 +149,5 @@ void	ft_key_action(t_cub3d *cub3d, t_keys *keys)
 		ft_action_door(cub3d);
 	ft_handle_minimap_toggle(&cub3d->mmap, &cub3d->keys);
 	ft_handle_mouse_sens_adjustment(&cub3d->mouse.rot, &cub3d->keys);
+	ft_handle_fov_adjustment(cub3d, keys);
 }
