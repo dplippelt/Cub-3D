@@ -6,7 +6,7 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:54:18 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/03 19:48:33 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/09 13:47:35 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,39 @@ void	ft_action_rotate(int key, t_cub3d *cub3d)
 		ft_vector_rotation(cub3d, -cub3d->rot_speed);
 }
 
+static void	ft_handle_minimap_toggle(t_mmap *mmap, t_keys *keys)
+{
+	if (mmap->can_toggle && keys->m)
+	{
+		mmap->visible = !mmap->visible;
+		mmap->can_toggle = 0;
+	}
+	if (!keys->m)
+		mmap->can_toggle = 1;
+}
+
+static void	ft_handle_mouse_sens_adjustment(t_rot *rot, t_keys *keys)
+{
+	if (rot->can_adjust && keys->plus)
+	{
+		if (rot->sens - MOUSE_SENS_STEPS > MOUSE_SENS_MIN)
+			rot->sens -= MOUSE_SENS_STEPS;
+		else
+			rot->sens = MOUSE_SENS_MIN;
+		rot->can_adjust = 0;
+	}
+	if (rot->can_adjust && keys->minus)
+	{
+		if (rot->sens + MOUSE_SENS_STEPS < MOUSE_SENS_MAX)
+			rot->sens += MOUSE_SENS_STEPS;
+		else
+			rot->sens = MOUSE_SENS_MAX;
+		rot->can_adjust = 0;
+	}
+	if (!keys->minus && !keys->plus)
+		rot->can_adjust = 1;
+}
+
 void	ft_key_action(t_cub3d *cub3d, t_keys *keys)
 {
 	if (keys->esc)
@@ -80,4 +113,6 @@ void	ft_key_action(t_cub3d *cub3d, t_keys *keys)
 		ft_action_move(XK_d, cub3d);
 	if (keys->space)
 		ft_action_door(cub3d);
+	ft_handle_minimap_toggle(&cub3d->mmap, &cub3d->keys);
+	ft_handle_mouse_sens_adjustment(&cub3d->mouse.rot, &cub3d->keys);
 }

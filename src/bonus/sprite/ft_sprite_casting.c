@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sprite_casting.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 19:14:42 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/03 16:33:38 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/05 15:00:09 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,10 @@ static void	ft_calc_size_on_win(t_sprite *s, int win_y)
 	}
 	else
 	{
-		s->hight = INFINITY;
-		s->width = INFINITY;
+		// s->hight = INFINITY;
+		// s->width = INFINITY;
+		s->hight = INT32_MAX;
+		s->width = INT32_MAX;
 	}
 }
 

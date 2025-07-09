@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_draw_vertic_line.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 13:03:10 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/02 18:08:48 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/05 15:00:45 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ static void	ft_calc_win_pos(t_draw *ln, double wall_dist, int win_y)
 {
 	ln->len_win = win_y;
 	if (wall_dist < EPSILON)
-		ln->len_tex = INFINITY;
+		// ln->len_tex = INFINITY;
+		ln->len_tex = INT32_MAX;
 	else
 		ln->len_tex = (int)(ln->len_win / wall_dist);
 	ln->begin = win_y / 2 - ln->len_tex / 2;

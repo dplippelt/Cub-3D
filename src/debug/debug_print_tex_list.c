@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_getcurrenttime.c                                :+:      :+:    :+:   */
+/*   debug_print_tex_list.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/03 18:27:00 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/03 18:42:20 by dlippelt         ###   ########.fr       */
+/*   Created: 2025/07/08 11:18:35 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/07/08 11:19:58 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "debug.h"
 
-long	ft_getcurrenttime(void)
+void	debug_print_tex_list(t_tex *tex)
 {
-	struct timeval	time;
-	long 			curr_time;
-
-	curr_time = 0;
-	if (gettimeofday(&time, NULL) < 0)
-		return (-1);
-	curr_time = (time.tv_sec * 1000) + (time.tv_usec / 1000);
-	return (curr_time);
+	while (tex)
+	{
+		printf("texture path: %s\n", tex->tex_path);
+		tex = tex->next;
+	}
 }

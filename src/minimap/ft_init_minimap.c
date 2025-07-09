@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 10:48:04 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/03 17:52:12 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/08 14:43:17 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,9 +84,13 @@ int	ft_init_minimap(t_cub3d *cub)
 	mmap->cols.background = ft_bgra(64, 64, 64, 0);
 	mmap->cols.floor = ft_bgra(0, 0, 100, 0);
 	mmap->cols.player = ft_bgra(0, 100, 0, 0);
+	mmap->cols.door_closed = ft_bgra(0, 120, 150, 0);
+	mmap->cols.door_open = ft_bgra(0, 70, 100, 0);
 	mmap->cols.squirrel = ft_bgra(19, 69, 139, 0);	//Medium Brown
 	// mmap->cols.squirrel = ft_bgra(63, 133, 205, 0);	//Light Brown
 	// mmap->cols.squirrel = ft_bgra(33, 67, 101, 0);	//Dark Brown
 	// mmap->cols.squirrel = ft_bgra(0, 215, 255, 0);	//Gold
+	mmap->can_toggle = 1;
+	mmap->visible = 1;
 	return (1);
 }

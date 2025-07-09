@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 12:50:21 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/19 12:50:42 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/08 11:14:59 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,16 @@ static int	ft_is_element(char *s, int *el_id)
 		*el_id = TEXSOUTH;
 	else if (!ft_strncmp(s, "WE ", 3))
 		*el_id = TEXWEST;
+	else if (!ft_strncmp(s, "DO ", 3))
+		*el_id = TEXDOOR;
+	else if (!ft_strncmp(s, "SQ0 ", 3))
+		*el_id = TEXSQUIRREL_ZERO;
+	else if (!ft_strncmp(s, "SQ1 ", 3))
+		*el_id = TEXSQUIRREL_ONE;
+	else if (!ft_strncmp(s, "SQ2 ", 3))
+		*el_id = TEXSQUIRREL_TWO;
+	else if (!ft_strncmp(s, "SQ3 ", 3))
+		*el_id = TEXSQUIRREL_THREE;
 	else if (!ft_strncmp(s, "F ", 2))
 		*el_id = COLFLOOR;
 	else if (!ft_strncmp(s, "C ", 2))
