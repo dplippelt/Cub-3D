@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:54:18 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/09 15:47:43 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/09 17:58:36 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,22 @@ static void	ft_handle_minimap_toggle(t_mmap *mmap, t_keys *keys)
 		mmap->can_toggle = 1;
 }
 
-static void	ft_handle_mouse_sens_adjustment(t_rot *rot, t_keys *keys)
+static int	ft_update_sens_display_info(t_display_info *di, int sens)
+{
+	di->show_info = 1;
+	di->type = "Mouse sens: ";
+	di->start_show = ft_getcurrenttime();
+	if (!di->start_show)
+		return (0);
+	if (di->value)
+		free(di->value);
+	di->value = ft_itoa(sens);
+	if (!di->value)
+		return (0);
+	return (1);
+}
+
+static int	ft_handle_mouse_sens_adjustment(t_rot *rot, t_keys *keys)
 {
 	if (rot->can_adjust && keys->plus)
 	{
@@ -78,7 +93,6 @@ static void	ft_handle_mouse_sens_adjustment(t_rot *rot, t_keys *keys)
 			rot->sens -= MOUSE_SENS_STEPS;
 		else
 			rot->sens = MOUSE_SENS_MIN;
-		rot->can_adjust = 0;
 	}
 	if (rot->can_adjust && keys->minus)
 	{
@@ -86,15 +100,18 @@ static void	ft_handle_mouse_sens_adjustment(t_rot *rot, t_keys *keys)
 			rot->sens += MOUSE_SENS_STEPS;
 		else
 			rot->sens = MOUSE_SENS_MAX;
-		rot->can_adjust = 0;
 	}
 	if (rot->can_adjust && keys->zero)
-	{
 		rot->sens = MOUSE_SENS;
+	if (rot->can_adjust && (keys->plus || keys->minus || keys->zero))
+	{
 		rot->can_adjust = 0;
+		if (!ft_update_sens_display_info(&rot->display_info, rot->sens))
+			return (0);
 	}
 	if (!keys->minus && !keys->plus && !keys->zero)
 		rot->can_adjust = 1;
+	return (1);
 }
 
 static void	ft_handle_fov_adjustment(t_cub3d *cub3d, t_keys *keys)
@@ -148,6 +165,10 @@ void	ft_key_action(t_cub3d *cub3d, t_keys *keys)
 	if (keys->space)
 		ft_action_door(cub3d);
 	ft_handle_minimap_toggle(&cub3d->mmap, &cub3d->keys);
-	ft_handle_mouse_sens_adjustment(&cub3d->mouse.rot, &cub3d->keys);
+	if (!ft_handle_mouse_sens_adjustment(&cub3d->mouse.rot, &cub3d->keys))
+	{
+		mlx_loop_end(cub3d->mlx);
+		return ;
+	}
 	ft_handle_fov_adjustment(cub3d, keys);
 }

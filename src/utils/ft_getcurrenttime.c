@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cleanup.h                                          :+:      :+:    :+:   */
+/*   ft_getcurrenttime.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/16 16:56:46 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/09 17:20:20 by dlippelt         ###   ########.fr       */
+/*   Created: 2025/07/09 16:42:46 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/07/09 16:45:34 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLEANUP_H
-# define CLEANUP_H
+#include "utils.h"
 
-# include <stdlib.h>
-# include "mlx.h"
-# include "structs.h"
+long	ft_getcurrenttime(void)
+{
+	struct timeval	ct;
+	long			time;
 
-void	ft_cleanup(t_file *f, t_cub3d *cub);
-void	ft_cleanup_str_array(char **sa);
-void	ft_cleanup_tex(t_tex *curr);
-void	ft_cleanup_col(t_col *curr);
-void	ft_cleanup_display_info(t_display_info *di);
-void	ft_destroy_minimap(t_mmap *mmap);
-
-#endif
+	if (gettimeofday(&ct, NULL) == -1)
+		return (ft_error(EGETTIME));
+	time = (ct.tv_sec * 1000) + (ct.tv_usec / 1000);
+	return (time);
+}

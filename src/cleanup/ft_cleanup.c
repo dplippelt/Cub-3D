@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:56:24 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/30 11:24:58 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/09 17:20:51 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,10 +71,12 @@ void	ft_cleanup_str_array(char **sa)
 	sa = NULL;
 }
 
-void	ft_cleanup(t_file *f)
+void	ft_cleanup(t_file *f, t_cub3d *cub)
 {
 	ft_cleanup_tex(f->tex);
 	ft_cleanup_col(f->col);
 	ft_cleanup_file(f->file, f->nlines);
 	ft_cleanup_str_array(f->map.map);
+	if (cub)
+		ft_cleanup_display_info(&cub->mouse.rot.display_info);
 }

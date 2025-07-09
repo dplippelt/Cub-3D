@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 15:08:02 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/09 15:28:12 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/09 18:06:11 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # define WIN_X_DEFAULT 1920
 # define MOUSE_SENS 1000
 # define MOUSE_SENS_MAX 2000
-# define MOUSE_SENS_MIN 1
+# define MOUSE_SENS_MIN 100
 # define MOUSE_SENS_STEPS 100
 # define MM_MAX_SIZE 300
 # define MM_POS 40

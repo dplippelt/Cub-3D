@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 17:37:03 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/08 11:02:54 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/09 17:09:33 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,9 @@ void	ft_init_mouse(t_cub3d *cub)
 	mouse->rot.dir_row = &cub->dir_row;
 	mouse->rot.plane_col = &cub->plane_col;
 	mouse->rot.plane_row = &cub->plane_row;
+	mouse->rot.display_info.show_info = 0;
+	mouse->rot.display_info.start_show = 0;
+	mouse->rot.display_info.value = NULL;
 	mlx_mouse_move(mouse->mlx, mouse->win, mouse->center_x, mouse->center_y);
 	mlx_mouse_hide(mouse->mlx, mouse->win);
 }

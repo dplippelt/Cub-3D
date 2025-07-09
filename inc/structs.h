@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/09 15:38:29 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/09 17:58:15 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,6 +185,14 @@ typedef struct s_mmap
 	int			visible;
 }				t_mmap;
 
+typedef struct s_display_info
+{
+	int		show_info;
+	long	start_show;
+	char	*value;
+	char	*type;
+}			t_display_info;
+
 typedef struct s_rot
 {
 	double	*dir_row;
@@ -193,6 +201,7 @@ typedef struct s_rot
 	double	*plane_col;
 	int		sens;
 	int		can_adjust;
+	t_display_info	display_info;
 }			t_rot;
 
 typedef struct s_mouse
