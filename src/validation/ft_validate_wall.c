@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_validate_wall.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:55:19 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/09 14:24:28 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/10 13:50:26 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ static int	ft_found_hole(t_map_val *map, int y, int x)
 	if (map->map[y][x] == 'W')
 		return (1);
 	if (map->map[y][x] == 'C')
+		return (1);
+	if (map->map[y][x] == 'D')
 		return (1);
 	return (0);
 }
