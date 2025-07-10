@@ -6,7 +6,7 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/09 18:56:10 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/10 14:09:55 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,13 +144,6 @@ typedef	struct	s_door
 	double		open_ratio;
 	int			texid;
 }				t_door;
-
-typedef struct s_line
-{
-	int		hight;
-	int		begin;
-	int		end;
-}			t_line;
 
 typedef struct s_mm_cols
 {
