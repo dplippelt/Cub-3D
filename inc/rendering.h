@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rendering.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 11:47:37 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/03 20:42:39 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/10 12:48:45 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,9 @@ void	ft_action_door(t_cub3d *cub3d);
 void	ft_door_status_check(t_cub3d *cub3d);
 void	ft_print_doors(t_door **doors, size_t width);
 // void	ft_print_sprite(t_sprite *sprite, size_t num);
+void	ft_init_settings(t_cub3d *cub);
+void	ft_init_fov(t_fov *fov);
+int		ft_show_sens_settings(t_settings *set, void *mlx, void *win);
+int		ft_show_fov_settings(t_settings *set, void *mlx, void *win);
 
 #endif

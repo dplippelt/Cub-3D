@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:51:31 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/03 17:04:07 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 12:43:20 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	ft_setup_hooks(void *win, t_cub3d *cub, t_mouse *mouse, t_keys *keys)
 {
-	ft_init_mouse(cub);
 	mlx_hook(win, KeyPress, KeyPressMask, ft_key_press, keys);
 	mlx_hook(win, KeyRelease, KeyReleaseMask, ft_key_release, keys);
 	mlx_hook(win, MotionNotify, PointerMotionMask, ft_mouse_move, mouse);

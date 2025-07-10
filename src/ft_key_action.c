@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:54:18 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/09 17:58:36 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 12:39:37 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,18 +70,23 @@ static void	ft_handle_minimap_toggle(t_mmap *mmap, t_keys *keys)
 		mmap->can_toggle = 1;
 }
 
-static int	ft_update_sens_display_info(t_display_info *di, int sens)
+static int	ft_update_sens_settings(t_settings *di, int sens)
 {
 	di->show_info = 1;
-	di->type = "Mouse sens: ";
 	di->start_show = ft_getcurrenttime();
 	if (!di->start_show)
 		return (0);
-	if (di->value)
-		free(di->value);
-	di->value = ft_itoa(sens);
-	if (!di->value)
+	di->value = (double)sens;
+	return (1);
+}
+
+static int	ft_update_fov_settings(t_settings *di, double fov)
+{
+	di->show_info = 1;
+	di->start_show = ft_getcurrenttime();
+	if (!di->start_show)
 		return (0);
+	di->value = fov;
 	return (1);
 }
 
@@ -106,7 +111,7 @@ static int	ft_handle_mouse_sens_adjustment(t_rot *rot, t_keys *keys)
 	if (rot->can_adjust && (keys->plus || keys->minus || keys->zero))
 	{
 		rot->can_adjust = 0;
-		if (!ft_update_sens_display_info(&rot->display_info, rot->sens))
+		if (!ft_update_sens_settings(&rot->set, rot->sens))
 			return (0);
 	}
 	if (!keys->minus && !keys->plus && !keys->zero)
@@ -114,33 +119,35 @@ static int	ft_handle_mouse_sens_adjustment(t_rot *rot, t_keys *keys)
 	return (1);
 }
 
-static void	ft_handle_fov_adjustment(t_cub3d *cub3d, t_keys *keys)
+static int	ft_handle_fov_adjustment(t_cub3d *cub, t_fov *fov, t_keys *keys)
 {
-	if (cub3d->can_adjust_fov && keys->mult)
+	if (fov->can_adjust && keys->mult)
 	{
-		if (cub3d->fov_factor + 0.1 > 1.66)
-			cub3d->fov_factor = 1.66;
+		if (fov->fov_factor + FOV_FACTOR_STEPS > FOV_FACTOR_MAX)
+			fov->fov_factor = FOV_FACTOR_MAX;
 		else
-			cub3d->fov_factor += 0.1;
-		cub3d->can_adjust_fov = 0;
+			fov->fov_factor += FOV_FACTOR_STEPS;
 	}
-	if (cub3d->can_adjust_fov && keys->div)
+	if (fov->can_adjust && keys->div)
 	{
-		if (cub3d->fov_factor - 0.1 < 0.36)
-			cub3d->fov_factor = 0.36;
+		if (fov->fov_factor - FOV_FACTOR_STEPS < FOV_FACTOR_MIN)
+			fov->fov_factor = FOV_FACTOR_MIN;
 		else
-			cub3d->fov_factor -= 0.1;
-		cub3d->can_adjust_fov = 0;
+			fov->fov_factor -= FOV_FACTOR_STEPS;
 	}
-	if (cub3d->can_adjust_fov && keys->equal)
+	if (fov->can_adjust && keys->equal)
+		fov->fov_factor = FOV_FACTOR;
+	if (fov->can_adjust && (keys->mult || keys->div || keys->equal))
 	{
-		cub3d->fov_factor = FOV_FACTOR;
-		cub3d->can_adjust_fov = 0;
+		fov->can_adjust = 0;
+		if (!ft_update_fov_settings(&fov->set, fov->fov_factor))
+			return (0);
 	}
-	cub3d->plane_row = cub3d->fov_factor * cub3d->dir_col;
-	cub3d->plane_col = -cub3d->fov_factor * cub3d->dir_row;
+	cub->plane_row = fov->fov_factor * cub->dir_col;
+	cub->plane_col = -fov->fov_factor * cub->dir_row;
 	if (!keys->mult && !keys->div && !keys->equal)
-		cub3d->can_adjust_fov = 1;
+		fov->can_adjust = 1;
+	return (1);
 }
 
 void	ft_key_action(t_cub3d *cub3d, t_keys *keys)
@@ -170,5 +177,9 @@ void	ft_key_action(t_cub3d *cub3d, t_keys *keys)
 		mlx_loop_end(cub3d->mlx);
 		return ;
 	}
-	ft_handle_fov_adjustment(cub3d, keys);
+	if (!ft_handle_fov_adjustment(cub3d, &cub3d->fov_data, keys))
+	{
+		mlx_loop_end(cub3d->mlx);
+		return ;
+	}
 }

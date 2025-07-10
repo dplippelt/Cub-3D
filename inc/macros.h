@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 15:08:02 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 10:37:06 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 12:51:19 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,14 @@
 # define MOUSE_SENS_MAX 2000
 # define MOUSE_SENS_MIN 100
 # define MOUSE_SENS_STEPS 100
+# define FOV_FACTOR 0.66
+# define FOV_FACTOR_MAX 1.66
+# define FOV_FACTOR_MIN 0.36
+# define FOV_FACTOR_STEPS 0.1
 # define MM_MAX_SIZE 300
 # define MM_POS 40
 # define CELL_SIZE_DEFAULT 20
 # define PLAYER_BORDER_DEFAULT 5
-# define FOV_FACTOR 0.66
 
 # define P_SPRITE_0 "textures/sprite_x256_0.xpm"
 # define P_SPRITE_1 "textures/sprite_x256_1.xpm"

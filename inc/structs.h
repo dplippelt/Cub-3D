@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/09 17:58:15 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 12:44:19 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,8 +170,6 @@ typedef struct s_mmap
 	int			map_height;
 	int			width;
 	int			height;
-	int			mm_x;
-	int			mm_y;
 	int			vis_dist;
 	int			cell_size;
 	int			player_border;
@@ -185,24 +183,25 @@ typedef struct s_mmap
 	int			visible;
 }				t_mmap;
 
-typedef struct s_display_info
+typedef struct s_settings
 {
 	int		show_info;
 	long	start_show;
-	char	*value;
-	char	*type;
-}			t_display_info;
+	double	value;
+	int		set_x;
+	int		set_y;
+}			t_settings;
 
 typedef struct s_rot
 {
-	double	*dir_row;
-	double	*dir_col;
-	double	*plane_row;
-	double	*plane_col;
-	int		sens;
-	int		can_adjust;
-	t_display_info	display_info;
-}			t_rot;
+	double		*dir_row;
+	double		*dir_col;
+	double		*plane_row;
+	double		*plane_col;
+	int			sens;
+	int			can_adjust;
+	t_settings	set;
+}				t_rot;
 
 typedef struct s_mouse
 {
@@ -240,14 +239,19 @@ typedef struct s_keys
 	int	space;
 }		t_keys;
 
+typedef struct s_fov
+{
+	double		fov_factor;
+	int			can_adjust;
+	t_settings	set;
+}				t_fov;
+
 typedef struct s_cub3d
 {
 	void			*mlx;
 	void			*win;
 	t_imgs			*imgs;
 	t_imgs			fov;
-	double			fov_factor;
-	int				can_adjust_fov;
 	int				win_x;
 	int				win_y;
 	char			**map;
@@ -275,6 +279,7 @@ typedef struct s_cub3d
 	t_map			*map_data;
 	t_mouse			mouse;
 	t_keys			keys;
+	t_fov			fov_data;
 }					t_cub3d;
 
 #endif
