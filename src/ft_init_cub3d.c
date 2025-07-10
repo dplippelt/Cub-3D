@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 14:48:53 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/10 12:50:08 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 12:58:17 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	ft_init_cub3d(t_cub3d *cub3d, t_map *map)
 	// cub3d->rot_speed = 0;
 	// cub3d->f_color = 0;
 	// cub3d->c_color = 0;
+	ft_get_player_pos(&map->player, map->map);
 	cub3d->map = map->map;
 	cub3d->map_data = map;
 }

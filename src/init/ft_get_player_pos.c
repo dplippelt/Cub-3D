@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_validate_player.c                               :+:      :+:    :+:   */
+/*   ft_get_player_pos.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/26 10:35:27 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 12:55:21 by dlippelt         ###   ########.fr       */
+/*   Created: 2025/07/10 12:54:56 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/07/10 12:58:51 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "validation.h"
+#include "init.h"
 
 static int	ft_found_player(char c)
 {
@@ -25,13 +25,11 @@ static int	ft_found_player(char c)
 	return (0);
 }
 
-static size_t	ft_count_players(char **map)
+void	ft_get_player_pos(t_pos *player, char **map)
 {
 	size_t	y;
 	size_t	x;
-	size_t	nplayers;
 
-	nplayers = 0;
 	y = 0;
 	while (map[y])
 	{
@@ -39,17 +37,13 @@ static size_t	ft_count_players(char **map)
 		while (map[y][x])
 		{
 			if (ft_found_player(map[y][x]))
-				nplayers++;
+			{
+				player->y = y;
+				player->x = x;
+				return ;
+			}
 			x++;
 		}
 		y++;
 	}
-	return (nplayers);
-}
-
-int	ft_validate_player(t_map *map)
-{
-	if (ft_count_players(map->map) != 1)
-		return (0);
-	return (1);
 }

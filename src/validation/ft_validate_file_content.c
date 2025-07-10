@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 15:58:08 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/26 11:03:09 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 12:59:48 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,5 @@ int	ft_validate_file_content(t_file *f)
 		return (0);
 	if (!ft_validate_elements(f))
 		return (0);
-	ft_get_player_pos(&f->map.player, f->map.map);
 	return (1);
 }
