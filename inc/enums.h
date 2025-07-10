@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:56:56 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 13:09:22 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 13:31:10 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,10 @@ enum e_cell
 {
 	FLOOR_CELL,
 	WALL_CELL,
-	CLOSED_DOOR_CELL,
-	OPEN_DOOR_CELL,
+	CLOSED_DOOR_CELL_H,
+	OPEN_DOOR_CELL_H,
+	CLOSED_DOOR_CELL_V,
+	OPEN_DOOR_CELL_V,
 	PLAYER_CELL,
 	SQUIRREL_CELL,
 	BACKGROUND_CELL

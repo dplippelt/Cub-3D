@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 16:12:00 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/08 14:53:34 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 13:43:20 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,39 +18,15 @@ static int	ft_drew_object(int cell_id)
 		return (1);
 	if (cell_id == SQUIRREL_CELL)
 		return (1);
-	if (cell_id == OPEN_DOOR_CELL)
+	if (cell_id == OPEN_DOOR_CELL_H)
 		return (1);
-	if (cell_id == CLOSED_DOOR_CELL)
+	if (cell_id == OPEN_DOOR_CELL_V)
+		return (1);
+	if (cell_id == CLOSED_DOOR_CELL_H)
+		return (1);
+	if (cell_id == CLOSED_DOOR_CELL_V)
 		return (1);
 	return (0);
-}
-
-static void	ft_draw_door(int line, int i, int color, t_mmap *mmap)
-{
-	char	*curr_img_data;
-	int		*pxl_start;
-	int		i_start;
-	int		x;
-	int		y;
-
-	i_start = i;
-	y = mmap->player_border;
-	line += mmap->player_border;
-	while (y < mmap->cell_size - mmap->player_border)
-	{
-		curr_img_data = &mmap->img.data[(line * mmap->img.sl)];
-		i = i_start;
-		x = 0;
-		while (x < mmap->cell_size)
-		{
-			pxl_start = (int *)(curr_img_data + i);
-			*pxl_start = color;
-			i += mmap->img.bpp / 8;
-			x++;
-		}
-		y++;
-		line++;
-	}
 }
 
 static void	ft_draw_object(int line, int i, int color, t_mmap *mmap)
@@ -90,10 +66,14 @@ static void	ft_check_pixel(int y, int i, int *drew_obj, t_mmap *mmap)
 		ft_draw_object(y, i, mmap->cols.squirrel, mmap);
 	if (cell_id == PLAYER_CELL)
 		ft_draw_object(y, i, mmap->cols.player, mmap);
-	if (cell_id == CLOSED_DOOR_CELL)
-		ft_draw_door(y, i, mmap->cols.door_closed, mmap);
-	if (cell_id == OPEN_DOOR_CELL)
-		ft_draw_door(y, i, mmap->cols.door_open, mmap);
+	if (cell_id == CLOSED_DOOR_CELL_H)
+		ft_draw_door_hor(y, i, mmap->cols.door_closed, mmap);
+	if (cell_id == OPEN_DOOR_CELL_H)
+		ft_draw_door_hor(y, i, mmap->cols.door_open, mmap);
+	if (cell_id == CLOSED_DOOR_CELL_V)
+		ft_draw_door_ver(y, i, mmap->cols.door_closed, mmap);
+	if (cell_id == OPEN_DOOR_CELL_V)
+		ft_draw_door_ver(y, i, mmap->cols.door_open, mmap);
 	if (ft_drew_object(cell_id))
 		*drew_obj = 1;
 }

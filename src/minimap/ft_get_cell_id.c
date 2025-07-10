@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 17:38:21 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/08 14:51:34 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 13:38:51 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,19 @@ static int	ft_offset(int pixel_pos, t_mmap *mmap)
 
 	cell_offset = pixel_pos / mmap->cell_size;
 	return (mmap->vis_dist - cell_offset);
+}
+
+static int	ft_door_cell_id(char **map, int y, int x)
+{
+	if (map[y][x] == 'D')
+	{
+		if (map[y][x - 1] == '1' && map[y][x + 1] == '1')
+			return (CLOSED_DOOR_CELL_H);
+		return (CLOSED_DOOR_CELL_V);
+	}
+	if (map[y][x - 1] == '1' && map[y][x + 1] == '1')
+		return (OPEN_DOOR_CELL_H);
+	return (OPEN_DOOR_CELL_V);
 }
 
 static int	ft_cell_id(t_mmap *mmap, int y, int x)
@@ -32,10 +45,6 @@ static int	ft_cell_id(t_mmap *mmap, int y, int x)
 		return (WALL_CELL);
 	if (mmap->map[y][x] == 'C')
 		return (SQUIRREL_CELL);
-	if (mmap->map[y][x] == 'D')
-		return (CLOSED_DOOR_CELL);
-	if (mmap->map[y][x] == 'O')
-		return (OPEN_DOOR_CELL);
 	if (mmap->map[y][x] == 'N')
 		return (FLOOR_CELL);
 	if (mmap->map[y][x] == 'E')
@@ -44,6 +53,8 @@ static int	ft_cell_id(t_mmap *mmap, int y, int x)
 		return (FLOOR_CELL);
 	if (mmap->map[y][x] == 'W')
 		return (FLOOR_CELL);
+	if (mmap->map[y][x] == 'D' || mmap->map[y][x] == 'O')
+		return (ft_door_cell_id(mmap->map, y, x));
 	return (BACKGROUND_CELL);
 }
 
