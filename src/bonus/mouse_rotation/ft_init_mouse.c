@@ -6,11 +6,11 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 17:37:03 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 12:50:55 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:25:55 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mouse_rotation.h"
+#include "bonus.h"
 
 void	ft_init_mouse(t_cub3d *cub)
 {

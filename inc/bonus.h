@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minimap.h                                          :+:      :+:    :+:   */
+/*   bonus.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 10:35:20 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 13:43:45 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 16:36:17 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINIMAP_H
-# define MINIMAP_H
+#ifndef BONUS_H
+# define BONUS_H
 
-# include <stdio.h>
+# include <math.h>
+# include <stdint.h>
 # include "mlx.h"
 # include "utils.h"
 # include "macros.h"
@@ -23,8 +24,24 @@ int		ft_init_minimap(t_cub3d *cub);
 void	ft_draw_minimap(t_mmap *mmap);
 int		ft_get_cell_id(int line, int i, t_mmap *mmap);
 void	ft_add_objects(t_mmap *mmap);
-void	ft_set_img_addr(t_imgs *imgs);
+void	ft_destroy_minimap(t_mmap *mmap);
+void	ft_set_minimap_dimensions(t_mmap *mmap, int win_w, int win_h);
 void	ft_draw_door_hor(int line, int i, int color, t_mmap *mmap);
 void	ft_draw_door_ver(int line, int i, int color, t_mmap *mmap);
+int		ft_mouse_move(int x, int y, void *param);
+void	ft_init_mouse(t_cub3d *cub);
+int		ft_focus_out(void *param);
+int		ft_focus_in(void *param);
+int		ft_init_sprite(t_cub3d *cub3d);
+void	ft_sort_sprite(t_sprite *sprite, size_t num);
+void	ft_draw_sprite(t_sprite sprite, t_cub3d *cub3d);
+void	ft_sprite_casting(t_cub3d *cub3d, t_sprite *sprite);
+int		ft_sprite_animation(t_cub3d *cub3d);
+void	ft_destroy_sprite(t_cub3d *cub3d);
+int		ft_init_doors(t_cub3d *cub3d, t_map map);
+void	ft_destroy_doors(t_cub3d *cub3d);
+int		ft_door_hit(t_dda *dda, t_dist dist, t_ray ray, t_cub3d *cub3d);
+void	ft_door_action(t_cub3d *cub3d, t_keys *keys);
+void	ft_door_positioning(t_cub3d *cub3d);
 
 #endif

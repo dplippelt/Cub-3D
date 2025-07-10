@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sprite_casting.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 19:14:42 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/09 19:43:36 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:27:18 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "bonus.h"
 
 static void	ft_calc_pos_on_camera(t_sprite *s, t_cub3d *c)
 {

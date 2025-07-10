@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_draw_sprite.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:51:44 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/09 19:30:56 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:26:56 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "bonus.h"
 
 static int	ft_out_of_win_y(t_sprite s, double wall_dist)
 {

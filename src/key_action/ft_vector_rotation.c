@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_vector_rotation.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 19:05:29 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/06/26 19:05:44 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:15:03 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "key_action.h"
 
 void	ft_vector_rotation(t_cub3d *cub3d, double x)
 {

@@ -6,24 +6,11 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 10:35:27 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 12:55:21 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 16:16:41 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "validation.h"
-
-static int	ft_found_player(char c)
-{
-	if (c == 'N')
-		return (1);
-	if (c == 'E')
-		return (1);
-	if (c == 'S')
-		return (1);
-	if (c == 'W')
-		return (1);
-	return (0);
-}
 
 static size_t	ft_count_players(char **map)
 {

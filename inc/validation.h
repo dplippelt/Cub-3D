@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 14:46:25 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 13:07:17 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 16:20:04 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 # include "structs.h"
 # include "get_next_line.h"
 # include "cleanup.h"
-# include "debug.h"
 
 int		ft_validate_file(t_file *f);
 int		ft_validate_file_content(t_file *f);
@@ -43,7 +42,7 @@ int		ft_malloc_map(t_map *map);
 int		ft_validate_texture_info(t_tex *tex);
 int		ft_validate_color_info(t_col *col);
 int		ft_validate_map(t_map *m);
-int		ft_copy_map_with_border(char ***dst, char **src, size_t width);
+int		ft_copy_map_with_border(char ***dst, char **src, t_map_val *mval);
 int		ft_validate_wall(t_map_val *map);
 int		ft_validate_player(t_map *map);
 int		ft_validate_playable_area(t_map_val *map);

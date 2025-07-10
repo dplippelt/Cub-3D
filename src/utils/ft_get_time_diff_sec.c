@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_start_cub3d.c                                   :+:      :+:    :+:   */
+/*   ft_get_time_diff_sec.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/17 18:26:51 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/10 15:06:14 by dlippelt         ###   ########.fr       */
+/*   Created: 2025/07/10 15:58:19 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/07/10 15:58:27 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "setup.h"
+#include "utils.h"
 
-void	ft_start_cub3d(t_cub3d *cub3d)
+double	ft_get_time_diff_sec(struct timeval curr, struct timeval prev)
 {
-	mlx_loop(cub3d->mlx);
+	double	usec_now;
+	double	usec_from;
+
+	usec_now = curr.tv_sec * 1e6 + curr.tv_usec;
+	usec_from = prev.tv_sec * 1e6 + prev.tv_usec;
+	return ((usec_now - usec_from) / 1e6);
 }

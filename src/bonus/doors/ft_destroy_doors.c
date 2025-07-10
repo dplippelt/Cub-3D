@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_destroy_doors.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 15:36:04 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/09 19:30:47 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:24:51 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "bonus.h"
 
 void	ft_destroy_doors(t_cub3d *cub3d)
 {

@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:50:19 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 14:20:05 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 16:20:44 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,21 +22,21 @@ int	main(int ac, char *av[])
 		ft_error(ENUMPARAM);
 		return (EXIT_FAILURE);
 	}
-	ft_init(&f, av);
+	ft_init_file(&f, av);
 	if (!ft_validate_file(&f))
 	{
-		ft_cleanup(&f);
+		ft_cleanup_file(&f);
 		return (EXIT_FAILURE);
 	}
 	ft_init_cub3d(&cub3d, &f.map);
 	if (!ft_setup_cub3d(&cub3d, f))
 	{
 		ft_destroy_cub3d(&cub3d);
-		ft_cleanup(&f);
+		ft_cleanup_file(&f);
 		return (EXIT_FAILURE);
 	}
 	ft_start_cub3d(&cub3d);
 	ft_destroy_cub3d(&cub3d);
-	ft_cleanup(&f);
+	ft_cleanup_file(&f);
 	return (EXIT_SUCCESS);
 }

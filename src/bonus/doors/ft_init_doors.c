@@ -6,11 +6,11 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 14:59:30 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/10 14:32:27 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:25:11 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "bonus.h"
 
 static void	ft_set_zero(t_door *door, size_t size)
 {

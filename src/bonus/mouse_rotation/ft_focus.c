@@ -6,11 +6,11 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 16:39:14 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/03 16:43:43 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:25:51 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mouse_rotation.h"
+#include "bonus.h"
 
 int	ft_focus_out(void *param)
 {

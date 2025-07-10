@@ -6,11 +6,11 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 16:01:52 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/10 12:49:56 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:05:42 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "setup.h"
 
 int	ft_init_field_of_view(t_cub3d *cub3d)
 {

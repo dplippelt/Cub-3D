@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_destroy_sprite.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 18:05:14 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/09 19:42:06 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:26:52 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "bonus.h"
 
 void	ft_destroy_sprite(t_cub3d *cub3d)
 {

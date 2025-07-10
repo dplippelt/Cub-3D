@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 12:37:48 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 13:09:09 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 16:19:23 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,19 @@
 
 static int	ft_init_map_val(t_map_val *map_val, t_map map)
 {
-	map_val->height = map.height;
-	map_val->width = map.width;
+	map_val->old_height = map.height;
+	map_val->old_width = map.width;
+	map_val->height = map.height + 2;
+	map_val->width = map.width + 2;
 	map_val->valid = 1;
-	if (!ft_copy_map_with_border(&map_val->map, map.map, map.width))
+	if (!ft_copy_map_with_border(&map_val->map, map.map, map_val))
 		return (0);
 	return (1);
 }
 
 static int	ft_cleanup_and_error(t_map_val *map_val, int e)
 {
-	ft_cleanup_str_array(map_val->map);
+	ft_cleanup_str_array(map_val->map, map_val->height);
 	return (ft_error(e));
 }
 
@@ -42,6 +44,6 @@ int	ft_validate_map(t_map *map)
 		return (ft_cleanup_and_error(&map_val, EDOORS));
 	if (!ft_validate_playable_area(&map_val))
 		return (ft_cleanup_and_error(&map_val, EMAP));
-	ft_cleanup_str_array(map_val.map);
+	ft_cleanup_str_array(map_val.map, map_val.height);
 	return (1);
 }

@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mouse_rotation.h                                   :+:      :+:    :+:   */
+/*   ft_set_wall_dist.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/02 17:08:12 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/03 16:42:38 by dlippelt         ###   ########.fr       */
+/*   Created: 2025/07/09 19:25:30 by tmitsuya          #+#    #+#             */
+/*   Updated: 2025/07/10 15:40:43 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MOUSE_ROTATION_H
-# define MOUSE_ROTATION_H
+#include "rendering.h"
 
-# include <stdio.h>
-# include <mlx.h>
-# include <math.h>
-# include "structs.h"
-# include "macros.h"
-
-int		ft_mouse_move(int x, int y, void *param);
-void	ft_init_mouse(t_cub3d *cub);
-int		ft_focus_out(void *param);
-int		ft_focus_in(void *param);
-
-#endif
+void	ft_set_wall_dist(t_cub3d *cub3d, double wall_dist, int win_x)
+{
+	cub3d->wall_dist = wall_dist;
+	if (cub3d->wall_dists)
+		cub3d->wall_dists[win_x] = wall_dist;
+}

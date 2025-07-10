@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_get_path.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 13:55:58 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/09 20:02:38 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:05:39 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "setup.h"
 
 static int	ft_field_to_texid(int i)
 {

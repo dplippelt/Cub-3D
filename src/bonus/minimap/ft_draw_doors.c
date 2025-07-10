@@ -6,11 +6,11 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 13:42:24 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 13:46:38 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 16:22:44 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minimap.h"
+#include "bonus.h"
 
 void	ft_draw_door_hor(int line, int i, int color, t_mmap *mmap)
 {
@@ -50,7 +50,6 @@ void	ft_draw_door_ver(int line, int i, int color, t_mmap *mmap)
 
 	i_start = i + (mmap->player_border * (mmap->img.bpp / 8));
 	y = 0;
-	// line += mmap->player_border;
 	while (y < mmap->cell_size)
 	{
 		curr_img_data = &mmap->img.data[(line * mmap->img.sl)];

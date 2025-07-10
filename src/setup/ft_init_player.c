@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_player_pos.c                                :+:      :+:    :+:   */
+/*   ft_init_player.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 12:54:56 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 12:58:51 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 16:31:02 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "init.h"
+#include "setup.h"
 
-static int	ft_found_player(char c)
+static void	ft_set_player_dir(t_cub3d *cub3d, char c)
 {
 	if (c == 'N')
-		return (1);
+		cub3d->dir_row = -1;
 	if (c == 'E')
-		return (1);
+		cub3d->dir_col = 1;
 	if (c == 'S')
-		return (1);
+		cub3d->dir_row = 1;
 	if (c == 'W')
-		return (1);
-	return (0);
+		cub3d->dir_col = -1;
+	cub3d->plane_row = cub3d->fov_data.fov_factor * cub3d->dir_col;
+	cub3d->plane_col = -cub3d->fov_data.fov_factor * cub3d->dir_row;
 }
 
-void	ft_get_player_pos(t_pos *player, char **map)
+static void	ft_get_player_pos(t_pos *player, char **map)
 {
 	size_t	y;
 	size_t	x;
@@ -46,4 +47,14 @@ void	ft_get_player_pos(t_pos *player, char **map)
 		}
 		y++;
 	}
+}
+
+void	ft_init_player(t_cub3d *cub3d, char **map)
+{
+	t_pos	player;
+
+	ft_get_player_pos(&player, cub3d->map);
+	cub3d->pos_col = (double)player.x + 0.5;
+	cub3d->pos_row = (double)player.y + 0.5;
+	ft_set_player_dir(cub3d, map[player.y][player.x]);
 }

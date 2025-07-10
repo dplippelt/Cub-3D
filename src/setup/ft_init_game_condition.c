@@ -6,32 +6,11 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 16:02:23 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/10 11:23:45 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:05:28 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
-
-static void	ft_set_player_dir(t_cub3d *cub3d, char c)
-{
-	if (c == 'N')
-		cub3d->dir_row = -1;
-	if (c == 'E')
-		cub3d->dir_col = 1;
-	if (c == 'S')
-		cub3d->dir_row = 1;
-	if (c == 'W')
-		cub3d->dir_col = -1;
-	cub3d->plane_row = cub3d->fov_data.fov_factor * cub3d->dir_col;
-	cub3d->plane_col = -cub3d->fov_data.fov_factor * cub3d->dir_row;
-}
-
-static void	ft_init_player(t_cub3d *cub3d, t_pos player, char **map)
-{
-	cub3d->pos_col = (double)player.x + 0.5;
-	cub3d->pos_row = (double)player.y + 0.5;
-	ft_set_player_dir(cub3d, map[player.y][player.x]);
-}
+#include "setup.h"
 
 static int	ft_rgb_to_color(int red, int green, int blue)
 {
@@ -52,7 +31,7 @@ static void	ft_get_color(t_cub3d *cub3d, t_col *col)
 
 int	ft_init_game_condition(t_cub3d *cub3d, t_file file)
 {
-	ft_init_player(cub3d, file.map.player, cub3d->map);
+	ft_init_player(cub3d, cub3d->map);
 	if (gettimeofday(&cub3d->time, NULL) < 0)
 		return (ft_error(EGETTIME));
 	cub3d->prev_time = cub3d->time;

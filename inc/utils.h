@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 14:02:38 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/09 17:04:55 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:58:03 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,9 @@ int			ft_copy_str_array(char ***dst, char **src);
 int			ft_bgra(int b, int g, int r, int a);
 long		ft_getcurrenttime(void);
 char		*ft_itoa(int num);
+int			ft_found_player(char c);
+void		ft_set_img_addr(t_imgs *imgs);
+void		ft_put_img_to_win(void *img, t_cub3d *cub3d);
+double		ft_get_time_diff_sec(struct timeval curr, struct timeval prev);
 
 #endif

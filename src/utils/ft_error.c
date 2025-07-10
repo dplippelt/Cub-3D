@@ -6,11 +6,10 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:53:28 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 14:14:29 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:41:53 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "enums.h"
 #include "utils.h"
 
 static void	ft_errno(int e)

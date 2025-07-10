@@ -6,11 +6,11 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 17:06:40 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/08 11:03:14 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:25:59 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mouse_rotation.h"
+#include "bonus.h"
 
 static void	ft_recenter_mouse(int x, int y, t_mouse *mouse)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_update_field_of_view.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 18:02:43 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/09 19:27:14 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:40:50 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "rendering.h"
 
 static int	ft_get_texture_x(t_dda dda, t_ray ray, int tex_size)
 {
@@ -22,7 +22,7 @@ static int	ft_get_texture_x(t_dda dda, t_ray ray, int tex_size)
 		if (dda.side == ROW_SIDE && ray.dir_row > 0)
 			texture_x = tex_size - texture_x - 1;
 		else if (dda.side == COL_SIDE && ray.dir_col < 0)
-			texture_x = tex_size - texture_x - 1;		
+			texture_x = tex_size - texture_x - 1;
 	}
 	return (texture_x);
 }

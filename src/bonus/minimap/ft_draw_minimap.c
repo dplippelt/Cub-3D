@@ -6,11 +6,11 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 10:33:50 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/08 14:54:23 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:25:26 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minimap.h"
+#include "bonus.h"
 
 static void	ft_fill_line(int y, t_mmap *mmap)
 {

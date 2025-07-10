@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_door_positioning.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 20:06:51 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/09 18:15:51 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:25:06 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rendering.h"
+#include "bonus.h"
 
 static void	ft_change_open_ratio(t_door *door, t_cub3d *cub3d)
 {

@@ -6,10 +6,11 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 15:26:44 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 14:25:01 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 16:03:02 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "setup.h"
 #include "rendering.h"
 
 int	ft_rendering_loop(void *param)

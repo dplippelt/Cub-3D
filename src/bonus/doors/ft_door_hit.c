@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_door_hit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 16:44:01 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/09 18:44:33 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:25:00 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "bonus.h"
 
 static double	ft_get_door_dist(t_dist dist, t_side side)
 {

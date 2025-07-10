@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 11:42:05 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/08 14:35:31 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 16:19:23 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ int	ft_is_valid_map_char(char c)
 	if (c == 'C')
 		return (1);
 	if (c == 'D')
-		return (1);
-	if (c == 'O') //REMOVE!!!
 		return (1);
 	return (0);
 }
@@ -76,7 +74,7 @@ int	ft_malloc_map(t_map *map)
 		map->map[line] = malloc(map->width + 1);
 		if (!map->map[line])
 		{
-			ft_cleanup_str_array(map->map);
+			ft_cleanup_str_array(map->map, line);
 			return (ft_error(EMALLOC));
 		}
 		line++;

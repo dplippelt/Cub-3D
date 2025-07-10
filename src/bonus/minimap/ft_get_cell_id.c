@@ -6,11 +6,11 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 17:38:21 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 13:38:51 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:25:30 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minimap.h"
+#include "bonus.h"
 
 static int	ft_offset(int pixel_pos, t_mmap *mmap)
 {

@@ -6,11 +6,12 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 11:16:42 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/10 14:20:36 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 16:31:56 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "rendering.h"
+#include "bonus.h"
 
 static void	ft_set_ray_dir(t_ray *ray, t_cub3d *cub3d, int i)
 {
@@ -58,10 +59,10 @@ static void	ft_set_step_for_dda(t_dda *dda, t_ray ray)
 		dda->step_col = 1;
 }
 
-static void	ft_digi_diff_analyze(t_dda *dda, t_dist dist, t_ray ray, t_cub3d *cub3d)
+static void	ft_digi_diff_analyze(t_dda *dda, t_dist dist, t_ray r, t_cub3d *c)
 {
-	dda->map_row = (int)cub3d->pos_row;
-	dda->map_col = (int)cub3d->pos_col;
+	dda->map_row = (int)c->pos_row;
+	dda->map_col = (int)c->pos_col;
 	dda->hit_type = 0;
 	while (!dda->hit_type)
 	{
@@ -77,9 +78,9 @@ static void	ft_digi_diff_analyze(t_dda *dda, t_dist dist, t_ray ray, t_cub3d *cu
 			dda->map_col += dda->step_col;
 			dda->side = COL_SIDE;
 		}
-		if (ft_wall_hit(dda, dist, ray, cub3d))
+		if (ft_wall_hit(dda, dist, r, c))
 			dda->hit_type = C_WALL;
-		if (ft_door_hit(dda, dist, ray, cub3d))
+		if (ft_door_hit(dda, dist, r, c))
 			dda->hit_type = C_DOOR;
 	}
 }

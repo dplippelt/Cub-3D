@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_setup_loop_hook.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 17:22:59 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/02 18:14:46 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:44:10 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "utils.h"
 
 void	ft_setup_loop_hook(void *mlx, int (*funct)(), void *param)
 {

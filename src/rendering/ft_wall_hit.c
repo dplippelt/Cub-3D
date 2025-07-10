@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_wall_hit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 19:28:47 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/09 19:29:13 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:40:53 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "rendering.h"
 
 int	ft_wall_hit(t_dda *dda, t_dist dist, t_ray ray, t_cub3d *cub3d)
 {

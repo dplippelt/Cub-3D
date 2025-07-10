@@ -6,11 +6,11 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 11:25:23 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/30 11:40:49 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:38:20 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cleanup.h"
+#include "bonus.h"
 
 void	ft_destroy_minimap(t_mmap *mmap)
 {

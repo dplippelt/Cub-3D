@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_set_wall_dist.c                                 :+:      :+:    :+:   */
+/*   ft_handle_minimap_toggle.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/09 19:25:30 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/09 19:26:47 by tmitsuya         ###   ########.fr       */
+/*   Created: 2025/07/10 16:39:44 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/07/10 16:39:52 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "key_action.h"
 
-void	ft_set_wall_dist(t_cub3d *cub3d, double wall_dist, int win_x)
+void	ft_handle_minimap_toggle(t_mmap *mmap, t_keys *keys)
 {
-	cub3d->wall_dist = wall_dist;
-	if (cub3d->wall_dists)
-		cub3d->wall_dists[win_x] = wall_dist;
+	if (mmap->can_toggle && keys->m)
+	{
+		mmap->visible = !mmap->visible;
+		mmap->can_toggle = 0;
+	}
+	if (!keys->m)
+		mmap->can_toggle = 1;
 }

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_set_img_addr.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 18:02:43 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/06/25 14:41:23 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:44:07 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "utils.h"
 
 void	ft_set_img_addr(t_imgs *imgs)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_put_img_to_win.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 17:18:47 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/06/25 14:30:57 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:44:01 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "utils.h"
 
 void	ft_put_img_to_win(void *img, t_cub3d *cub3d)
 {

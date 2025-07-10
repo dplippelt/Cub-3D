@@ -6,11 +6,11 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 12:17:35 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 14:40:23 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:06:00 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "setup.h"
 
 void	ft_init_settings(t_cub3d *cub)
 {

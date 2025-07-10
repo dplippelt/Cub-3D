@@ -6,21 +6,11 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 16:39:09 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/03 18:27:06 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:58:29 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
-
-double	ft_get_time_diff_sec(struct timeval curr, struct timeval prev)
-{
-	double	usec_now;
-	double	usec_from;
-
-	usec_now = curr.tv_sec * 1e6 + curr.tv_usec;
-	usec_from = prev.tv_sec * 1e6 + prev.tv_usec;
-	return ((usec_now - usec_from) / 1e6);
-}
+#include "setup.h"
 
 int	ft_calc_frame_time(t_cub3d *cub3d)
 {

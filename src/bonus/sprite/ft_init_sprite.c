@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init_sprite.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 12:08:58 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/09 19:19:11 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:27:01 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "bonus.h"
 
 static size_t	ft_get_num_sprite(char **map)
 {

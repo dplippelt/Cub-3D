@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_start_cub3d.c                                   :+:      :+:    :+:   */
+/*   ft_init_file.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/17 18:26:51 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/10 15:06:14 by dlippelt         ###   ########.fr       */
+/*   Created: 2025/06/16 16:29:41 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/07/10 15:39:16 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "setup.h"
+#include "init.h"
 
-void	ft_start_cub3d(t_cub3d *cub3d)
+void	ft_init_file(t_file *f, char *av[])
 {
-	mlx_loop(cub3d->mlx);
+	f->file = NULL;
+	f->file_path = av[1];
+	f->nlines = 0;
+	f->tex = NULL;
+	f->col = NULL;
+	f->map.map = NULL;
+	f->map.height = 0;
+	f->map.width = 0;
 }

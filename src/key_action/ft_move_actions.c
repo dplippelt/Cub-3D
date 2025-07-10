@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_move_actions.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 19:33:25 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/09 19:39:22 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:14:54 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "key_action.h"
 
 static void	ft_valid_move(t_cub3d *cub3d, double add_row, double add_col)
 {

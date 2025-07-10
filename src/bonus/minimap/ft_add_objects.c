@@ -6,11 +6,11 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 16:12:00 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 13:43:20 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:25:18 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minimap.h"
+#include "bonus.h"
 
 static int	ft_drew_object(int cell_id)
 {

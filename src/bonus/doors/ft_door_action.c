@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_action_door.c                                   :+:      :+:    :+:   */
+/*   ft_door_action.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 19:48:51 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/09 18:14:42 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:24:57 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "bonus.h"
 
 static void	ft_change_door_status(t_cub3d *cub3d, t_door *door)
 {

@@ -6,11 +6,11 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:51:31 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/10 14:26:25 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:06:12 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "setup.h"
 
 void	ft_setup_hooks(void *win, t_cub3d *cub, t_mouse *mouse, t_keys *keys)
 {

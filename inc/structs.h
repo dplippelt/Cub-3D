@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 14:19:06 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 16:08:51 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ typedef struct s_map_val
 	int		valid;
 	int		height;
 	int		width;
+	int		old_width;
+	int		old_height;
 }			t_map_val;
 
 typedef struct s_tex
