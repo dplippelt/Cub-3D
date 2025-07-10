@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 17:24:45 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/09 15:33:17 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 14:24:26 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ int	ft_key_press(int key, void *param)
 		keys->d = 1;
 	else if (key == XK_space)
 		keys->space = 1;
-	if (key == XK_m)
+	else if (key == XK_m)
 		keys->m = 1;
-	if (key == XK_KP_Subtract)
+	else if (key == XK_KP_Subtract)
 		keys->minus = 1;
-	if (key == XK_KP_Add)
+	else if (key == XK_KP_Add)
 		keys->plus = 1;
 	if (key == XK_KP_Insert)
 		keys->zero = 1;

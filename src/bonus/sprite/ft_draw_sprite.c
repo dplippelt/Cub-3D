@@ -6,7 +6,7 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:51:44 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/02 18:08:48 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/09 19:30:56 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,25 +84,3 @@ void	ft_draw_sprite(t_sprite sprite, t_cub3d *cub3d)
 		i++;
 	}
 }
-
-// void	ft_print_sprite(t_sprite *sprite, size_t num)
-// {
-// 	size_t i;
-
-// 	i = 0;
-// 	while (i < num)
-// 	{
-// 		printf("num %zu\n", i);
-// 		// printf("id %d\n", sprite[i].id);
-// 		printf("map_row %d\n", sprite[i].map_row);
-// 		printf("map_col %d\n", sprite[i].map_col);
-// 		// printf("pos_row %f\n", sprite[i].pos_row);
-// 		// printf("pos_col %f\n", sprite[i].pos_col);
-// 		printf("x_on_camera %f\n", sprite[i].x_on_camera);
-// 		printf("y_on_camera %f\n", sprite[i].y_on_camera);
-// 		printf("x_on_win %d\n", sprite[i].x_on_win);
-// 		printf("y_on_win %d\n", sprite[i].x_on_win);
-// 		printf("dist %f\n", sprite[i].dist);
-// 		i++;
-// 	}
-// }

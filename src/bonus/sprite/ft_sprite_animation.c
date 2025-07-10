@@ -6,7 +6,7 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 17:27:20 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/03 19:32:43 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/09 19:01:32 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ static void	ft_change_sprite_id(t_sprite *sprite)
 		sprite->id = SPRITE_0;
 }
 
-static int	ft_is_image_change(t_cub3d *cub3d, int sec)
+static int	ft_is_image_change(t_cub3d *cub3d, int milsec)
 {
 	size_t	i;
 
-	if (sec < ANIMATION_SPEED_MILISEC)
+	if (milsec < ANIMATION_SPEED_MILISEC)
 		return (0);
 	i = 0;
 	while (i < cub3d->num_sprite)
@@ -38,10 +38,10 @@ static int	ft_is_image_change(t_cub3d *cub3d, int sec)
 
 int	ft_sprite_animation(t_cub3d *cub3d)
 {
-	int	sec;
+	int	milsec;
 
-	sec = ft_get_time_diff_sec(cub3d->time, cub3d->anim_time) * 1000;
-	if (ft_is_image_change(cub3d, sec))
+	milsec = ft_get_time_diff_sec(cub3d->time, cub3d->anim_time) * 1000;
+	if (ft_is_image_change(cub3d, milsec))
 		cub3d->anim_time = cub3d->time;
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 12:44:19 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 14:19:06 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,8 +98,9 @@ typedef struct s_dda
 	int			step_col;
 	int			map_row;
 	int			map_col;
-	double		hit;
-	double		side;
+	char		hit_type;
+	int			side;
+	double		hit_x;
 	t_img_field img;
 }				t_dda;
 
@@ -136,20 +137,13 @@ typedef struct s_sprite
 
 typedef	struct	s_door
 {
-	enum e_side		dir;
-	double			row;
-	double			col;
-	enum e_status	status;
-	double			open_ratio;
-	int				texid;
-}					t_door;
-
-typedef struct s_line
-{
-	int		hight;
-	int		begin;
-	int		end;
-}			t_line;
+	t_side		dir;
+	double		row;
+	double		col;
+	t_status	status;
+	double		open_ratio;
+	int			texid;
+}				t_door;
 
 typedef struct s_mm_cols
 {
@@ -261,6 +255,7 @@ typedef struct s_cub3d
 	double			dir_col;
 	double			plane_row;
 	double			plane_col;
+	double			wall_dist;
 	struct timeval	time;
 	struct timeval	prev_time;
 	double			frame_time;
@@ -273,8 +268,7 @@ typedef struct s_cub3d
 	double			*wall_dists;
 	struct timeval	anim_time;
 	t_door			**doors;
-	size_t			height;
-	size_t			width;
+	int				door_act;
 	t_mmap			mmap;
 	t_map			*map_data;
 	t_mouse			mouse;

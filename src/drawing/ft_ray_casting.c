@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 11:16:42 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/09 15:15:53 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 14:20:36 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,56 +58,12 @@ static void	ft_set_step_for_dda(t_dda *dda, t_ray ray)
 		dda->step_col = 1;
 }
 
-int	ft_is_door(t_dda *dda, t_dist dist, t_ray ray, t_cub3d *cub3d)
-{
-	t_door	door;
-	double	door_dist;
-	double	intsec;
-
-	if (cub3d->map[dda->map_row][dda->map_col] != 'D')
-		return (0);
-	door = cub3d->doors[dda->map_row][dda->map_col];
-	if (dda->side == ROW_SIDE)
-	{
-		door_dist = dist.side_row - (dist.delta_row / 2);
-		intsec = cub3d->pos_col + door_dist * ray.dir_col;
-		if (intsec - (door.col + door.open_ratio) > EPSILON && ((int)door.col + 1) - intsec > EPSILON)
-			return (1);
-	}
-	else
-	{
-		door_dist = dist.side_col - (dist.delta_col / 2);
-		intsec = cub3d->pos_row + door_dist * ray.dir_row;
-		if (intsec - (door.row + door.open_ratio) > EPSILON && ((int)door.row + 1) - intsec > EPSILON)
-			return (1);
-	}
-	return (0);
-}
-
-void	ft_get_dist(t_dda *dda, t_dist dist, t_cub3d *cub3d)
-{
-	if (dda->side == ROW_SIDE)
-	{
-		if (cub3d->map[dda->map_row][dda->map_col] == '1')
-			dda->wall_dist = dist.side_row - dist.delta_row;
-		else
-			dda->wall_dist = dist.side_row - (dist.delta_row / 2);
-	}
-	else
-	{
-		if (cub3d->map[dda->map_row][dda->map_col] == '1')
-			dda->wall_dist = dist.side_col - dist.delta_col;
-		else
-			dda->wall_dist = dist.side_col - (dist.delta_col / 2);
-	}
-}
-
 static void	ft_digi_diff_analyze(t_dda *dda, t_dist dist, t_ray ray, t_cub3d *cub3d)
 {
 	dda->map_row = (int)cub3d->pos_row;
 	dda->map_col = (int)cub3d->pos_col;
-	dda->hit = 0;
-	while (!dda->hit)
+	dda->hit_type = 0;
+	while (!dda->hit_type)
 	{
 		if (dist.side_row < dist.side_col)
 		{
@@ -121,12 +77,11 @@ static void	ft_digi_diff_analyze(t_dda *dda, t_dist dist, t_ray ray, t_cub3d *cu
 			dda->map_col += dda->step_col;
 			dda->side = COL_SIDE;
 		}
-		if (cub3d->map[dda->map_row][dda->map_col] == '1')
-			dda->hit = 1;
-		if (ft_is_door(dda, dist, ray, cub3d))
-			dda->hit = 1;
+		if (ft_wall_hit(dda, dist, ray, cub3d))
+			dda->hit_type = C_WALL;
+		if (ft_door_hit(dda, dist, ray, cub3d))
+			dda->hit_type = C_DOOR;
 	}
-	ft_get_dist(dda, dist, cub3d);
 }
 
 void	ft_ray_casting(t_rcast *rc, t_cub3d *cub3d, int win_x)
@@ -135,6 +90,5 @@ void	ft_ray_casting(t_rcast *rc, t_cub3d *cub3d, int win_x)
 	ft_calc_dist_for_dda(&rc->dist, rc->ray, cub3d);
 	ft_set_step_for_dda(&rc->dda, rc->ray);
 	ft_digi_diff_analyze(&rc->dda, rc->dist, rc->ray, cub3d);
-	ft_set_target_img(&rc->dda, rc->ray, cub3d->map[rc->dda.map_row][rc->dda.map_col]);
-	cub3d->wall_dists[win_x] = rc->dda.wall_dist;
+	ft_get_target_img(&rc->dda, rc->ray);
 }

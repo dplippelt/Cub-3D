@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init_mlx_setup_win.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:15:13 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/03 17:49:36 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/09 19:50:07 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,5 @@ int	ft_init_mlx_setup_win(t_cub3d *cub)
 	cub->win = mlx_new_window(cub->mlx, cub->win_x, cub->win_y, TITLE);
 	if (!cub->win)
 		return (ft_error(EMLXWIN));
-	mlx_hook(cub->win, DestroyNotify, ClientMessage, mlx_loop_end, cub->mlx);
 	return (1);
 }

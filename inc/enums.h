@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:56:56 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 13:31:10 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 14:14:09 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,11 +87,11 @@ enum e_dir
 	RIGHT
 };
 
-enum e_side
+typedef enum e_side
 {
 	ROW_SIDE,
 	COL_SIDE,
-};
+}	t_side;
 
 typedef enum e_img_field
 {
@@ -107,12 +107,12 @@ typedef enum e_img_field
 	MAX_IMAGE,
 }	t_img_field;
 
-enum e_status
+typedef enum e_status
 {
 	CLOSE,
 	CLOSING,
 	OPENING,
 	OPEN,
-};
+}	t_status;
 
 #endif

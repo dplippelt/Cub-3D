@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 15:26:44 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 12:11:18 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 14:25:01 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ int	ft_rendering_loop(void *param)
 		return (mlx_loop_end(cub3d->mlx), 0);
 	ft_key_action(cub3d, &cub3d->keys);
 	ft_sprite_animation(cub3d);
-	ft_door_status_check(cub3d);
+	ft_door_positioning(cub3d);
 	ft_update_field_of_view(cub3d);
+	ft_sprite_casting(cub3d, cub3d->sprite);
 	ft_put_img_to_win(cub3d->fov.img, cub3d);
 	if (cub3d->mmap.visible)
 		ft_draw_minimap(&cub3d->mmap);
