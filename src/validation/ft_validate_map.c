@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 12:37:48 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/08 13:24:55 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 13:09:09 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ int	ft_validate_map(t_map *map)
 		return (ft_cleanup_and_error(&map_val, EWALL));
 	if (!ft_validate_player(map))
 		return (ft_cleanup_and_error(&map_val, ENUMPLAYERS));
+	if (!ft_validate_doors(&map_val))
+		return (ft_cleanup_and_error(&map_val, EDOORS));
 	if (!ft_validate_playable_area(&map_val))
 		return (ft_cleanup_and_error(&map_val, EMAP));
 	ft_cleanup_str_array(map_val.map);

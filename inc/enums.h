@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:56:56 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/08 14:33:06 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 13:09:22 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ enum e_errors
 	EMLXNEWIMG = 13,
 	EGETTIME = 14,
 	EMAP = 15,
+	EDOORS = 16,
 	ECOLORFORMAT = 999
 };
 
