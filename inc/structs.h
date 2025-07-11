@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 16:08:51 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/11 10:17:51 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -261,6 +261,8 @@ typedef struct s_cub3d
 	struct timeval	time;
 	struct timeval	prev_time;
 	double			frame_time;
+	double			frame_time_target;
+	double			time_diff;
 	double			move_speed;
 	double			rot_speed;
 	int				f_color;

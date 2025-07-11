@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 14:02:38 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 15:58:03 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/11 10:48:28 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,7 @@ int			ft_found_player(char c);
 void		ft_set_img_addr(t_imgs *imgs);
 void		ft_put_img_to_win(void *img, t_cub3d *cub3d);
 double		ft_get_time_diff_sec(struct timeval curr, struct timeval prev);
+long		ft_get_time_diff_usec(struct timeval curr, struct timeval prev);
+int			ft_usleep(long dur, long st);
 
 #endif

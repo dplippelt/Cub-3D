@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calc_frame_time.c                               :+:      :+:    :+:   */
+/*   ft_usleep.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/19 16:39:09 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/11 10:18:54 by dlippelt         ###   ########.fr       */
+/*   Created: 2025/07/11 10:46:44 by dlippelt          #+#    #+#             */
+/*   Updated: 2025/07/11 10:50:55 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "setup.h"
+#include "utils.h"
 
-int	ft_calc_frame_time(t_cub3d *cub3d)
+int	ft_usleep(long dur, long st)
 {
-	// cub3d->prev_time = cub3d->time;
-	// if (gettimeofday(&cub3d->time, NULL) < 0)
-	// 	return (ft_error(EGETTIME));
-	// cub3d->frame_time = 1 / (double)FPS;
-	// cub3d->frame_time = ft_get_time_diff_sec(cub3d->time, cub3d->prev_time);
-	cub3d->move_speed = DIST_PER_SECOND * cub3d->frame_time;
-	cub3d->rot_speed = RADIAN_PER_SECOND * cub3d->frame_time;
+	long	ct;
+	long	dt;
+
+	ct = ft_getcurrenttime() * 1000;
+	if (ct == -1)
+		return (0);
+	if (st == -1)
+		st = ct;
+	dt = ct - st;
+	while (dt < dur)
+	{
+		if (dur - dt > 200)
+			usleep(((dur - dt) / 2));
+		else
+			usleep((dur - dt));
+		ct = ft_getcurrenttime() * 1000;
+		if (ct == -1)
+			return (0);
+		dt = ct - st;
+	}
 	return (1);
 }
