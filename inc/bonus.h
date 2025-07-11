@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bonus.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 10:35:20 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 16:36:17 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 18:18:12 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	ft_destroy_sprite(t_cub3d *cub3d);
 int		ft_init_doors(t_cub3d *cub3d, t_map map);
 void	ft_destroy_doors(t_cub3d *cub3d);
 int		ft_door_hit(t_dda *dda, t_dist dist, t_ray ray, t_cub3d *cub3d);
+int		ft_door_side_wall(t_dda *dda, t_cub3d *cub3d);
 void	ft_door_action(t_cub3d *cub3d, t_keys *keys);
 void	ft_door_positioning(t_cub3d *cub3d);
 

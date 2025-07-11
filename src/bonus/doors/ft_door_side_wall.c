@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_target_img.c                                :+:      :+:    :+:   */
+/*   ft_door_side_wall.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/19 18:05:09 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/10 18:21:50 by tmitsuya         ###   ########.fr       */
+/*   Created: 2025/07/10 18:07:21 by tmitsuya          #+#    #+#             */
+/*   Updated: 2025/07/10 18:18:05 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rendering.h"
+#include "bonus.h"
 
-static void	ft_get_wall_img(t_dda *dda, t_ray ray)
+int	ft_door_side_wall(t_dda *dda, t_cub3d *cub3d)
 {
+	if (cub3d->map[dda->map_row][dda->map_col] != C_WALL)
+		return (0);
 	if (dda->side == ROW_SIDE)
 	{
-		if (ray.dir_row > 0)
-			dda->img = NO;
-		else
-			dda->img = SO;
+		if (cub3d->map[dda->map_row - dda->step_row][dda->map_col] == C_DOOR)
+			return (1);
 	}
 	else
 	{
-		if (ray.dir_col > 0)
-			dda->img = WE;
-		else
-			dda->img = EA;
+		if (cub3d->map[dda->map_row][dda->map_col - dda->step_col] == C_DOOR)
+			return (1);
 	}
-}
-
-void	ft_get_target_img(t_dda *dda, t_ray ray)
-{
-	if (dda->hit_type == C_WALL)
-		ft_get_wall_img(dda, ray);
-	else if (dda->hit_type == C_DOOR)
-		dda->img = DOOR;
-	else if (dda->hit_type == C_DOOR_SIDE)
-		dda->img = DOOR_SIDE;
+	return (0);
 }

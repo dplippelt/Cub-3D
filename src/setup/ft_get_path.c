@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_get_path.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 13:55:58 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/10 15:05:39 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 18:40:43 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_field_to_texid(int i)
 	else if (i == SO)
 		return (TEXSOUTH);
 	else if (i == WE)
-		return (TEXEAST);
+		return (TEXWEST);
 	else if (i == EA)
 		return (TEXEAST);
 	else if (i == SPRITE_0)
@@ -42,7 +42,13 @@ char	*ft_get_path(int i, t_tex *tex)
 
 	tex_id = ft_field_to_texid(i);
 	if (tex_id == NOELEMENT)
-		return (NULL);
+	{
+		if (i == DOOR_SIDE) // should be got from linked-list
+			return (P_DOOR_SIDE);
+		else
+			return (NULL);
+	}
+		// return (NULL);
 	while (tex)
 	{
 		if (tex->id == tex_id)
