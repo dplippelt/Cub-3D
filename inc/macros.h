@@ -6,7 +6,7 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 15:08:02 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/11 11:46:19 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/11 15:44:55 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # define C_DOOR_SIDE 'S'
 # define DIST_PER_SECOND 5.0
 # define RADIAN_PER_SECOND 2.0
+# define WALL_DISTANCE 0.2
 # define WIN_X_DEFAULT 1920
 # define MOUSE_SENS 1000
 # define MOUSE_SENS_MAX 2000

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 16:08:51 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/11 17:46:35 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,18 @@ typedef struct s_draw
 	int		begin;
 	int		end;
 }			t_draw;
+
+typedef struct s_collision
+{
+	double	add_row;
+	double	add_col;
+	double	pos_row;
+	double	pos_col;
+	int		nexmap_row;
+	int		nexmap_col;
+	int		side_row;
+	int		side_col;
+}			t_collision;
 
 typedef struct s_sprite
 {
