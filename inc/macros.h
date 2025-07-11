@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 15:08:02 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/11 16:37:12 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/11 16:59:38 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # define C_DOOR 'D'
 # define DIST_PER_SECOND 5.0
 # define RADIAN_PER_SECOND 2.0
-# define WIN_X_DEFAULT 80
+# define WIN_X_DEFAULT 1920
 # define MOUSE_SENS 1000
 # define MOUSE_SENS_MAX 2000
 # define MOUSE_SENS_MIN 100

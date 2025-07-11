@@ -6,21 +6,23 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/11 12:37:01 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/11 16:49:05 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/11 17:01:00 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rendering.h"
 
-static int	ft_build_fps_str(char *s, double value, size_t size)
+static int	ft_build_fps_str(char *s, int value, size_t size, char *type)
 {
 	char	*sval;
+	size_t	type_sl;
 
-	sval = ft_itoa((int)value);
+	type_sl = ft_strlen(type);
+	sval = ft_itoa(value);
 	if (!sval)
 		return (0);
-	ft_strlcpy(s, "Max FPS: ", size);
-	ft_strlcpy(s + 9, sval, size - 9);
+	ft_strlcpy(s, type, size);
+	ft_strlcpy(s + type_sl, sval, size - type_sl);
 	return (free(sval), 1);
 }
 
@@ -37,7 +39,7 @@ int	ft_show_fps_settings(t_settings *set, void *mlx, void *win)
 			return (0);
 		if (ct - set->start_show < 2000)
 		{
-			ft_build_fps_str(s, set->value, 30);
+			ft_build_fps_str(s, (int)set->value, 30, "Max FPS ");
 			mlx_string_put(mlx, win, set->set_x, set->set_y, 0xFFFFFF00, s);
 		}
 		else
@@ -49,24 +51,12 @@ int	ft_show_fps_settings(t_settings *set, void *mlx, void *win)
 	return (1);
 }
 
-static int	ft_build_fps_counter_str(char *s, int value, size_t size)
-{
-	char	*sval;
-
-	sval = ft_itoa(value);
-	if (!sval)
-		return (0);
-	ft_strlcpy(s, "FPS: ", size);
-	ft_strlcpy(s + 5, sval, size - 5);
-	return (free(sval), 1);
-}
-
 void	ft_show_fps(t_fps_counter *fps_counter, void *mlx, void *win)
 {
 	char	s[30];
 	int		fps;
 
 	fps = (int)round(1.0 / *fps_counter->frame_time);
-	ft_build_fps_counter_str(s, fps, 30);
+	ft_build_fps_str(s, fps, 30, "FPS: ");
 	mlx_string_put(mlx, win, fps_counter->x, fps_counter->y, 0xFFFFFF00, s);
 }
