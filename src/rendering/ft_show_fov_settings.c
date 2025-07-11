@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/11 12:37:27 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/11 12:45:03 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/11 17:07:48 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,9 @@ static void	ft_add_post_dec(char *s, char *post_dec, size_t size)
 	ft_strlcpy(s, post_dec, size);
 }
 
-static int	ft_build_fov_str(char *s, double value, size_t size)
+static int	ft_build_fov_str(char *s, double value, size_t size, char *type)
 {
+	size_t	type_sl;
 	char	*post_dec;
 	int		pre_dec_int;
 	int		post_dec_int;
@@ -44,9 +45,10 @@ static int	ft_build_fov_str(char *s, double value, size_t size)
 	post_dec = ft_itoa(post_dec_int);
 	if (!post_dec)
 		return (free(post_dec), 0);
-	ft_strlcpy(s, "Fov factor: ", size);
-	s += 12;
-	size -= 12;
+	type_sl = ft_strlen(type);
+	ft_strlcpy(s, type, size);
+	s += type_sl;
+	size -= type_sl;
 	ft_add_pre_dec(&s, &size, pre_dec_int, post_dec_int);
 	ft_add_post_dec(s, post_dec, size);
 	return (free(post_dec), 1);
@@ -65,7 +67,7 @@ int	ft_show_fov_settings(t_settings *set, void *mlx, void *win)
 			return (0);
 		if (ct - set->start_show < 2000)
 		{
-			ft_build_fov_str(s, set->value, 30);
+			ft_build_fov_str(s, set->value, 30, "Fov factor: ");
 			mlx_string_put(mlx, win, set->set_x, set->set_y, 0xFFFFFF00, s);
 		}
 		else
