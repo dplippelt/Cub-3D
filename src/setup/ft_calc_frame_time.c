@@ -6,12 +6,13 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 16:39:09 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/11 10:18:54 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/11 12:47:19 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "setup.h"
 
+//Rename function
 int	ft_calc_frame_time(t_cub3d *cub3d)
 {
 	// cub3d->prev_time = cub3d->time;
