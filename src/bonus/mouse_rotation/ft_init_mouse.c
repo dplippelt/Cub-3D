@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 17:37:03 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 15:25:55 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/11 12:00:40 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ void	ft_init_mouse(t_cub3d *cub)
 	mouse->max_diff = mouse->max_x - mouse->center_x;
 	mouse->skip = 0;
 	mouse->focus = 1;
-	mouse->rot.sens = MOUSE_SENS;
-	mouse->rot.can_adjust = 1;
 	mouse->rot.dir_col = &cub->dir_col;
 	mouse->rot.dir_row = &cub->dir_row;
 	mouse->rot.plane_col = &cub->plane_col;

@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 16:01:52 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/10 15:05:42 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/11 12:00:35 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 int	ft_init_field_of_view(t_cub3d *cub3d)
 {
-	cub3d->fov_data.fov_factor = FOV_FACTOR;
-	cub3d->fov_data.can_adjust = 1;
 	cub3d->fov.x = cub3d->win_x;
 	cub3d->fov.y = cub3d->win_y;
 	cub3d->fov.img = mlx_new_image(cub3d->mlx, cub3d->win_x, cub3d->win_y);

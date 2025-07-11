@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/11 10:17:51 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/11 11:40:00 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -242,6 +242,13 @@ typedef struct s_fov
 	t_settings	set;
 }				t_fov;
 
+typedef struct s_fps
+{
+	int			fps;
+	int			can_adjust;
+	t_settings	set;
+}				t_fps;
+
 typedef struct s_cub3d
 {
 	void			*mlx;
@@ -278,6 +285,7 @@ typedef struct s_cub3d
 	t_mouse			mouse;
 	t_keys			keys;
 	t_fov			fov_data;
+	t_fps			fps;
 }					t_cub3d;
 
 #endif
