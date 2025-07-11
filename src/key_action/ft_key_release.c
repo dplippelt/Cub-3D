@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 17:24:45 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/11 12:10:41 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/11 15:53:34 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ static void	ft_settings_key_release(int key, t_keys *keys)
 		keys->pg_down = 0;
 	else if (key == XK_Home)
 		keys->home = 0;
+	else if (key == XK_F1)
+		keys->f1 = 0;
 }
 
 static void	ft_interaction_key_release(int key, t_keys *keys)

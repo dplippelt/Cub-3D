@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 15:12:23 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/11 12:26:26 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/11 15:46:14 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ int		ft_handle_fov_adjustment(t_cub3d *cub, t_fov *fov, t_keys *keys);
 int		ft_handle_mouse_sens_adjustment(t_rot *rot, t_keys *keys);
 void	ft_handle_minimap_toggle(t_mmap *mmap, t_keys *keys);
 int		ft_handle_fps_adjustment(t_cub3d *cub, t_fps *fps, t_keys *keys);
+void	ft_handle_fps_toggle(t_fps_counter *fps_counter, t_keys *keys);
 
 #endif

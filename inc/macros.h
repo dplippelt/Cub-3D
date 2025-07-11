@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 15:08:02 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/11 11:30:51 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/11 16:23:28 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@
 # define SP_SIZE_DOWN 2
 # define EPSILON 1e-6
 # define ANIMATION_SPEED_MILISEC 500
-# define FPS 60
+# define MAX_FPS 60
 
 #endif

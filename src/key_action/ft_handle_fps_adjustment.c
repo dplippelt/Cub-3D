@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/11 12:11:24 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/11 12:34:20 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/11 16:23:24 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,21 @@ static void	ft_update_fps(t_fps *fps, t_keys *keys, double *frame_time_target)
 {
 	if (fps->can_adjust && keys->pg_down)
 	{
-		if (fps->fps - 5 > 30)
-			fps->fps -= 5;
+		if (fps->max_fps - 5 > 30)
+			fps->max_fps -= 5;
 		else
-			fps->fps = 30;
+			fps->max_fps = 30;
 	}
 	if (fps->can_adjust && keys->pg_up)
 	{
-		if (fps->fps + 5 < 120)
-			fps->fps += 5;
+		if (fps->max_fps + 5 < 120)
+			fps->max_fps += 5;
 		else
-			fps->fps = 120;
+			fps->max_fps = 120;
 	}
 	if (fps->can_adjust && keys->home)
-		fps->fps = FPS;
-	*frame_time_target = 1 / (double)fps->fps;
+		fps->max_fps = MAX_FPS;
+	*frame_time_target = 1 / (double)fps->max_fps;
 }
 
 int	ft_handle_fps_adjustment(t_cub3d *cub, t_fps *fps, t_keys *keys)
@@ -49,7 +49,7 @@ int	ft_handle_fps_adjustment(t_cub3d *cub, t_fps *fps, t_keys *keys)
 	if (fps->can_adjust && (keys->pg_up || keys->pg_down || keys->home))
 	{
 		fps->can_adjust = 0;
-		if (!ft_update_fps_settings(&fps->set, fps->fps))
+		if (!ft_update_fps_settings(&fps->set, fps->max_fps))
 			return (0);
 	}
 	if (!keys->pg_up && !keys->pg_down && !keys->home)

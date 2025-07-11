@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/11 12:14:38 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/11 16:20:44 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ typedef struct s_dda
 	char		hit_type;
 	int			side;
 	double		hit_x;
-	t_img_field img;
+	t_img_field	img;
 }				t_dda;
 
 typedef struct s_rcast
@@ -137,7 +137,7 @@ typedef struct s_sprite
 	double	dist;
 }			t_sprite;
 
-typedef	struct	s_door
+typedef struct s_door
 {
 	t_side		dir;
 	double		row;
@@ -232,6 +232,7 @@ typedef struct s_keys
 	int	pg_up;
 	int	pg_down;
 	int	home;
+	int	f1;
 	int	left;
 	int	right;
 	int	esc;
@@ -247,10 +248,19 @@ typedef struct s_fov
 
 typedef struct s_fps
 {
-	int			fps;
+	int			max_fps;
 	int			can_adjust;
 	t_settings	set;
 }				t_fps;
+
+typedef struct s_fps_counter
+{
+	double	*frame_time;
+	int		x;
+	int		y;
+	int		can_toggle;
+	int		visible;
+}		t_fps_counter;
 
 typedef struct s_cub3d
 {
@@ -289,6 +299,7 @@ typedef struct s_cub3d
 	t_keys			keys;
 	t_fov			fov_data;
 	t_fps			fps;
+	t_fps_counter	fps_counter;
 }					t_cub3d;
 
 #endif

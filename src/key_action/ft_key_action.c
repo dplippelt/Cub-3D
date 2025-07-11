@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:54:18 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/11 12:30:05 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/11 15:46:51 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	ft_key_action(t_cub3d *cub3d, t_keys *keys)
 	ft_rotate_actions(cub3d, keys);
 	ft_door_action(cub3d, keys);
 	ft_handle_minimap_toggle(&cub3d->mmap, &cub3d->keys);
+	ft_handle_fps_toggle(&cub3d->fps_counter, keys);
 	if (!ft_handle_mouse_sens_adjustment(&cub3d->mouse.rot, &cub3d->keys))
 	{
 		mlx_loop_end(cub3d->mlx);
