@@ -6,7 +6,7 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 13:55:58 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/10 18:40:43 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/11 11:46:05 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ static int	ft_field_to_texid(int i)
 		return (TEXSQUIRREL_THREE);
 	else if (i == DOOR)
 		return (TEXDOOR);
+	else if (i == DOOR_SIDE)
+		return (TEXDOORSIDE);
 	else
 		return (NOELEMENT);
 }
@@ -42,13 +44,7 @@ char	*ft_get_path(int i, t_tex *tex)
 
 	tex_id = ft_field_to_texid(i);
 	if (tex_id == NOELEMENT)
-	{
-		if (i == DOOR_SIDE) // should be got from linked-list
-			return (P_DOOR_SIDE);
-		else
-			return (NULL);
-	}
-		// return (NULL);
+		return (NULL);
 	while (tex)
 	{
 		if (tex->id == tex_id)

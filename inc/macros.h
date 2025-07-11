@@ -6,7 +6,7 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 15:08:02 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 18:38:16 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/11 11:46:19 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,5 @@
 # define SP_SIZE_DOWN 2
 # define EPSILON 1e-6
 # define ANIMATION_SPEED_MILISEC 500
-# define P_DOOR_SIDE "./textures/plate_door_side_x256.xpm" // should be deleted
 
 #endif

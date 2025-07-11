@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 11:11:41 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 12:42:24 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 18:12:37 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,27 +38,39 @@ static int	ft_build_sens_str(char *s, double value, size_t size)
 	return (1);
 }
 
+static void	ft_add_part_one(char **s, size_t *size, int pre_dec, int post_dec)
+{
+	if (pre_dec == 0)
+		(*s)++[0] = '0';
+	else
+		(*s)++[0] = '1';
+	(*size)--;
+	(*s)++[0] = '.';
+	(*size)--;
+	if (post_dec < 10)
+	{
+		(*s)++[0] = '0';
+		(*size)--;
+	}
+}
+
 static int	ft_build_fov_str(char *s, double value, size_t size)
 {
-	char	*pre_dec;
 	char	*post_dec;
+	int		pre_dec_int;
+	int		post_dec_int;
 
-	pre_dec = NULL;
-	post_dec = NULL;
-	pre_dec = ft_itoa((int)value);
-	post_dec = ft_itoa(((int)(value * 100) % 100));
-	if (!pre_dec || !post_dec)
-		return (free(pre_dec), free(post_dec), 0);
+	pre_dec_int = (int)value;
+	post_dec_int = (int)round(value * 100) % 100;
+	post_dec = ft_itoa(post_dec_int);
+	if (!post_dec)
+		return (free(post_dec), 0);
 	ft_strlcpy(s, "Fov factor: ", size);
 	s += 12;
 	size -= 12;
-	ft_strlcpy(s, pre_dec, size);
-	s += ft_strlen(pre_dec);
-	size -= ft_strlen(pre_dec);
-	s++[0] = '.';
-	size--;
+	ft_add_part_one(&s, &size, pre_dec_int, post_dec_int);
 	ft_strlcpy(s, post_dec, size);
-	return (free(pre_dec), free(post_dec), 1);
+	return (free(post_dec), 1);
 }
 
 int	ft_show_sens_settings(t_settings *set, void *mlx, void *win)

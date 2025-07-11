@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 13:05:56 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/08 11:37:58 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/11 08:35:56 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ static int	ft_got_all_necessary_tex_info(t_tex *tex)
 	if (!ft_got_tex_info(tex, TEXWEST))
 		return (0);
 	if (!ft_got_tex_info(tex, TEXDOOR))
+		return (0);
+	if (!ft_got_tex_info(tex, TEXDOORSIDE))
 		return (0);
 	if (!ft_got_tex_info(tex, TEXSQUIRREL_ZERO))
 		return (0);

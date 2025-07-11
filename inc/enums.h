@@ -6,7 +6,7 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:56:56 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/11 11:35:35 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/11 11:43:16 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ enum e_elements
 	TEXWEST,
 	TEXSOUTH,
 	TEXDOOR,
+	TEXDOORSIDE,
 	TEXSQUIRREL_ZERO,
 	TEXSQUIRREL_ONE,
 	TEXSQUIRREL_TWO,
