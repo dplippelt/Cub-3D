@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 17:24:45 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 16:30:44 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/11 12:26:06 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,12 @@ static void	ft_settings_key_press(int key, t_keys *keys)
 		keys->div = 1;
 	else if (key == XK_KP_Equal)
 		keys->equal = 1;
+	else if (key == XK_Page_Up)
+		keys->pg_up = 1;
+	else if (key == XK_Page_Down)
+		keys->pg_down = 1;
+	else if (key == XK_Home)
+		keys->home = 1;
 }
 
 static void	ft_interaction_key_press(int key, t_keys *keys)

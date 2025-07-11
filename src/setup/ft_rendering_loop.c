@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 15:26:44 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/11 11:36:04 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/11 12:29:17 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ int	ft_rendering_loop(void *param)
 	if (!ft_show_sens_settings(&cub3d->mouse.rot.set, cub3d->mlx, cub3d->win))
 		return (mlx_loop_end(cub3d->mlx), 0);
 	if (!ft_show_fov_settings(&cub3d->fov_data.set, cub3d->mlx, cub3d->win))
+		return (mlx_loop_end(cub3d->mlx), 0);
+	if (!ft_show_fps_settings(&cub3d->fps.set, cub3d->mlx, cub3d->win))
 		return (mlx_loop_end(cub3d->mlx), 0);
 	return (1);
 }
