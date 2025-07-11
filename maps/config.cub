@@ -4,6 +4,7 @@ WE  ./textures/wall_west_x128.xpm
 EA  ./textures/wall_east_x128.xpm
 
 DO  ./textures/plate_door_x256.xpm
+DOS ./textures/plate_door_side_x256.xpm
 
 SQ0 ./textures/sprite_x256_0.xpm
 SQ1 ./textures/sprite_x256_1.xpm
