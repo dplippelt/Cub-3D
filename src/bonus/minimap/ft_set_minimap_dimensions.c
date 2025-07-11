@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 16:32:46 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 16:42:54 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/11 16:36:15 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,9 @@ static int	ft_set_minimap_size(int win_w, int win_h, int cell_size)
 	if ((size / cell_size) % 2 == 0)
 		size += cell_size;
 	if (size > MM_MAX_SIZE)
-		size = MM_MAX_SIZE;
+		size = MM_MAX_SIZE - (MM_MAX_SIZE % cell_size) + cell_size;
+	else if (size < MM_MIN_SIZE)
+		size = MM_MIN_SIZE - (MM_MIN_SIZE % cell_size) + cell_size;
 	return (size);
 }
 
