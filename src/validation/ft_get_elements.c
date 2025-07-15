@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 12:50:21 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/15 15:33:19 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 15:48:59 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ static int	ft_find_elements(t_file *f, size_t *x, size_t y)
 		*x += ft_move_past_element(&f->file[y][*x]);
 	}
 	else if (f->file[y][*x])
-		return (ft_error(EUNEXPECTED, NULL));
+		return (ft_error(EUNEXPECTED, &f->file[y][*x]));
 	return (1);
 }
 

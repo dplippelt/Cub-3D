@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 10:56:26 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/15 15:34:00 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 15:49:45 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static int	ft_post_map_content(t_file *f, size_t y)
 		while (f->file[y][x])
 		{
 			if (f->file[y][x] != ' ')
-				return (ft_error(EUNEXPECTED, NULL));
+				return (ft_error(EUNEXPECTED, &f->file[y][x]));
 			x++;
 		}
 		y++;
