@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 15:08:02 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/15 13:54:15 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 14:12:52 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@
 # define C_PLAYER_E 'E'
 # define C_PLAYER_S 'S'
 # define C_PLAYER_W 'W'
+# define C_DOOR_SIDE 'S'
 # define WIN_Y_DEFAULT 1080
 # define MAX_FPS 60
-# define C_DOOR_SIDE 'S'
 # define DIST_PER_SECOND 5.0
 # define RADIAN_PER_SECOND 2.0
 # define WALL_DISTANCE 0.2
