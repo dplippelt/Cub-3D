@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 14:59:30 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/10 15:25:11 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 15:31:22 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	ft_init_doors(t_cub3d *cub3d, t_map map)
 
 	cub3d->doors = (t_door **)malloc(sizeof(t_door *) * (map.height + 1));
 	if (!cub3d->doors)
-		return (ft_error(EMALLOC));
+		return (ft_error(EMALLOC, NULL));
 	i = 0;
 	flag = 0;
 	while (i < map.height)
@@ -80,7 +80,7 @@ int	ft_init_doors(t_cub3d *cub3d, t_map map)
 	}
 	cub3d->doors[map.height] = NULL;
 	if (flag)
-		return (ft_error(EMALLOC));
+		return (ft_error(EMALLOC, NULL));
 	ft_loading_doors(cub3d->doors, map);
 	cub3d->door_act = 1;
 	return (1);

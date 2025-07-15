@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:50:19 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 16:20:44 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 15:31:39 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int ac, char *av[])
 
 	if (ac != 2)
 	{
-		ft_error(ENUMPARAM);
+		ft_error(ENUMPARAM, NULL);
 		return (EXIT_FAILURE);
 	}
 	ft_init_file(&f, av);

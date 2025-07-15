@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 08:45:21 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/09 17:04:42 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 15:32:28 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	*ft_itoa(int num)
 	s = malloc(ndig + 1);
 	if (!s)
 	{
-		ft_error(EMALLOC);
+		ft_error(EMALLOC, NULL);
 		return (NULL);
 	}
 	if (num < 0)

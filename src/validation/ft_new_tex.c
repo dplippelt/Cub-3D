@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 13:38:12 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/18 14:22:54 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 15:34:41 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,12 @@ int	ft_new_tex(t_tex **head, char *el, int el_id)
 
 	tex_path = ft_get_tex_path(el);
 	if (!tex_path)
-		return (ft_error(EMALLOC));
+		return (ft_error(EMALLOC, NULL));
 	new_tex = ft_add_tex(head);
 	if (!new_tex)
 	{
 		free(tex_path);
-		return (ft_error(EMALLOC));
+		return (ft_error(EMALLOC, NULL));
 	}
 	new_tex->next = NULL;
 	new_tex->id = el_id;

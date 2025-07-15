@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 15:26:44 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/15 13:52:09 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 15:32:21 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_frame_rate_limiter(t_cub3d *cub3d)
 	long	st;
 
 	if (gettimeofday(&cub3d->time, NULL) < 0)
-		return (ft_error(EGETTIME));
+		return (ft_error(EGETTIME, NULL));
 	time_diff = ft_get_time_diff_usec(cub3d->time, cub3d->prev_time);
 	if (time_diff < 0)
 		time_diff = cub3d->frame_time * 1e6;
@@ -29,7 +29,7 @@ static int	ft_frame_rate_limiter(t_cub3d *cub3d)
 		ft_usleep(cub3d->frame_time_target * 1e6 - time_diff, st);
 	}
 	if (gettimeofday(&cub3d->prev_time, NULL) < 0)
-		return (ft_error(EGETTIME));
+		return (ft_error(EGETTIME, NULL));
 	if (time_diff > cub3d->frame_time_target * 1e6)
 		cub3d->frame_time = time_diff / 1e6;
 	else

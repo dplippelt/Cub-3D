@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 13:05:56 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/11 08:35:56 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 15:37:02 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ static int	ft_got_tex_info(t_tex *tex, int type)
 		tex = tex->next;
 	}
 	if (nfound > 1)
-		return (ft_error(EDUPENTRIES));
+		return (ft_error(EDUPENTRIES, NULL));
 	if (nfound == 0)
-		return (ft_error(EMISSINGTEX));
+		return (ft_error(EMISSINGTEX, NULL));
 	return (1);
 }
 

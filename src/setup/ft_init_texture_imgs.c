@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 13:29:29 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/10 15:09:02 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 15:32:11 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	ft_init_texture_imgs(t_cub3d *cub3d, t_tex *tex)
 
 	cub3d->imgs = (t_imgs *)malloc(sizeof(t_imgs) * (MAX_IMAGE + 1));
 	if (!cub3d->imgs)
-		return (ft_error(EMALLOC));
+		return (ft_error(EMALLOC, NULL));
 	i = 0;
 	while (i < MAX_IMAGE)
 	{
@@ -53,6 +53,6 @@ int	ft_init_texture_imgs(t_cub3d *cub3d, t_tex *tex)
 	}
 	cub3d->imgs[MAX_IMAGE].img = NULL;
 	if (!ft_is_loading_success(cub3d->imgs))
-		return (ft_error(EMLXLOADTEX));
+		return (ft_error(EMLXLOADTEX, NULL));
 	return (1);
 }

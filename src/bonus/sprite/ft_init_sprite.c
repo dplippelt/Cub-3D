@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 12:08:58 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/10 15:27:01 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 15:31:33 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int	ft_init_sprite(t_cub3d *cub3d)
 	{
 		free(cub3d->sprite);
 		free(cub3d->wall_dists);
-		return (ft_error(EMALLOC));
+		return (ft_error(EMALLOC, NULL));
 	}
 	ft_get_sprite_info(cub3d->sprite, cub3d->map);
 	ft_set_zeros(cub3d->wall_dists, cub3d->win_x);

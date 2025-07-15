@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 10:48:04 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 16:42:52 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 15:31:28 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	ft_init_image(t_cub3d *cub, t_mmap *mmap)
 {
 	mmap->img.img = mlx_new_image(mmap->mlx, mmap->width, mmap->height);
 	if (!mmap->img.img)
-		return (ft_error(EMLXNEWIMG));
+		return (ft_error(EMLXNEWIMG, NULL));
 	ft_set_img_addr(&mmap->img);
 	mmap->mmap = mmap->img.data;
 	mmap->img.x = cub->win_x / MM_POS;

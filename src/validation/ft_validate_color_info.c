@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 13:20:19 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/08 11:38:04 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 15:35:00 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ static int	ft_got_color_info(t_col *col, int type)
 		col = col->next;
 	}
 	if (nfound > 1)
-		return (ft_error(EDUPENTRIES));
+		return (ft_error(EDUPENTRIES, NULL));
 	if (nfound == 0)
-		return (ft_error(EMISSINGCOL));
+		return (ft_error(EMISSINGCOL, NULL));
 	return (1);
 }
 

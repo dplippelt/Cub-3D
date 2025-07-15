@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 12:37:48 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 16:19:23 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 15:36:44 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	ft_init_map_val(t_map_val *map_val, t_map map)
 static int	ft_cleanup_and_error(t_map_val *map_val, int e)
 {
 	ft_cleanup_str_array(map_val->map, map_val->height);
-	return (ft_error(e));
+	return (ft_error(e, NULL));
 }
 
 int	ft_validate_map(t_map *map)

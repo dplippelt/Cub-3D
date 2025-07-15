@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 14:42:29 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 16:06:46 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 15:35:43 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ static int	ft_validate_file_format(const char *file_path)
 
 	slen = ft_strlen(file_path);
 	if (slen < 4)
-		return (ft_error(EFILEFORMAT));
+		return (ft_error(EFILEFORMAT, file_path));
 	slen -= 4;
 	if (ft_strcmp(&file_path[slen], FORMAT))
-		return (ft_error(EFILEFORMAT));
+		return (ft_error(EFILEFORMAT, file_path));
 	return (1);
 }
 

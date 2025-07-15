@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 15:58:08 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 16:06:58 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 15:36:34 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_get_num_lines(int fd, t_file *f)
 
 	br = read(fd, buffer, 1);
 	if (br == -1)
-		return (close(fd), ft_error(ERRNO));
+		return (close(fd), ft_error(ERRNO, NULL));
 	if (br == 0)
 		return (close(fd), 1);
 	if (*buffer == '\n')
@@ -34,7 +34,7 @@ static int	ft_get_file_content(int fd, t_file *f)
 
 	f->file = malloc(sizeof(char *) * (f->nlines + 1));
 	if (!f->file)
-		return (close(fd), ft_error(EMALLOC));
+		return (close(fd), ft_error(EMALLOC, NULL));
 	line = 0;
 	while (line <= f->nlines)
 		f->file[line++] = NULL;

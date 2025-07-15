@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 16:25:07 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 16:22:10 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 15:32:39 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	ft_malloc_exp_arr(char ***dst, size_t new_rows, size_t new_width)
 
 	*dst = malloc(sizeof(char *) * (new_rows + 1));
 	if (!*dst)
-		return (ft_error(EMALLOC));
+		return (ft_error(EMALLOC, NULL));
 	i = 0;
 	while (i < new_rows)
 	{
@@ -36,7 +36,7 @@ static int	ft_malloc_exp_arr(char ***dst, size_t new_rows, size_t new_width)
 		if (!(*dst)[i])
 		{
 			ft_cleanup_str_array(*dst, i);
-			return (ft_error(EMALLOC));
+			return (ft_error(EMALLOC, NULL));
 		}
 		i++;
 	}

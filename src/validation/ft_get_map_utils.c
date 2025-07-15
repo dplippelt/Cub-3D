@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 11:42:05 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/15 11:03:39 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 15:34:08 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	ft_malloc_map(t_map *map)
 
 	map->map = malloc(sizeof(char *) * (map->height + 1));
 	if (!map->map)
-		return (ft_error(EMALLOC));
+		return (ft_error(EMALLOC, NULL));
 	line = 0;
 	while (line < map->height)
 	{
@@ -75,7 +75,7 @@ int	ft_malloc_map(t_map *map)
 		if (!map->map[line])
 		{
 			ft_cleanup_str_array(map->map, line);
-			return (ft_error(EMALLOC));
+			return (ft_error(EMALLOC, NULL));
 		}
 		line++;
 	}

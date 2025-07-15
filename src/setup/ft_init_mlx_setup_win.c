@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:15:13 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/15 10:43:39 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 15:32:03 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ int	ft_init_mlx_setup_win(t_cub3d *cub)
 {
 	cub->mlx = mlx_init();
 	if (!cub->mlx)
-		return (ft_error(EMLXINIT));
+		return (ft_error(EMLXINIT, NULL));
 	ft_set_win_dimesions(cub);
 	cub->win = mlx_new_window(cub->mlx, cub->win_x, cub->win_y, TITLE);
 	if (!cub->win)
-		return (ft_error(EMLXWIN));
+		return (ft_error(EMLXWIN, NULL));
 	return (1);
 }

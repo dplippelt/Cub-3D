@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 16:42:46 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/09 16:45:34 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 15:32:25 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ long	ft_getcurrenttime(void)
 	long			time;
 
 	if (gettimeofday(&ct, NULL) == -1)
-		return (ft_error(EGETTIME));
+		return (ft_error(EGETTIME, NULL));
 	time = (ct.tv_sec * 1000) + (ct.tv_usec / 1000);
 	return (time);
 }

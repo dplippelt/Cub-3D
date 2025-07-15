@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_new_col.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 13:38:12 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/25 17:11:19 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/15 15:34:34 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,10 @@ int	ft_new_col(t_col **head, char *el, int el_id)
 
 	new_col = ft_add_col(head);
 	if (!new_col)
-		return (ft_error(EMALLOC));
+		return (ft_error(EMALLOC, NULL));
 	new_col->id = el_id;
 	new_col->next = NULL;
 	if (!ft_get_rgb(new_col, el, RED))
-		return (ft_error(ECOLORFORMAT));
+		return (ft_error(ECOLORFORMAT, NULL));
 	return (1);
 }

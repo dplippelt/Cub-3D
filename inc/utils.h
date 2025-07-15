@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 14:02:38 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/15 11:00:40 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 15:37:30 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 # include "macros.h"
 # include "cleanup.h"
 
-int			ft_error(int e);
+int			ft_error(int e, const char *detail);
 size_t		ft_strlen(const char *s);
 size_t		ft_strlcpy(char *dst, const char *src, size_t size);
 int			ft_putstr(const char *s, int fd);
