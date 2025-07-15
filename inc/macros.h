@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 15:08:02 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/15 11:06:49 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 13:47:58 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # define C_PLAYER_W 'W'
 # define WIN_Y_DEFAULT 1080
 # define MAX_FPS 60
+# define C_DOOR_SIDE 'S'
 # define DIST_PER_SECOND 5.0
 # define RADIAN_PER_SECOND 2.0
 # define MOUSE_SENS 1000
@@ -43,5 +44,6 @@
 # define SP_SIZE_DOWN 2
 # define EPSILON 1e-6
 # define ANIMATION_SPEED_MILISEC 500
+# define P_DOOR_SIDE "./textures/plate_door_side_x256.xpm" // should be deleted
 
 #endif

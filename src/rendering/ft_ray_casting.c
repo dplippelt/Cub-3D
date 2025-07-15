@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ray_casting.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 11:16:42 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/10 16:31:56 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/10 18:18:53 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,8 @@ static void	ft_digi_diff_analyze(t_dda *dda, t_dist dist, t_ray r, t_cub3d *c)
 		}
 		if (ft_wall_hit(dda, dist, r, c))
 			dda->hit_type = C_WALL;
+		if (ft_door_side_wall(dda, c))
+			dda->hit_type = C_DOOR_SIDE;
 		if (ft_door_hit(dda, dist, r, c))
 			dda->hit_type = C_DOOR;
 	}

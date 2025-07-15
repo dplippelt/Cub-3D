@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:56:56 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/11 08:30:34 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 13:47:39 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,14 +72,6 @@ enum e_cell
 	BACKGROUND_CELL
 };
 
-// enum e_wall_side
-// {
-// 	TOP,
-// 	RIGHT,
-// 	BOTTOM,
-// 	LEFT
-// };
-
 enum e_dir
 {
 	UP,
@@ -105,6 +97,7 @@ typedef enum e_img_field
 	SPRITE_2,
 	SPRITE_3,
 	DOOR,
+	DOOR_SIDE,
 	MAX_IMAGE,
 }	t_img_field;
 
