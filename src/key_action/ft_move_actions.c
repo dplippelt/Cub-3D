@@ -3,55 +3,51 @@
 /*                                                        :::      ::::::::   */
 /*   ft_move_actions.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 19:33:25 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/10 15:14:54 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/11 17:56:37 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "key_action.h"
+#include "bonus.h"
 
-static void	ft_valid_move(t_cub3d *cub3d, double add_row, double add_col)
+static void	ft_valid_move(t_cub3d *c, double add_row, double add_col)
 {
-	int	next_pos_row;
-	int	next_pos_col;
-
-	next_pos_row = cub3d->pos_row + add_row;
-	next_pos_col = cub3d->pos_col + add_col;
-	if (cub3d->map[next_pos_row][next_pos_col] == C_WALL)
+	if (ft_wall_collision(c, add_row, add_col))
 		return ;
-	if (cub3d->map[next_pos_row][next_pos_col] == C_DOOR)
-	{
-		if (cub3d->doors[next_pos_row][next_pos_col].status != OPEN)
-			return ;
-	}
-	cub3d->pos_row += add_row;
-	cub3d->pos_col += add_col;
+	c->pos_row += add_row;
+	c->pos_col += add_col;
 }
 
-static void	ft_action_move(int key, t_cub3d *cub3d)
+static void	ft_action_move(int key, t_cub3d *c)
 {
+	double	add_row;
+	double	add_col;
+
 	if (key == XK_w)
 	{
-		ft_valid_move(cub3d, cub3d->dir_row * cub3d->move_speed, 0);
-		ft_valid_move(cub3d, 0, cub3d->dir_col * cub3d->move_speed);
+		add_row = c->dir_row * c->move_speed;
+		add_col = c->dir_col * c->move_speed;
 	}
 	else if (key == XK_s)
 	{
-		ft_valid_move(cub3d, -cub3d->dir_row * cub3d->move_speed, 0);
-		ft_valid_move(cub3d, 0, -cub3d->dir_col * cub3d->move_speed);
+		add_row = -c->dir_row * c->move_speed;
+		add_col = -c->dir_col * c->move_speed;
 	}
 	else if (key == XK_d)
 	{
-		ft_valid_move(cub3d, cub3d->plane_row * cub3d->move_speed, 0);
-		ft_valid_move(cub3d, 0, cub3d->plane_col * cub3d->move_speed);
+		add_row = c->plane_row * c->move_speed;
+		add_col = c->plane_col * c->move_speed;
 	}
 	else
 	{
-		ft_valid_move(cub3d, -cub3d->plane_row * cub3d->move_speed, 0);
-		ft_valid_move(cub3d, 0, -cub3d->plane_col * cub3d->move_speed);
+		add_row = -c->plane_row * c->move_speed;
+		add_col = -c->plane_col * c->move_speed;
 	}
+	ft_valid_move(c, add_row, 0.0);
+	ft_valid_move(c, 0.0, add_col);
 }
 
 void	ft_move_actions(t_cub3d *cub3d, t_keys *keys)

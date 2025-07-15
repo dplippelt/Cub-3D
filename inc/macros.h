@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 15:08:02 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/15 13:47:58 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 13:54:15 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 # define C_DOOR_SIDE 'S'
 # define DIST_PER_SECOND 5.0
 # define RADIAN_PER_SECOND 2.0
+# define WALL_DISTANCE 0.2
 # define MOUSE_SENS 1000
 # define MOUSE_SENS_MAX 2000
 # define MOUSE_SENS_MIN 100
@@ -44,6 +45,5 @@
 # define SP_SIZE_DOWN 2
 # define EPSILON 1e-6
 # define ANIMATION_SPEED_MILISEC 500
-# define P_DOOR_SIDE "./textures/plate_door_side_x256.xpm" // should be deleted
 
 #endif

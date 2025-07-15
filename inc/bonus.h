@@ -6,7 +6,7 @@
 /*   By: tmitsuya <tmitsuya@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 10:35:20 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 18:18:12 by tmitsuya         ###   ########.fr       */
+/*   Updated: 2025/07/11 17:48:37 by tmitsuya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # include "macros.h"
 # include "structs.h"
 
+void	ft_init_checker(t_collision *check, double row, double col, t_cub3d *c);
+int		ft_wall_collision(t_cub3d *c, double add_row, double add_col);
 int		ft_init_minimap(t_cub3d *cub);
 void	ft_draw_minimap(t_mmap *mmap);
 int		ft_get_cell_id(int line, int i, t_mmap *mmap);
