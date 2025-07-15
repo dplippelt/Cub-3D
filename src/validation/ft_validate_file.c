@@ -6,21 +6,39 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 14:42:29 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/15 15:35:43 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 16:54:26 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "validation.h"
 
+static size_t	ft_file_name_len(const char *file_path)
+{
+	size_t	path_len;
+	size_t	file_len;
+
+	path_len = ft_strlen(file_path);
+	file_len = 0;
+	while (path_len-- > 0)
+	{
+		if (file_path[path_len] == '/')
+			return (file_len);
+		file_len++;
+	}
+	return (file_len);
+}
+
 static int	ft_validate_file_format(const char *file_path)
 {
-	size_t	slen;
+	size_t	file_len;
+	size_t	path_len;
 
-	slen = ft_strlen(file_path);
-	if (slen < 4)
+	path_len = ft_strlen(file_path);
+	file_len = ft_file_name_len(file_path);
+	if (file_len < 5)
 		return (ft_error(EFILEFORMAT, file_path));
-	slen -= 4;
-	if (ft_strcmp(&file_path[slen], FORMAT))
+	path_len -= 4;
+	if (ft_strcmp(&file_path[path_len], FORMAT))
 		return (ft_error(EFILEFORMAT, file_path));
 	return (1);
 }
