@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/15 13:54:34 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 16:21:23 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -241,9 +241,6 @@ typedef struct s_keys
 	int	mult;
 	int	div;
 	int	equal;
-	int	pg_up;
-	int	pg_down;
-	int	home;
 	int	f;
 	int	left;
 	int	right;
@@ -257,13 +254,6 @@ typedef struct s_fov
 	int			can_adjust;
 	t_settings	set;
 }				t_fov;
-
-typedef struct s_fps
-{
-	int			max_fps;
-	int			can_adjust;
-	t_settings	set;
-}				t_fps;
 
 typedef struct s_fps_counter
 {
@@ -293,8 +283,6 @@ typedef struct s_cub3d
 	struct timeval	time;
 	struct timeval	prev_time;
 	double			frame_time;
-	double			frame_time_target;
-	double			time_diff;
 	double			move_speed;
 	double			rot_speed;
 	int				f_color;
@@ -310,7 +298,6 @@ typedef struct s_cub3d
 	t_mouse			mouse;
 	t_keys			keys;
 	t_fov			fov_data;
-	t_fps			fps;
 	t_fps_counter	fps_counter;
 }					t_cub3d;
 

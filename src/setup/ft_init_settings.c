@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 12:17:35 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/11 16:23:24 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 16:20:36 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,6 @@ static void	ft_init_fov(t_fov *fov_data, t_mmap *mmap)
 	fov_data->set.set_y = mmap->img.y + mmap->height + 40;
 }
 
-static void	ft_init_fps(t_fps *fps, t_mmap *mmap)
-{
-	fps->set = (t_settings){0};
-	fps->can_adjust = 1;
-	fps->max_fps = MAX_FPS;
-	fps->set.set_x = mmap->img.x + 5;
-	fps->set.set_y = mmap->img.y + mmap->height + 60;
-}
-
 static void	ft_init_fps_counter(t_fps_counter *fps_c, t_cub3d *cub, void *ft)
 {
 	fps_c->can_toggle = 1;
@@ -52,6 +43,5 @@ void	ft_init_settings(t_cub3d *cub)
 {
 	ft_init_sens(&cub->mouse, &cub->mmap);
 	ft_init_fov(&cub->fov_data, &cub->mmap);
-	ft_init_fps(&cub->fps, &cub->mmap);
 	ft_init_fps_counter(&cub->fps_counter, cub, &cub->frame_time);
 }

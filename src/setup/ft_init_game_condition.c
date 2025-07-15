@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 16:02:23 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/15 15:31:50 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 16:20:39 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ int	ft_init_game_condition(t_cub3d *cub3d, t_file file)
 		return (ft_error(EGETTIME, NULL));
 	cub3d->prev_time = cub3d->time;
 	cub3d->anim_time = cub3d->time;
-	cub3d->frame_time_target = 1 / (double)MAX_FPS;
 	ft_get_color(cub3d, file.col);
 	return (1);
 }

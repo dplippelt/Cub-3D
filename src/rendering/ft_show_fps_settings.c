@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/11 12:37:01 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/11 17:01:00 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 16:20:43 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,31 +24,6 @@ static int	ft_build_fps_str(char *s, int value, size_t size, char *type)
 	ft_strlcpy(s, type, size);
 	ft_strlcpy(s + type_sl, sval, size - type_sl);
 	return (free(sval), 1);
-}
-
-int	ft_show_fps_settings(t_settings *set, void *mlx, void *win)
-{
-	long	ct;
-	char	s[30];
-
-	ct = 0;
-	if (set->show_info)
-	{
-		ct = ft_getcurrenttime();
-		if (!ct)
-			return (0);
-		if (ct - set->start_show < 2000)
-		{
-			ft_build_fps_str(s, (int)set->value, 30, "Max FPS ");
-			mlx_string_put(mlx, win, set->set_x, set->set_y, 0xFFFFFF00, s);
-		}
-		else
-		{
-			set->start_show = 0;
-			set->show_info = 0;
-		}
-	}
-	return (1);
 }
 
 void	ft_show_fps(t_fps_counter *fps_counter, void *mlx, void *win)

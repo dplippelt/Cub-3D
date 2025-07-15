@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:54:18 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/11 15:46:51 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 16:20:56 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,6 @@ void	ft_key_action(t_cub3d *cub3d, t_keys *keys)
 		return ;
 	}
 	if (!ft_handle_fov_adjustment(cub3d, &cub3d->fov_data, keys))
-	{
-		mlx_loop_end(cub3d->mlx);
-		return ;
-	}
-	if (!ft_handle_fps_adjustment(cub3d, &cub3d->fps, keys))
 	{
 		mlx_loop_end(cub3d->mlx);
 		return ;
