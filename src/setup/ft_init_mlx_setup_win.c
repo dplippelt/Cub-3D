@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:15:13 by tmitsuya          #+#    #+#             */
-/*   Updated: 2025/07/10 15:05:46 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 10:43:39 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ static void	ft_set_win_dimesions(t_cub3d *cub)
 	int	screen_x;
 	int	screen_y;
 
-	cub->win_x = WIN_X_DEFAULT;
-	cub->win_y = WIN_X_DEFAULT * 3 / 4;
+	cub->win_y = WIN_Y_DEFAULT;
+	cub->win_x = WIN_Y_DEFAULT * 4 / 3;
 	mlx_get_screen_size(cub->mlx, &screen_x, &screen_y);
 	if ((screen_y * 19 / 20) < cub->win_y)
 	{
