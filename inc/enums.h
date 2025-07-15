@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:56:56 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/15 13:53:45 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 16:31:53 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,24 @@
 
 enum e_errors
 {
-	ERRNO = 0,
-	ENUMPARAM = 1,
-	EFILEFORMAT = 2,
-	EMALLOC = 3,
-	EUNEXPECTED = 4,
-	EMISSINGTEX = 5,
-	EMISSINGCOL = 6,
-	EDUPENTRIES = 7,
-	EWALL = 8,
-	ENUMPLAYERS = 9,
-	EMLXINIT = 10,
-	EMLXWIN = 11,
-	EMLXLOADTEX = 12,
-	EMLXNEWIMG = 13,
-	EGETTIME = 14,
-	EMAP = 15,
-	EDOORS = 16,
-	ECOLORFORMAT = 999
+	ERRNO,
+	ENUMPARAM,
+	EFILEFORMAT,
+	EMALLOC,
+	EUNEXPECTED,
+	EMISSINGTEX,
+	EMISSINGCOL,
+	EDUPENTRIES,
+	EWALL,
+	ENUMPLAYERS,
+	EMLXINIT,
+	EMLXWIN ,
+	EMLXLOADTEX,
+	EMLXNEWIMG,
+	EGETTIME,
+	EMAP,
+	EDOORS,
+	ECOLORFORMAT
 };
 
 enum e_elements

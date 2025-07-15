@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 14:02:38 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/15 15:37:30 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 16:28:56 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int			ft_strncmp(const char *s1, const char *s2, size_t n);
 int			ft_is_printable(char c);
 int			ft_open(const char *path, int *fd);
 u_int8_t	ft_colortoi(char **s, int *overflow);
-int			ft_copy_str_array(char ***dst, char **src);
 int			ft_bgra(int b, int g, int r, int a);
 long		ft_getcurrenttime(void);
 char		*ft_itoa(int num);
