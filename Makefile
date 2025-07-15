@@ -6,7 +6,7 @@
 #    By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/16 12:34:50 by dlippelt          #+#    #+#              #
-#    Updated: 2025/06/16 15:50:27 by dlippelt         ###   ########.fr        #
+#    Updated: 2025/07/15 14:16:49 by dlippelt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ VALG =		valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
 CFLAGS =	-Wall -Werror -Wextra -g3
 IFLAGS =	-I$(INCDIR) -I$(MLXDIR)
 OUTPUT =	-o
-EXLIBS =	-L$(MLXDIR) -lmlx -lXext -lX11 -lm
+EXLIBS =	-L$(MLXDIR) -lmlx -lXext -lX11 -lm -lXfixes
 
 MLXDIR =	./mlx
 SRCDIR =	./src
