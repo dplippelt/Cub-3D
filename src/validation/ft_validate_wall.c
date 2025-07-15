@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:55:19 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 16:18:07 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 11:03:44 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 static int	ft_found_hole(t_map_val *map, int y, int x)
 {
-	if (map->map[y][x] == '0')
+	if (map->map[y][x] == C_FLOOR)
 		return (1);
-	if (map->map[y][x] == 'N')
+	if (map->map[y][x] == C_PLAYER_N)
 		return (1);
-	if (map->map[y][x] == 'E')
+	if (map->map[y][x] == C_PLAYER_E)
 		return (1);
-	if (map->map[y][x] == 'S')
+	if (map->map[y][x] == C_PLAYER_S)
 		return (1);
-	if (map->map[y][x] == 'W')
+	if (map->map[y][x] == C_PLAYER_W)
 		return (1);
-	if (map->map[y][x] == 'C')
+	if (map->map[y][x] == C_SPRITE)
 		return (1);
-	if (map->map[y][x] == 'D')
+	if (map->map[y][x] == C_DOOR)
 		return (1);
 	return (0);
 }
@@ -41,7 +41,7 @@ static int	ft_valid_pos(t_map_val *map, int y, int x)
 		return (0);
 	if (x >= map->width)
 		return (0);
-	if (map->map[y][x] == '1')
+	if (map->map[y][x] == C_WALL)
 		return (0);
 	if (map->map[y][x] == 'X')
 		return (0);

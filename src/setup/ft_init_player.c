@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 12:54:56 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 16:31:02 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 11:03:26 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 static void	ft_set_player_dir(t_cub3d *cub3d, char c)
 {
-	if (c == 'N')
+	if (c == C_PLAYER_N)
 		cub3d->dir_row = -1;
-	if (c == 'E')
+	if (c == C_PLAYER_E)
 		cub3d->dir_col = 1;
-	if (c == 'S')
+	if (c == C_PLAYER_S)
 		cub3d->dir_row = 1;
-	if (c == 'W')
+	if (c == C_PLAYER_W)
 		cub3d->dir_col = -1;
 	cub3d->plane_row = cub3d->fov_data.fov_factor * cub3d->dir_col;
 	cub3d->plane_col = -cub3d->fov_data.fov_factor * cub3d->dir_row;

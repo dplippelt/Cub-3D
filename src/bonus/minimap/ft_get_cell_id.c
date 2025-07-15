@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 17:38:21 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 15:25:30 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 11:03:14 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ static int	ft_offset(int pixel_pos, t_mmap *mmap)
 
 static int	ft_door_cell_id(char **map, int y, int x)
 {
-	if (map[y][x] == 'D')
+	if (map[y][x] == C_DOOR)
 	{
-		if (map[y][x - 1] == '1' && map[y][x + 1] == '1')
+		if (map[y][x - 1] == C_WALL && map[y][x + 1] == C_WALL)
 			return (CLOSED_DOOR_CELL_H);
 		return (CLOSED_DOOR_CELL_V);
 	}
-	if (map[y][x - 1] == '1' && map[y][x + 1] == '1')
+	if (map[y][x - 1] == C_WALL && map[y][x + 1] == C_WALL)
 		return (OPEN_DOOR_CELL_H);
 	return (OPEN_DOOR_CELL_V);
 }
@@ -39,21 +39,21 @@ static int	ft_cell_id(t_mmap *mmap, int y, int x)
 		return (BACKGROUND_CELL);
 	if (y >= mmap->map_height || x >= mmap->map_width)
 		return (BACKGROUND_CELL);
-	if (mmap->map[y][x] == '0')
+	if (mmap->map[y][x] == C_FLOOR)
 		return (FLOOR_CELL);
-	if (mmap->map[y][x] == '1')
+	if (mmap->map[y][x] == C_WALL)
 		return (WALL_CELL);
-	if (mmap->map[y][x] == 'C')
+	if (mmap->map[y][x] == C_SPRITE)
 		return (SQUIRREL_CELL);
-	if (mmap->map[y][x] == 'N')
+	if (mmap->map[y][x] == C_PLAYER_N)
 		return (FLOOR_CELL);
-	if (mmap->map[y][x] == 'E')
+	if (mmap->map[y][x] == C_PLAYER_E)
 		return (FLOOR_CELL);
-	if (mmap->map[y][x] == 'S')
+	if (mmap->map[y][x] == C_PLAYER_S)
 		return (FLOOR_CELL);
-	if (mmap->map[y][x] == 'W')
+	if (mmap->map[y][x] == C_PLAYER_W)
 		return (FLOOR_CELL);
-	if (mmap->map[y][x] == 'D' || mmap->map[y][x] == 'O')
+	if (mmap->map[y][x] == C_DOOR)
 		return (ft_door_cell_id(mmap->map, y, x));
 	return (BACKGROUND_CELL);
 }

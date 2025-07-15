@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 15:08:02 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/15 10:47:42 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 11:06:49 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,15 @@
 # define C_WALL '1'
 # define C_SPRITE 'C'
 # define C_DOOR 'D'
+# define C_FLOOR '0'
+# define C_PLAYER_N 'N'
+# define C_PLAYER_E 'E'
+# define C_PLAYER_S 'S'
+# define C_PLAYER_W 'W'
+# define WIN_Y_DEFAULT 1080
+# define MAX_FPS 60
 # define DIST_PER_SECOND 5.0
 # define RADIAN_PER_SECOND 2.0
-# define WIN_Y_DEFAULT 1080
 # define MOUSE_SENS 1000
 # define MOUSE_SENS_MAX 2000
 # define MOUSE_SENS_MIN 100
@@ -37,6 +43,5 @@
 # define SP_SIZE_DOWN 2
 # define EPSILON 1e-6
 # define ANIMATION_SPEED_MILISEC 500
-# define MAX_FPS 60
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 14:02:38 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/11 10:48:28 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 11:00:40 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 # include "enums.h"
+# include "macros.h"
 # include "cleanup.h"
 
 int			ft_error(int e);

@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 10:35:41 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/06/19 11:44:15 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 10:51:38 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int	ft_found_map(char *line)
 	is_map = 0;
 	while (*line)
 	{
-		if (*line != ' ' && *line != '1')
+		if (*line != ' ' && *line != C_WALL)
 			return (0);
-		if (*line == '1')
+		if (*line == C_WALL)
 			is_map = 1;
 		line++;
 	}
