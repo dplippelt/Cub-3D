@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 16:21:43 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/11 16:20:44 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 10:35:05 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -232,7 +232,7 @@ typedef struct s_keys
 	int	pg_up;
 	int	pg_down;
 	int	home;
-	int	f1;
+	int	f;
 	int	left;
 	int	right;
 	int	esc;
