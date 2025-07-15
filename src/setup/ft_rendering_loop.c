@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 15:26:44 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/15 13:49:14 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 13:52:09 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,7 @@ int	ft_rendering_loop(void *param)
 	cub3d = (t_cub3d *)param;
 	if (!ft_frame_rate_limiter(cub3d))
 		return (mlx_loop_end(cub3d->mlx), 0);
-	if (!ft_calc_frame_time(cub3d))
-		return (mlx_loop_end(cub3d->mlx), 0);
+	ft_calc_speed(cub3d);
 	ft_key_action(cub3d, &cub3d->keys);
 	ft_sprite_animation(cub3d);
 	ft_door_positioning(cub3d);

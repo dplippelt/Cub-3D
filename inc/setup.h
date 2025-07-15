@@ -6,7 +6,7 @@
 /*   By: dlippelt <dlippelt@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 15:05:02 by dlippelt          #+#    #+#             */
-/*   Updated: 2025/07/10 15:57:58 by dlippelt         ###   ########.fr       */
+/*   Updated: 2025/07/15 13:51:46 by dlippelt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include "key_action.h"
 # include "bonus.h"
 
-int		ft_calc_frame_time(t_cub3d *cub3d);
+void	ft_calc_speed(t_cub3d *cub3d);
 char	*ft_get_path(int i, t_tex *tex);
 int		ft_init_field_of_view(t_cub3d *cub3d);
 int		ft_init_game_condition(t_cub3d *cub3d, t_file file);
